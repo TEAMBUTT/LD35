@@ -11,6 +11,12 @@ In the long run, I'd like to rewrite this as generator style thing, currently
 you just clone this repo, and find and replace "hater" with your project's name
 in all the places.
 
+```sh
+# Ensure you have loverocks installed.
+# To fetch the luarocks dependencies:
+$ loverocks deps
+```
+
 ## Details
 
 This project is based off of [loverocks](https://github.com/Alloyed/loverocks)
