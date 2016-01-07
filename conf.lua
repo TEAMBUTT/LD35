@@ -1,5 +1,3 @@
-require 'rocks' ()
-
 function love.conf(t)
   t.identity = "hater"
   t.window.title = t.identity
