@@ -1,3 +1,5 @@
+require 'env'
+
 local callbacks = require 'callbacks'
 
 describe("LOVE callbacks", function()
