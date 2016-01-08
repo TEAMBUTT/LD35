@@ -1,16 +1,3 @@
-# Hater
+# TEAMBUTT Ludum Dare #35 Entry
 
-[![Build Status](https://travis-ci.org/jarednorman/hater.svg?branch=master)](https://travis-ci.org/jarednorman/hater)
-
-__Warning: This isn't ready for use.__
-
-Hater is an opinionated starting point for building games with
-[LÖVE](https://love2d.org). It was born out of my experience in competing in
-competitions like [Ludum Dare](http://ludumdare.com/compo/) and my old LÖVE
-skeleton, [Hatred](https://github.com/jarednorman/hatred).
-
-## Getting Started
-
-In the long run, I'd like to rewrite this as generator style thing, currently
-you just clone this repo, and find and replace "hater" with your project's name
-in all the places.
+__Warning: There's nothing here yet.__
