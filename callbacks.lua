@@ -1,6 +1,8 @@
+local white = require('colours').white
+
 return function(target)
   target.load = function()
-    love.graphics.setBackgroundColor(255, 255, 255)
+    love.graphics.setBackgroundColor(white())
   end
 
   target.update = function(dt)
