@@ -3,8 +3,11 @@ local black = require('colours').black
 
 return function(target)
   target.load = function()
-    local width, height = love.window.getDesktopDimensions()
-    love.window.setMode(width - 256, height - 256)
+    if DEBUG then
+      local width, height = love.window.getDesktopDimensions()
+      love.window.setMode(width - 256, height - 256)
+    end
+
     love.graphics.setBackgroundColor(white())
   end
 
@@ -24,6 +27,9 @@ return function(target)
   end
 
   target.keypressed = function(key)
+    if key == "escape" and DEBUG then
+      love.event.quit()
+    end
   end
 
   target.keyreleased = function(key)
