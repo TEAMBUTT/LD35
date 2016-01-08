@@ -1,5 +1,7 @@
 # Hater
 
+[![Build Status](https://travis-ci.org/jarednorman/hater.svg?branch=master)](https://travis-ci.org/jarednorman/hater)
+
 __Warning: This isn't ready for use.__
 
 Hater is an opinionated starting point for building games with
