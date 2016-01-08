@@ -1,6 +1,6 @@
 local inject = require('underscore').inject
 
-return inject({
+local colours = {
   {
     name = 'white',
     rgb = { 255, 255, 255 }
@@ -9,7 +9,9 @@ return inject({
     name = 'black',
     rgb = { 0, 0, 0 }
   }
-}, {}, function(memo, colour)
+}
+
+return inject(colours, {}, function(memo, colour)
   memo[colour.name] = function()
     return unpack(colour.rgb)
   end
