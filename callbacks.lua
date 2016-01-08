@@ -3,6 +3,8 @@ local black = require('colours').black
 
 return function(target)
   target.load = function()
+    local width, height = love.window.getDesktopDimensions()
+    love.window.setMode(width - 256, height - 256)
     love.graphics.setBackgroundColor(white())
   end
 
