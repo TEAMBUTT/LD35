@@ -6,8 +6,7 @@ return function(target)
   target.quit = require 'callbacks.quit'
 
   target.mousepressed,
-  target.mousereleased = unpack(require 'callbacks.mouse')
-
+  target.mousereleased,
   target.keypressed,
-  target.keyreleased = unpack(require 'callbacks.keyboard')
+  target.keyreleased = unpack(require 'callbacks.input')
 end
