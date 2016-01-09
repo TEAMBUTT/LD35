@@ -12,6 +12,10 @@ local getMessage = function()
 end
 
 return function(dt, initial)
+  if DEBUG then
+    setState(require 'states.game')
+  end
+
   if initial then
     timeElapsed = 0
   end
