@@ -1,4 +1,6 @@
-local colours = require('colours')
+local colours = require 'colours'
+local state = require 'state'
+local nextState = require 'states.mainMenu'
 
 local timeElapsed
 
@@ -10,10 +12,13 @@ return function(dt, initial)
   timeElapsed = timeElapsed + dt
 
   local message
-  if timeElapsed < 5 then
+  if timeElapsed < 1.5 then
     message = "a game by\nJared Norman"
-  else
+  elseif timeElapsed < 3 then
     message = "HATER"
+  else
+    state.setState(nextState)
+    return {}
   end
 
   return { function()

@@ -1,12 +1,11 @@
-local state = function(dt)
-  return {}
-end
-local initial = false
+local state
+local lastState
 local renderList = {}
 
 local update = function(dt)
+  local initial = state ~= lastState
+  lastState = state
   renderList = state(dt, initial)
-  initial = false
 end
 
 local getRenderList = function()
@@ -15,7 +14,6 @@ end
 
 local setState = function(newState)
   state = newState
-  initial = true
 end
 
 return {
