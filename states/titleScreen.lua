@@ -1,8 +1,15 @@
 local colours = require 'colours'
-local state = require 'state'
-local nextState = require 'states.mainMenu'
+local setState = require('state').setState
 
 local timeElapsed
+
+local getMessage = function()
+  if timeElapsed < 1.5 then
+    return "a game by\nJared Norman"
+  else
+    return "HATER"
+  end
+end
 
 return function(dt, initial)
   if initial then
@@ -11,15 +18,8 @@ return function(dt, initial)
 
   timeElapsed = timeElapsed + dt
 
-  local message
-  if timeElapsed < 1.5 then
-    message = "a game by\nJared Norman"
-  else
-    message = "HATER"
-  end
-
   if timeElapsed >= 3 then
-    state.setState(nextState)
+    setState(require 'states.mainMenu')
   end
 
   return { function()
@@ -28,6 +28,6 @@ return function(dt, initial)
     end
 
     love.graphics.setColor(colours.white())
-    love.graphics.print(message)
+    love.graphics.print(getMessage())
   end }
 end
