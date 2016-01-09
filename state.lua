@@ -1,11 +1,13 @@
 local state
 local lastState
+local clearInput = require('input').clear
 local renderList = {}
 
 local update = function(dt)
   local initial = state ~= lastState
   lastState = state
   renderList = state(dt, initial)
+  clearInput()
 end
 
 local getRenderList = function()
