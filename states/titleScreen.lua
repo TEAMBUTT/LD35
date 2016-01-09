@@ -14,11 +14,12 @@ return function(dt, initial)
   local message
   if timeElapsed < 1.5 then
     message = "a game by\nJared Norman"
-  elseif timeElapsed < 3 then
-    message = "HATER"
   else
+    message = "HATER"
+  end
+
+  if timeElapsed >= 3 then
     state.setState(nextState)
-    return {}
   end
 
   return { function()
