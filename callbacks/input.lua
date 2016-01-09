@@ -1,7 +1,7 @@
-local push = require('input').push
+local enqueue = require('input').enqueue
 
 local mousePressed = function(x, y, button)
-  push{
+  enqueue{
     type = 'MOUSE_PRESS',
     payload = {
       x = x,
@@ -12,7 +12,7 @@ local mousePressed = function(x, y, button)
 end
 
 local mouseReleased = function(x, y, button)
-  push{
+  enqueue{
     type = 'MOUSE_RELEASE',
     payload = {
       x = x,
@@ -23,14 +23,14 @@ local mouseReleased = function(x, y, button)
 end
 
 local keyPressed = function(key)
-  push{
+  enqueue{
     type = 'KEY_PRESS',
     payload = { key = key },
   }
 end
 
 local keyReleased = function(key)
-  push{
+  enqueue{
     type = 'KEY_RELEASE',
     payload = { key = key },
   }
