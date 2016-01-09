@@ -1,5 +1,9 @@
 local queue = {}
 
+local clear = function()
+  queue = {}
+end
+
 local enqueue = function(event)
   table.insert(queue, event)
 end
@@ -11,4 +15,5 @@ end
 return {
   enqueue = enqueue,
   dequeue = dequeue,
+  clear = clear,
 }
