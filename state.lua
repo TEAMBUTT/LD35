@@ -1,21 +1,25 @@
 local state = function(dt)
-  return { function()
-    love.graphics.setColor(require('colours').black())
-    love.graphics.print("You might want to change the state to a real one.")
-  end }
+  return {}
 end
-
+local initial = false
 local renderList = {}
 
 local update = function(dt)
-  renderList = state()
+  renderList = state(dt, initial)
+  initial = false
 end
 
 local getRenderList = function()
   return renderList
 end
 
+local setState = function(newState)
+  state = newState
+  initial = true
+end
+
 return {
   update = update,
-  getRenderList = getRenderList
+  getRenderList = getRenderList,
+  setState = setState,
 }

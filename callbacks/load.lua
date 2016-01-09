@@ -1,4 +1,5 @@
-local white = require('colours').white
+local state = require 'state'
+local titleScreen = require 'states.titleScreen'
 
 return function()
   if DEBUG then
@@ -6,6 +7,8 @@ return function()
     love.window.setMode(width - 256, height - 256)
   end
 
-  love.graphics.setBackgroundColor(white())
+  love.graphics.setDefaultFilter('nearest', 'nearest')
+
+  state.setState(titleScreen)
 end
 

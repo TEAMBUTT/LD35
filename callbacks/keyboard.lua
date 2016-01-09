@@ -9,5 +9,4 @@ local keyReleased = function(key)
   end
 end
 
-  print(keyReleased)
 return { keyPressed, keyReleased }
