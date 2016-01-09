@@ -1,7 +1,10 @@
-local black = require('colours').black
+local state = require 'state'
 
 return function()
   love.graphics.scale(2)
-  love.graphics.setColor(black())
-  love.graphics.print("This is working", 0, 0)
+  for index, renderable in ipairs(state.getRenderList()) do
+    if type(renderable) == 'function' then
+      renderable()
+    end
+  end
 end
