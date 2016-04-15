@@ -1,0 +1,7 @@
+/* It's not scss, so we'll just use sprockets.
+ *= require normalize
+ */
+@import 'constants';
+@import 'general';
+@import 'game';
+@import 'footer';
