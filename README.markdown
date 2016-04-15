@@ -1,3 +1,9 @@
 # TEAMBUTT Ludum Dare #35 Entry
 
-__Warning: There's nothing here yet.__
+```bash
+# To setup, just run:
+$ bin/setup
+# For development you need both of these running:
+$ bundle exec rails s -p 9891
+$ npm run watch
+```
