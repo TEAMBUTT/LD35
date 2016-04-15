@@ -8,6 +8,7 @@ gem 'sass-rails', '~> 5.0'
 
 group :development do
   gem 'rack-livereload'
+  gem 'guard-livereload', '~> 2.5', require: false
 end
 
 group :development, :test do
