@@ -1,6 +1,5 @@
-import $ from 'jquery';
 import Entity from '../Entity.js';
-import { addMessage } from '../messageQueue.js';
+import printMessage from '../printMessage.js';
 
 export class AlarmClock extends Entity {
   constructor() {
@@ -18,7 +17,7 @@ export class AlarmClock extends Entity {
         label: "Turn it off.",
         callback: () => {
           this.ringing = false;
-          addMessage($('<div class="message">You turn the alarm clock off.</div>'));
+          printMessage('You turn the alarm clock off.');
         }
       }
     ];
