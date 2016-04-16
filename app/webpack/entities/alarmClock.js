@@ -15,6 +15,9 @@ export class AlarmClock extends Entity {
   actions() {
     if(this.ringing) {
       return [
+        action("Snooze", () => {
+          printMessage('You sleep for another 5 minutes before the alarm clock rings again.');
+        }),
         action("Turn if off.", () => {
           this.ringing = false;
           printMessage('You turn the alarm clock off.');
