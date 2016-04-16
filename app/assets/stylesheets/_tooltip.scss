@@ -11,7 +11,6 @@
   @include transform(translatex(-50%));
   width: 25vw;
   min-width: 150px;
-  padding: 4px; // TODO: Remove me?
   color: $color-background;
   background-color: $color-foreground;
   font-weight: normal;
@@ -27,5 +26,14 @@
 
   &.tooltip-up {
     bottom: 100%;
+  }
+
+  .action-label {
+    padding: 4px;
+
+    &:hover {
+      color: $color-foreground;
+      background-color: $color-accent-secondary;
+    }
   }
 }
