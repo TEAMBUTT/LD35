@@ -7,11 +7,11 @@ export class Clothing extends Entity {
 
   name() {
     if (state.wearing == "uniform") {
-      return "your work uniform";
+      return "work uniform";
     } else if (state.wearing == "pajamas") {
-      return "your pajamas";
+      return "pajamas";
     } else {
-      return "your birthday suit";
+      return "birthday suit";
     }
   }
 
