@@ -18,7 +18,8 @@ export class CellPhone extends Entity {
     return [
       action("Put it in your pocket.", () => {
         addItem(self)
-      })
+      }),
+      action("Check time.", () => { printMessage(`It is now ${time()}.`) })
     ];
   }
 }
