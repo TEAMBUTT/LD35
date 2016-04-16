@@ -4,15 +4,13 @@ import Scene from '../Scene.js';
 
 export class HomeHallway extends Scene {
   descriptionMessage() {
-    const message = $(`
+    const message = `
       <div>
         You are in the hallway outside your bedroom.
       </div>
-    `);
+    `;
 
-    this.insertEntities(message, []);
-
-    return message;
+    return this.insertEntities(message, {});
   }
 }
 

@@ -7,21 +7,19 @@ import bedroomDoor from '../entities/bedroomDoor.js';
 
 export class Bedroom extends Scene {
   descriptionMessage() {
-    const message = $(`
+    const message = `
       <p>
-        Your ${alarmClock.placeholder()} is ringing beside you on the bedside table.
+        Your <%= entity("alarmClock") %> is ringing beside you on the bedside table.
         Your uniform is on the floor beside your mirror.
 
         <br><br>
 
-        ${bedroomDoor.placeholder("Your bedroom door")} is closed, with your
+        <%= entity("bedroomDoor", "Your bedroom door") %> is closed, with your
         Circle Burger hat hanging on the doorknob.
       </p>
-    `);
+    `;
 
-    this.insertEntities(message, [alarmClock, bedroomDoor]);
-
-    return message;
+    return this.insertEntities(message, {alarmClock, bedroomDoor});
   }
 }
 
