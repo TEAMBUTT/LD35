@@ -11,9 +11,12 @@ export default class Door extends Entity {
     return "door";
   }
 
-  html(text) {
-    const $element = super.html(text);
-    $element.on('click', () => changeScene(this.destination));
-    return $element;
+  actions() {
+    return [
+      {
+        label: "Enter door",
+        callback: () => changeScene(this.destination)
+      }
+    ];
   }
 }
