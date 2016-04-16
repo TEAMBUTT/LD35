@@ -3,10 +3,12 @@ import $ from 'jquery';
 import Scene from '../Scene.js';
 
 import alarmClock from '../entities/alarmClock.js';
-import bedroomDoor from '../entities/bedroomDoor.js';
+import homeHallway from '../scenes/homeHallway.js';
+import Door from '../entities/Door.js';
 
 export class Bedroom extends Scene {
   descriptionMessage() {
+    const bedroomDoor = new Door(homeHallway);
     const message = `
       <div>
         Your <%= entity("alarmClock") %> is ringing beside you on the bedside
