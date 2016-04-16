@@ -1,6 +1,7 @@
 /* It's not scss, so we'll just use sprockets.
  *= require normalize
  */
+@import 'bourbon';
 @import 'constants';
 @import 'general';
 @import 'game';
