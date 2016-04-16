@@ -2,7 +2,7 @@
   padding: 10px;
   line-height: 1.5;
 
-  a {
+  .entity {
     color: $color-accent-primary;
     font-weight: bold;
     text-decoration: none;
@@ -13,7 +13,7 @@
     pointer-events: none;
     color: $disabled-color;
 
-    a {
+    .entity {
       color: $disabled-color;
       font-weight: normal;
     }
