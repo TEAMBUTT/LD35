@@ -1,6 +1,6 @@
 import Entity, { printMessage, action, time, state } from "../Entity.js";
 
-export class AlarmClock extends Entity {
+export class GarageDoor extends Entity {
   constructor() {
     super();
   }
@@ -31,4 +31,4 @@ export class AlarmClock extends Entity {
   }
 }
 
-export default new AlarmClock();
+export default new GarageDoor();
