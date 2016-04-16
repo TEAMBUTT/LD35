@@ -1,12 +1,13 @@
 import bedroom from './scenes/bedroom.js';
+import { addMessage } from './messageQueue.js';
 
 let currentScene = bedroom;
 
-module.exports = {
-  getCurrentScene() {
-    return currentScene;
-  },
-  setCurrentScene(scene) {
-    currentScene = scene;
-  }
+export function getCurrentScene() {
+  return currentScene;
+}
+
+export function changeScene(scene) {
+  currentScene = scene;
+  addMessage(currentScene.descriptionMessage());
 }
