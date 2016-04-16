@@ -19,7 +19,9 @@ class Entity {
   html(text) {
     const actions = this.actions();
 
-    if(!actions.length) {
+    const availableActions = filter(actions, (action) => action.condition());
+
+    if(!availableActions.length) {
       return $(`<span>${text}</span>`);
     }
 
@@ -27,8 +29,6 @@ class Entity {
     const $tooltipContainer = $('<div class="tooltip-content"></div>');
 
     $element.append($tooltipContainer);
-
-    const availableActions = filter(actions, (action) => action.condition());
 
     each(availableActions, (action) => {
       const $action = $(`<div class="action-label">${action.label}</div>`);
