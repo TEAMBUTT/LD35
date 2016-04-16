@@ -1,4 +1,4 @@
-import Entity, { printMessage, action, time, state } from "../../Entity.js";
+import Entity, { printMessage, action, time, state } from "../Entity.js";
 import { addItem } from '../inventory.js';
 
 export class CellPhone extends Entity {
