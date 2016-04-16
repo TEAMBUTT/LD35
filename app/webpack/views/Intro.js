@@ -19,7 +19,7 @@ module.exports = class {
       setTimeout(() => {
         frame.empty();
         resolve();
-      }, 2000);
+      }, 5000);
     });
   }
   html(text) {
