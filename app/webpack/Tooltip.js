@@ -38,7 +38,6 @@ class Tooltip {
   }
 
   fixOverflow(offset) {
-    console.log(offset);
     this.$target.css("left", `calc(50% - ${offset}px)`);
   }
 
