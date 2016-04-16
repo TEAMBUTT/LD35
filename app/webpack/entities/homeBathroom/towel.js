@@ -18,7 +18,7 @@ export class Towel extends Entity {
           }
         },
         () => {
-          return !state.wearingUniform;
+          return state.wearing === "nothing";
         }
       )
     ];

@@ -17,7 +17,7 @@ export class Uniform extends Entity {
       action(
         "Put on",
         () => {
-          state.wearingUniform = true;
+          state.wearing = "uniform";
           printMessage('You put on your uniform');
         }
       )

@@ -16,7 +16,7 @@ export class Bedroom extends Scene {
     const message = `
       <div>
         Your <%= entity("alarmClock") %> is ${ state.alarmRinging ? "ringing" : "silent" } beside you on the bedside table.
-        <% if(!state.wearingUniform) { %>Your <%= entity("uniform") %> is on the floor beside <% } else { %> On the floor is <% } %> your <%= entity("mirror") %>.
+        <% if(state.wearing !== "uniform") { %>Your <%= entity("uniform") %> is on the floor beside <% } else { %> On the floor is <% } %> your <%= entity("mirror") %>.
       </div>
       <div>
         <%= entity("bedroomDoor", "Your bedroom door") %> is closed, with your

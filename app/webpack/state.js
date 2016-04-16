@@ -5,5 +5,6 @@ export default {
   alarmRinging: true,
   garageDoorOpen: false,
   inventory: [],
+  wearing: "pajamas",
   luck: 10
 };
