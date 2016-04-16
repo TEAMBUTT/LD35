@@ -10,7 +10,8 @@ export class HomeKitchen extends Scene {
     const hallwayDoor = new Door(homeHallway);
     const message = `
       You are in the kitchen. It smells awful, because you haven't taken your
-      garbage out since before last weeks crazy bender.
+      garbage out since before last weeks crazy bender. The <%=
+      entity("hallwayDoor", "door back to the hallway") %> is behind you.
     `;
 
     return this.insertEntities(message, {hallwayDoor});
