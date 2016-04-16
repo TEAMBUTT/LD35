@@ -12,7 +12,7 @@ module.exports = class {
     const frame = $('#game');
     const deferred = $.Deferred();
     frame.html(this.html('The second game by butt.team'));
-    setTimeout(() => frame.html(this.html('Name of game')), 1000);
+    setTimeout(() => frame.html(this.html('Work Shift')), 1000);
     setTimeout(() => deferred.resolve(), 2000);
     return deferred;
   }
