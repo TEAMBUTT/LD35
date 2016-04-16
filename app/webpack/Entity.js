@@ -18,7 +18,6 @@ class Entity {
 
   html(text) {
     const actions = this.actions();
-
     const availableActions = filter(actions, (action) => action.condition());
 
     if(!availableActions.length) {
