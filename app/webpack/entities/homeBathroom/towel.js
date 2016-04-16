@@ -12,6 +12,7 @@ export class Towel extends Entity {
         () => {
           if (state.wet) {
             state.wet = false;
+            state.bathroomTowel = "damp";
             printMessage('You dry yourself off, thinking, <em>damn, this towel is soft!</em>');
           } else {
             printMessage("You rub the towel against your skin. Nothing happens.");
