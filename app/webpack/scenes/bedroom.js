@@ -5,13 +5,14 @@ import Scene from '../Scene.js';
 import alarmClock from '../entities/alarmClock.js';
 import homeHallway from '../scenes/homeHallway.js';
 import Door from '../entities/Door.js';
+import state from '../state.js';
 
 export class Bedroom extends Scene {
   descriptionMessage() {
     const bedroomDoor = new Door(homeHallway);
     const message = `
       <div>
-        Your <%= entity("alarmClock") %> is ${ alarmClock.ringing ? "ringing" : "silent" } beside you on the bedside
+        Your <%= entity("alarmClock") %> is ${ state.alarmRinging ? "ringing" : "silent" } beside you on the bedside
         table. Your uniform is on the floor beside your mirror.
       </div>
       <div>

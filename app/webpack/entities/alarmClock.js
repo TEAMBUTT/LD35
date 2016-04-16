@@ -7,7 +7,6 @@ import state from '../state.js';
 export class AlarmClock extends Entity {
   constructor() {
     super();
-    this.ringing = true;
   }
 
   name() {
@@ -27,10 +26,10 @@ export class AlarmClock extends Entity {
       action(
         "Turn if off.",
         () => {
-          this.ringing = false;
+          state.alarmRinging = false;
           printMessage('You turn the alarm clock off.');
         },
-        () => this.ringing
+        () => state.alarmRinging
       ),
       action(
         "Look at the time.",
