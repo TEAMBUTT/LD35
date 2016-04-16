@@ -12,13 +12,16 @@ export default class {
   start() {
     const frame = $('#game');
 
+    // TODO: remove this when we actually want to have an intro
+    return Promise.resolve();
+
     return new Promise((resolve, reject) => {
       frame.html(this.html('The second game by butt.team'));
-      setTimeout(() => frame.html(this.html('Work Shift')), 250);
+      setTimeout(() => frame.html(this.html('Work Shift')), 2000);
       setTimeout(() => {
         frame.empty();
         resolve();
-      }, 500);
+      }, 5000);
     });
   }
   html(text) {
