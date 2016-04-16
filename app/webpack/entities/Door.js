@@ -14,7 +14,7 @@ export default class Door extends Entity {
 
   actions() {
     return [
-      action("Enter door", () => changeScene(this.destination))
+      action("Enter door.", () => changeScene(this.destination))
     ];
   }
 }

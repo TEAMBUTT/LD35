@@ -16,20 +16,20 @@ export class Mirror extends Entity {
   actions() {
     return [
       action(
-        "Look",
+        "Look.",
         () => {
           printMessage("You look in the oval mirror.");
           printMessage("You are in your <%= entity('clothing') %>.", {clothing});
         }
       ),
       action(
-        "Talk",
+        "Talk.",
         () => {
           printMessage("Mirror mirror on the wall...<br/>It isn't that kind of mirror.");
         }
       ),
       action(
-        "Punch",
+        "Punch.",
         () => {
           printMessage("You smash the mirror. That's 7 years bad luck.");
           state.luck -= 7;

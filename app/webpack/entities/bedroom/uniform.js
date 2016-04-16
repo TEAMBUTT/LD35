@@ -15,10 +15,10 @@ export class Uniform extends Entity {
   actions() {
     return [
       action(
-        "Put on",
+        "Put on.",
         () => {
           state.wearing = "uniform";
-          printMessage('You put on your uniform');
+          printMessage('You put on your uniform.');
         }
       )
     ];

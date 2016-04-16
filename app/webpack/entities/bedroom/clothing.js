@@ -21,9 +21,9 @@ export class Clothing extends Entity {
   actions() {
     return [
       action(
-        "Remove",
+        "Remove.",
         () => {
-          printMessage("You strip");
+          printMessage("You strip.");
           state.wearing = "nothing"
         },
         () => (state.wearing != "nothing")

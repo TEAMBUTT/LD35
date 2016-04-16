@@ -12,7 +12,7 @@ export class AlarmClock extends Entity {
   actions() {
     return [
       action(
-        "Snooze",
+        "Snooze.",
         () => {
           state.currentTime.add(5, 'minutes');
           printMessage(`You sleep for another 5 minutes before the alarm clock rings again. It's now ${time()}.`);
