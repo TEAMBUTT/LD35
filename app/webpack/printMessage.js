@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import { addMessage } from './messageQueue.js';
+import formatMessage from './formatMessage.js';
 
-export default function plainMessage(message) {
-  addMessage($(`<div class="message">${message}</div>`));
+export default function printMessage(message, entities) {
+  entities = entities || [];
+  addMessage(formatMessage(message, entities));
 };

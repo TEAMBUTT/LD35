@@ -5,7 +5,6 @@ import bedroom from '../scenes/bedroom.js';
 import homeHallway from '../scenes/homeHallway.js';
 import Door from '../entities/Door.js';
 import cellPhone from '../entities/cellPhone.js';
-import { isInInventory } from '../inventory.js';
 
 export class HomeKitchen extends Scene {
   descriptionMessage() {
@@ -20,12 +19,6 @@ export class HomeKitchen extends Scene {
     `;
 
     return this.insertEntities(message, {hallwayDoor, cellPhone});
-  }
-
-  helpers() {
-    return {
-      hasCellPhone: () => isInInventory(cellPhone)
-    }
   }
 }
 
