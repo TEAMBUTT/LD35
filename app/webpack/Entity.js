@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import uuid from 'uuid';
 import { each } from 'lodash';
+import { getCurrentScene } from './currentScene.js';
+import { addMessage } from './messageQueue.js';
 
 class Entity {
   constructor() {
@@ -15,7 +17,12 @@ class Entity {
 
     each(this.actions(), (action) => {
       const $action = $(`<div class="action-label">${action.label}</div>`);
-      $action.on('click', action.callback);
+
+      $action.on('click', () => {
+        action.callback();
+        addMessage(getCurrentScene().descriptionMessage());
+      });
+
       $tooltipContainer.append($action);
     });
 
