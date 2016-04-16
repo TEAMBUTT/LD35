@@ -1,9 +1,9 @@
 import $ from 'jquery';
-import Handlebars from 'handlebars';
+import _ from 'lodash';
 
-let template = Handlebars.compile(`
+let template = _.template(`
   <div class="intro-screen">
-    <div class="intro-screen-title">{{text}}</div>
+    <div class="intro-screen-title"><%= text %></div>
   </div>
 `)
 
