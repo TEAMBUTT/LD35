@@ -9,5 +9,4 @@ export function getCurrentScene() {
 
 export function changeScene(scene) {
   currentScene = scene;
-  addMessage(currentScene.descriptionMessage());
 }
