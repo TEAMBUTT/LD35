@@ -1,8 +1,4 @@
-import Entity from '../../Entity.js';
-import printMessage from '../../printMessage.js';
-import action from '../../action.js';
-import time from '../../time.js';
-import state from '../../state.js';
+import Entity, { printMessage, action, time, state } from "../../Entity.js";
 
 export class Shower extends Entity {
   name() {
@@ -15,7 +11,22 @@ export class Shower extends Entity {
         'Wash yourself.',
         () => {
           state.currentTime.add(10, 'minutes');
-          printMessage('Bleh!');
+          let message = "";
+
+          if (state.showered) {
+            message += "Again?! Okay . . .<br>"
+          }
+
+          if (state.wearingUniform) {
+            state.wetUniform = true;
+            message += "Your uniform is all wet, dummy! Why didn't you take it off?";
+          } else {
+            message += 'So clean!';
+          }
+
+          state.wet = true;
+          state.showered = true;
+          printMessage(message);
         }
       )
     ];

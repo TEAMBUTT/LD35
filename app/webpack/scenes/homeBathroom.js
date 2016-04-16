@@ -14,6 +14,7 @@ export class HomeBathroom extends Scene {
     const message = `
       The <%= entity("shower", "shower") %> is to your left. a clean
       <%= entity("towel", "towel") %> hanging on the door.
+      <br>
       The <%= entity("bathroomDoor", "door back to the hallway") %> is behind you.
     `;
 
