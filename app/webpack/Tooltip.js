@@ -15,6 +15,24 @@ class Tooltip {
       this.$target.toggleClass("open");
       this.checkOverflow();
     });
+
+    $("body").on("click", (e) => {
+      if (!this.contains(e.target)) {
+        this.$target.removeClass("open")
+      }
+    });
+  }
+
+  contains(el) {
+    return this.isTrigger(el) || this.isTarget(el);
+  }
+
+  isTrigger(el) {
+    return $(el).closest(this.$el).length !== 0;
+  }
+
+  isTarget(el) {
+    return $(el).closest(this.$target).length !== 0;
   }
 
   checkOverflow() {
