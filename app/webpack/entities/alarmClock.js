@@ -1,5 +1,6 @@
 import Entity from '../Entity.js';
 import printMessage from '../printMessage.js';
+import action from '../action.js';
 
 export class AlarmClock extends Entity {
   constructor() {
@@ -13,13 +14,10 @@ export class AlarmClock extends Entity {
 
   actions() {
     return [
-      {
-        label: "Turn it off.",
-        callback: () => {
-          this.ringing = false;
-          printMessage('You turn the alarm clock off.');
-        }
-      }
+      action("Turn if off.", () => {
+        this.ringing = false;
+        printMessage('You turn the alarm clock off.');
+      })
     ];
   }
 }
