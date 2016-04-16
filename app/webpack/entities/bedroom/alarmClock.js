@@ -21,10 +21,10 @@ export class AlarmClock extends Entity {
           state.currentTime.add(5, 'minutes');
           printMessage(`You sleep for another 5 minutes before the alarm clock rings again. It's now ${time()}.`);
         },
-        () => this.ringing
+        () => state.alarmRinging
       ),
       action(
-        "Turn if off.",
+        "Turn it off.",
         () => {
           state.alarmRinging = false;
           printMessage('You turn the alarm clock off.');
