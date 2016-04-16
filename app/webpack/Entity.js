@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import uuid from 'uuid';
+import { each } from 'lodash';
 
 class Entity {
   constructor() {
@@ -11,6 +12,11 @@ class Entity {
     const $tooltipContainer = $('<div class="tooltip-content"></div>');
 
     $element.append($tooltipContainer);
+
+    each(this.actions(), (action) => {
+      const $action = $(`<div class="action-label">${action.label}</div>`);
+      $tooltipContainer.append($action);
+    });
 
     return $element;
   }
@@ -25,13 +31,7 @@ class Entity {
   }
 
   actions() {
-    return [
-      {
-        label: "Turn it off.",
-        action: () => {
-        }
-      }
-    ]
+    return [];
   }
 }
 
