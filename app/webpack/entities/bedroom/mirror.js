@@ -18,7 +18,11 @@ export class Mirror extends Entity {
         "Look",
         () => {
           printMessage("You look in the oval mirror.");
-          printMessage("You are in your pajamas. Not quite work appropriate");
+          if(state.wearingUniform) {
+            printMessage("You're in your work uniform");
+          } else {
+            printMessage("You are in your pajamas. Not quite work appropriate");
+          }
         }
       ),
       action(
