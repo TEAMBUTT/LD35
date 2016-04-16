@@ -12,7 +12,7 @@ class Scene {
     };
 
     message = _.template(message)(helpers);
-    message = $('<div class="message">').append(message);
+    message = $('<div class="message scene-description">').append(message);
 
     each(entities, (entity) => {
       message
