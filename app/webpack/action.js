@@ -1,3 +1,3 @@
-export default function action(label, callback) {
-  return { label, callback };
+export default function action(label, callback, condition = () => true) {
+  return { label, callback, condition };
 };

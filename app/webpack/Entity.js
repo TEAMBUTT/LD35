@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import uuid from 'uuid';
-import { each } from 'lodash';
+import { each, filter } from 'lodash';
 import { getCurrentScene } from './currentScene.js';
 import { addMessage } from './messageQueue.js';
 
@@ -21,7 +21,9 @@ class Entity {
 
     $element.append($tooltipContainer);
 
-    each(actions, (action) => {
+    const availableActions = filter(actions, (action) => action.condition());
+
+    each(availableActions, (action) => {
       const $action = $(`<div class="action-label">${action.label}</div>`);
 
       $action.on('click', () => {
