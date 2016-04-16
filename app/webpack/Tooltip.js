@@ -34,7 +34,7 @@ class Tooltip {
     if (right > (windowWidth - gutter)) {
       this.fixOverflow(right - windowWidth + gutter);
     }
-    if (bottom > (windowHeight - gutter)) {
+    if (bottom > (windowHeight + gutter)) {
       this.$target.addClass("tooltip-up");
     }
   }
