@@ -21,11 +21,11 @@
     display: none;
   }
 
-  &:not(.tooltip-down) {
-    bottom: 100%;
+  &:not(.tooltip-up) {
+    top: 100%;
   }
 
-  &.tooltip-down {
-    top: 100%;
+  &.tooltip-up {
+    bottom: 100%;
   }
 }
