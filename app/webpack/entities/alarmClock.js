@@ -13,12 +13,16 @@ export class AlarmClock extends Entity {
   }
 
   actions() {
-    return [
-      action("Turn if off.", () => {
-        this.ringing = false;
-        printMessage('You turn the alarm clock off.');
-      })
-    ];
+    if(this.ringing) {
+      return [
+        action("Turn if off.", () => {
+          this.ringing = false;
+          printMessage('You turn the alarm clock off.');
+        })
+      ];
+    } else {
+      return [];
+    }
   }
 }
 
