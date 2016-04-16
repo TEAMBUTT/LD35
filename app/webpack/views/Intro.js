@@ -14,12 +14,11 @@ module.exports = class {
 
     return new Promise((resolve, reject) => {
       frame.html(this.html('The second game by butt.team'));
-      setTimeout(() => frame.html(this.html('Work Shift')), 1000);
-      setTimeout(() => frame.html(this.html("You are a people shaped person.<br/>Are you a bad enough dude to rescue the president?")), 2000);
+      setTimeout(() => frame.html(this.html('Work Shift')), 250);
       setTimeout(() => {
         frame.empty();
         resolve();
-      }, 5000);
+      }, 500);
     });
   }
   html(text) {
