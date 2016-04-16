@@ -1,8 +1,4 @@
-import Entity from '../../Entity.js';
-import printMessage from '../../printMessage.js';
-import action from '../../action.js';
-import time from '../../time.js';
-import state from '../../state.js';
+import Entity, { printMessage, action, time, state } from "../../Entity.js";
 
 export class AlarmClock extends Entity {
   constructor() {

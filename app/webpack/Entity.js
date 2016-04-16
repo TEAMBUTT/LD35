@@ -4,6 +4,13 @@ import { each, filter } from 'lodash';
 import { getCurrentScene } from './currentScene.js';
 import { addMessage } from './messageQueue.js';
 
+import printMessage from "./printMessage";
+import action from "./action";
+import time from "./time";
+import state from "./state";
+
+export { printMessage, action, time, state }
+
 class Entity {
   constructor() {
     this.uuid = uuid.v4();
