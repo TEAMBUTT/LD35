@@ -1,0 +1,31 @@
+.tooltip {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  color: $color-accent-primary;
+  font-weight: bold;
+}
+
+.tooltip-content {
+  @include position(absolute, null null null 50%);
+  @include transform(translatex(-50%));
+  width: 25vw;
+  min-width: 150px;
+  padding: 4px; // TODO: Remove me?
+  color: $color-background;
+  background-color: $color-foreground;
+  font-weight: normal;
+  z-index: $z-index-tooltips;
+
+  &:not(.open) {
+    display: none;
+  }
+
+  &:not(.tooltip-down) {
+    bottom: 100%;
+  }
+
+  &.tooltip-down {
+    top: 100%;
+  }
+}
