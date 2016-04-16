@@ -24,11 +24,6 @@ export default class {
       new Tooltip(el);
     });
 
-    if (message.hasClass('scene-description')) {
-      this.messageBox.children(':not(.disabled)').addClass('to-hide');
-    }
-
     this.$frame.scrollTop(this.$frame[0].scrollHeight);
-
   }
 }
