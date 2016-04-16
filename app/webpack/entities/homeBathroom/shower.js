@@ -20,8 +20,11 @@ export class Shower extends Entity {
           if (state.wearing === "uniform") {
             state.wetUniform = true;
             message += "Your uniform is all wet, dummy! Why didn't you take it off?";
+          } else if (state.wearing === "pajamas") {
+            state.wetPajamas = true;
+            message += "Your pajamas are all wet! Probably shouldn't have done that.";
           } else {
-            message += 'So clean!';
+            message += "So clean!";
           }
 
           state.wet = true;
