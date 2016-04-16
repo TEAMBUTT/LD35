@@ -13,10 +13,11 @@ module.exports = class {
     const deferred = $.Deferred();
     frame.html(this.html('The second game by butt.team'));
     setTimeout(() => frame.html(this.html('Work Shift')), 1000);
+    setTimeout(() => frame.html(this.html("You are a people shaped person.<br/>Are you a bad enough dude to rescue the president?")), 2000);
     setTimeout(() => {
       frame.empty();
       deferred.resolve();
-    }, 2000);
+    }, 5000);
     return deferred;
   }
   html(text) {
