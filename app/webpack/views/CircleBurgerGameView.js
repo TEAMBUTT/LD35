@@ -2,6 +2,7 @@ import $ from 'jquery';
 import Tooltip from '../Tooltip.js';
 import { onMessage, addMessage } from '../messageQueue.js';
 import { getCurrentScene } from '../currentScene.js';
+import printMessage from '../printMessage.js';
 
 export default class {
   constructor() {
@@ -11,6 +12,7 @@ export default class {
     this.messageBox = $('<div class="message-box">');
     this.$frame.append(this.messageBox);
     onMessage((message) => this.displayMessage(message));
+    printMessage("You are late for work!");
     addMessage(getCurrentScene().descriptionMessage());
   }
   displayMessage(message) {

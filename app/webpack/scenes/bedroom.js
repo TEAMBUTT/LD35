@@ -2,8 +2,9 @@ import $ from 'jquery';
 
 import Scene from '../Scene.js';
 
-import alarmClock from '../entities/alarmClock.js';
+import alarmClock from '../entities/bedroom/alarmClock.js';
 import homeHallway from '../scenes/homeHallway.js';
+import mirror from '../entities/bedroom/mirror.js';
 import Door from '../entities/Door.js';
 import state from '../state.js';
 
@@ -13,7 +14,7 @@ export class Bedroom extends Scene {
     const message = `
       <div>
         Your <%= entity("alarmClock") %> is ${ state.alarmRinging ? "ringing" : "silent" } beside you on the bedside
-        table. Your uniform is on the floor beside your mirror.
+        table. Your uniform is on the floor beside your <%= entity("mirror") %>.
       </div>
       <div>
         <%= entity("bedroomDoor", "Your bedroom door") %> is closed, with your
@@ -21,7 +22,7 @@ export class Bedroom extends Scene {
       </div>
     `;
 
-    return this.insertEntities(message, {alarmClock, bedroomDoor});
+    return this.insertEntities(message, {alarmClock, bedroomDoor, mirror});
   }
 }
 
