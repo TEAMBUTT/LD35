@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import uuid from 'uuid';
 import { each, filter } from 'lodash';
-import { getCurrentScene } from './currentScene.js';
+import { renderCurrentScene } from './currentScene.js';
 import { addMessage } from './messageQueue.js';
 
 import printMessage from "./printMessage";
@@ -35,7 +35,7 @@ class Entity {
 
       $action.on('click', () => {
         action.callback();
-        addMessage(getCurrentScene().descriptionMessage());
+        renderCurrentScene();
       });
 
       $tooltipContainer.append($action);

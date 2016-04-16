@@ -10,3 +10,7 @@ export function getCurrentScene() {
 export function changeScene(scene) {
   currentScene = scene;
 }
+
+export function renderCurrentScene() {
+  addMessage(getCurrentScene().descriptionMessage());
+}
