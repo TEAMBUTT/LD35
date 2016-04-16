@@ -9,8 +9,7 @@ export class AlarmClock extends Entity {
     return [
       {
         label: "Turn it off.",
-        action: () => {
-        }
+        action: () => { console.log('off!'); }
       }
     ];
   }
