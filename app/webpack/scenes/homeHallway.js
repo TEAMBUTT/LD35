@@ -5,9 +5,7 @@ import Scene from '../Scene.js';
 export class HomeHallway extends Scene {
   descriptionMessage() {
     const message = `
-      <div>
-        You are in the hallway outside your bedroom.
-      </div>
+      You are in the hallway outside your bedroom.
     `;
 
     return this.insertEntities(message, {});
