@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { onMessage, addMessage } from '../messageQueue.js';
 
 module.exports = class {
   constructor() {
@@ -7,5 +8,9 @@ module.exports = class {
   start() {
     this.messageBox = $('<div class="message-box">');
     this.$frame.append(this.messageBox);
+    onMessage((message) => {
+      this.messageBox.append(message);
+    });
+    addMessage($('<h1>Wake up! You\'re late for your shift!</h1>'));
   }
 }
