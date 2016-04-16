@@ -11,7 +11,7 @@ export class Bedroom extends Scene {
     const bedroomDoor = new Door(homeHallway);
     const message = `
       <div>
-        Your <%= entity("alarmClock") %> is ringing beside you on the bedside
+        Your <%= entity("alarmClock") %> is ${ alarmClock.ringing ? "ringing" : "silent" } beside you on the bedside
         table. Your uniform is on the floor beside your mirror.
       </div>
       <div>
