@@ -7,5 +7,5 @@ $ bin/setup
 $ bundle exec rails s -p 9891
 $ npm run watch
 # If you want LiveReload to work, also run:
-$ bx guard
+$ bundle exec guard
 ```
