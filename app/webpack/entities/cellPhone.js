@@ -19,7 +19,8 @@ export class CellPhone extends Entity {
       action("Put it in your pocket.", () => {
         addItem(self)
       }),
-      action("Check time.", () => { printMessage(`It is now ${time()}.`) })
+      action("Check time.", () => printMessage(`It is now ${time()}.`)),
+      action("Check for notificatoins.", () => printMessage('You have 3 unread texts.'))
     ];
   }
 }
