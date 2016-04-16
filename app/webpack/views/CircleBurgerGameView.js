@@ -13,6 +13,7 @@ export default class {
     addMessage(getCurrentScene().descriptionMessage());
   }
   displayMessage(message) {
+    this.messageBox.children().addClass('disabled');
     this.messageBox.append(message);
     this.$frame.scrollTop(this.$frame[0].scrollHeight);
   }

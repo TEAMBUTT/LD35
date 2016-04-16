@@ -6,4 +6,15 @@
     font-weight: bold;
     text-decoration: none;
   }
+
+  > .disabled {
+    $disabled-color: darken($color-foreground, 45);
+    pointer-events: none;
+    color: $disabled-color;
+
+    a {
+      color: $disabled-color;
+      font-weight: normal;
+    }
+  }
 }
