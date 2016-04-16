@@ -18,13 +18,14 @@ export default class {
 
     this.messageBox.append(message);
 
+    message.find(".tooltip").each((index, el) => {
+      new Tooltip(el);
+    });
+
     if (message.hasClass('scene-description')) {
       this.messageBox.children(':not(.disabled)').addClass('to-hide');
     }
 
-    for (var el of this.messageBox.find(".tooltip")) {
-      new Tooltip(el);
-    }
     this.$frame.scrollTop(this.$frame[0].scrollHeight);
 
   }
