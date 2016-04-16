@@ -9,7 +9,7 @@ module.exports = class {
     this.messageBox = $('<div class="message-box">');
     this.$frame.append(this.messageBox);
     onMessage((message) => this.displayMessage(message));
-    addMessage($('<h1>Wake up! You\'re late for your shift!</h1>'));
+    addMessage($('<h1>Wake up, Adam! You\'re late for your (shape) shift!</h1>'));
   }
   displayMessage(message) {
     this.messageBox.append(message);
