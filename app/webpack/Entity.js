@@ -7,7 +7,14 @@ class Entity {
   }
 
   html(text) {
-    return $(`<div class="entity tooltip">${text}<div class="tooltip-content">This is a really long tooltip that will probably hit the edge.</div></div>`);
+    return $(`
+      <div class="entity tooltip">
+        ${text}
+        <div class="tooltip-content">
+          This is a really long tooltip that will probably hit the edge.
+        </div>
+      </div>
+    `);
   }
 
   placeholder(text = '') {
