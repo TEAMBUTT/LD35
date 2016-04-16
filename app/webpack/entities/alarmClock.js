@@ -5,7 +5,7 @@ import { addMessage } from '../messageQueue.js';
 export class AlarmClock extends Entity {
   constructor() {
     super();
-    self.ringing = true;
+    this.ringing = true;
   }
 
   name() {
@@ -17,7 +17,7 @@ export class AlarmClock extends Entity {
       {
         label: "Turn it off.",
         callback: () => {
-          self.ringing = false;
+          this.ringing = false;
           addMessage($('<div>You turn the alarm clock off.</div>'));
         }
       }
