@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { each, map, mapValues } from 'lodash';
+import { each, map, mapValues, assign } from 'lodash';
 import state from './state.js';
 
 class Scene {
@@ -7,12 +7,12 @@ class Scene {
     return $('<p>Not implemented.</p>')
   }
   insertEntities(message, entities) {
-    let helpers = {
+    let helpers = assign({}, this.helpers(), {
       entity: (entity, text) => {
         return entities[entity].placeholder(text)
       },
       state: state
-    };
+    });
 
     message = _.template(message)(helpers);
     message = $('<div class="message scene-description">').append(message);
@@ -26,6 +26,10 @@ class Scene {
         });
     });
     return message;
+  }
+
+  helpers() {
+    return {};
   }
 };
 
