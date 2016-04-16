@@ -1,16 +1,11 @@
 import Entity from '../Entity.js';
 
 class AlarmClock extends Entity {
+  identifierClass() {
+    return "alarm-clock";
+  }
   name() {
     return "alarm clock";
-  }
-
-  placeholder() {
-    return '<span class="alarm-clock"></span>';
-  }
-
-  placeholderSelector() {
-    return '.alarm-clock';
   }
 }
 
