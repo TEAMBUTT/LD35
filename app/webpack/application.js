@@ -1,3 +1,8 @@
-import $ from 'jquery';
+import Intro from './views/Intro.js';
 
-$('#game').text('Gillian Anderson');
+const intro = new Intro();
+intro
+  .start()
+  .done(() => {
+    console.log("Do other things.");
+  });
