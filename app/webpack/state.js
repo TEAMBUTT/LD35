@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export default {
-  currentTime: 0
+  currentTime: moment('2013-01-12 16:30')
 };

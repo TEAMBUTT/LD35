@@ -1,7 +1,7 @@
 import Entity from '../Entity.js';
 import printMessage from '../printMessage.js';
 import action from '../action.js';
-import state from '../state.js';
+import time from '../time.js';
 
 export class AlarmClock extends Entity {
   constructor() {
@@ -17,8 +17,7 @@ export class AlarmClock extends Entity {
     if(this.ringing) {
       return [
         action("Snooze", () => {
-          state.currentTime += 5;
-          printMessage('You sleep for another 5 minutes before the alarm clock rings again.');
+          printMessage(`You sleep for another 5 minutes before the alarm clock rings again. It's now ${time()}.`);
         }),
         action("Turn if off.", () => {
           this.ringing = false;
