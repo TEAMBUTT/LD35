@@ -1,5 +1,5 @@
 .game {
-  height: 100vh;
+  height: calc(100vh - 3em);
   position: relative;
   overflow-y: scroll;
 }
