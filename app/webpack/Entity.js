@@ -1,5 +1,7 @@
+import $ from 'jquery';
+
 module.exports = class Entity {
   html() {
-    return this.name();
+    return $(`<a href="#">${this.name()}</a>`);
   }
 }
