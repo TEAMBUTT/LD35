@@ -1,8 +1,10 @@
 import Intro from './views/Intro.js';
+import CircleBurgerGameView from './views/CircleBurgerGameView';
 
 const intro = new Intro();
 intro
   .start()
   .done(() => {
-    console.log("Do other things.");
+    const game = new CircleBurgerGameView();
+    game.start();
   });
