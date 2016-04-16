@@ -9,7 +9,10 @@ module.exports = class Scene {
     each(entities, (entity) => {
       message
         .find(entity.placeholderSelector())
-        .replaceWith(entity.html());
+        .each((index, element) => {
+          const $element = $(element);
+          $element.replaceWith(entity.html($element.text()));
+        });
     });
   }
 };

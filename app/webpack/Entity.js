@@ -6,12 +6,13 @@ module.exports = class Entity {
     this.uuid = uuid.v4();
   }
 
-  html() {
-    return $(`<a href="#">${this.name()}</a>`);
+  html(text) {
+    return $(`<a href="#">${text}</a>`);
   }
 
-  placeholder() {
-    return `<span data-uuid="${this.uuid}"></span>`;
+  placeholder(text = '') {
+    text = text || this.name();
+    return `<span data-uuid="${this.uuid}">${text}</span>`;
   }
 
   placeholderSelector() {

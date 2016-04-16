@@ -10,9 +10,9 @@ class Bedroom extends Scene {
     const message = $(`
       <p>
         Your ${alarmClock.placeholder()} is ringing beside you on the bedside table.
-        Your uniform is on the floor beside your mirror. Your
-        ${bedroomDoor.placeholder()} is closed, with your Circle Burger hat on hanging
-        on the doorknob.
+        Your uniform is on the floor beside your mirror. 
+        ${bedroomDoor.placeholder("Your bedroom door")} is closed, with your Circle
+        Burger hat on hanging on the doorknob.
       </p>
     `);
 
