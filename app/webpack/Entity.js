@@ -15,6 +15,7 @@ class Entity {
 
     each(this.actions(), (action) => {
       const $action = $(`<div class="action-label">${action.label}</div>`);
+      $action.on('click', action.callback);
       $tooltipContainer.append($action);
     });
 
