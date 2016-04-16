@@ -24,7 +24,7 @@ export class HomeHallway extends Scene {
       Around the corner and up the stairs is the <%= entity("bathroomDoor", "bathroom") %>.
     `;
 
-    return this.insertEntities(message, {bedroomDoor, kitchenDoor, garageDoor});
+    return this.insertEntities(message, {bedroomDoor, bathroomDoor, kitchenDoor, garageDoor});
   }
 }
 
