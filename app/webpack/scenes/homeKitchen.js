@@ -13,7 +13,7 @@ export class HomeKitchen extends Scene {
       You are in the kitchen. It smells awful, because you haven't taken your
       garbage out since before last weeks crazy bender. The <%=
       entity("hallwayDoor", "door back to the hallway") %> is behind you.
-      <% if (!hasCellPhone()) { %>
+      <% if (!isInInventory("cellphone")) { %>
         <%= entity("cellPhone", "Your cellphone") %> is on the counter.
       <% } %>
     `;
