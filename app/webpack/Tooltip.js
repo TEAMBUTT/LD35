@@ -2,7 +2,7 @@ import $ from "jquery";
 
 const gutter = 16;
 
-module.exports = class Tooltip {
+class Tooltip {
   constructor(el) {
     this.$el = $(el);
     this.$target = this.$el.find(".tooltip-content");
@@ -20,11 +20,11 @@ module.exports = class Tooltip {
   checkOverflow() {
     this.reset();
 
-    var windowWidth = $(window).width();
+    let windowWidth = $(window).width();
 
-    var left = this.$target.offset().left;
-    var right = left + this.$target.outerWidth();
-    var top = this.$target.offset().top;
+    let left = this.$target.offset().left;
+    let right = left + this.$target.outerWidth();
+    let top = this.$target.offset().top;
 
     if (left < gutter) {
       this.fixOverflow(left - gutter);
@@ -46,3 +46,5 @@ module.exports = class Tooltip {
     this.$target.attr("style", "");
   }
 }
+
+export default Tooltip;
