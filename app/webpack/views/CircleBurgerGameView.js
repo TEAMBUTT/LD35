@@ -13,5 +13,6 @@ module.exports = class {
   }
   displayMessage(message) {
     this.messageBox.append(message);
+    this.$frame.scrollTop(this.$frame[0].scrollHeight);
   }
 }
