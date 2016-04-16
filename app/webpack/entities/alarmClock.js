@@ -18,7 +18,7 @@ export class AlarmClock extends Entity {
         label: "Turn it off.",
         callback: () => {
           this.ringing = false;
-          addMessage($('<div>You turn the alarm clock off.</div>'));
+          addMessage($('<div class="message">You turn the alarm clock off.</div>'));
         }
       }
     ];

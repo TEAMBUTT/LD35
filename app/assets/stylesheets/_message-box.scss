@@ -2,6 +2,10 @@
   padding: 10px;
   line-height: 1.5;
 
+  .message {
+    margin: 1em 0;
+  }
+
   .entity {
     color: $color-accent-primary;
     font-weight: bold;
