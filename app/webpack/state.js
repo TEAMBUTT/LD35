@@ -7,5 +7,9 @@ export default {
   garageDoorOpen: false,
   inventory: [],
   wearing: "pajamas",
-  luck: 10
+  luck: 10,
+  car: {
+    running: false,
+    atWork: false
+  }
 };
