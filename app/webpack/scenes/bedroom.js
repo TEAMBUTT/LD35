@@ -5,7 +5,7 @@ import Scene from '../Scene.js';
 import alarmClock from '../entities/alarmClock.js';
 import bedroomDoor from '../entities/bedroomDoor.js';
 
-class Bedroom extends Scene {
+export class Bedroom extends Scene {
   descriptionMessage() {
     const message = $(`
       <p>
@@ -25,4 +25,4 @@ class Bedroom extends Scene {
   }
 }
 
-module.exports = new Bedroom();
+export default new Bedroom();

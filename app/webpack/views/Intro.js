@@ -8,7 +8,7 @@ let template = _.template(`
   </div>
 `)
 
-module.exports = class {
+export default class {
   start() {
     const frame = $('#game');
 

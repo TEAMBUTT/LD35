@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import { each } from 'lodash';
 
-module.exports = class Scene {
+class Scene {
   descriptionMessage() {
     return $('<p>Not implemented.</p>')
   }
@@ -16,3 +16,5 @@ module.exports = class Scene {
     });
   }
 };
+
+export default Scene;

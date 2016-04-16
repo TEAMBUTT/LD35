@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import uuid from 'uuid';
 
-module.exports = class Entity {
+class Entity {
   constructor() {
     this.uuid = uuid.v4();
   }
@@ -19,3 +19,5 @@ module.exports = class Entity {
     return `[data-uuid="${this.uuid}"]`;
   }
 }
+
+export default Entity;

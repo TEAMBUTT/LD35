@@ -2,7 +2,7 @@ import Entity from '../Entity.js';
 import homeHallway from '../scenes/homeHallway.js';
 import { changeScene } from '../currentScene.js';
 
-class BedroomDoor extends Entity {
+export class BedroomDoor extends Entity {
   name() {
     return "bedroom door";
   }
@@ -14,4 +14,4 @@ class BedroomDoor extends Entity {
   }
 }
 
-module.exports = new BedroomDoor();
+export default new BedroomDoor();

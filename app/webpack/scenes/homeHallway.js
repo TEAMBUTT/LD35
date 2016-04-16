@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 import Scene from '../Scene.js';
 
-class HomeHallway extends Scene {
+export class HomeHallway extends Scene {
   descriptionMessage() {
     const message = $(`
       <div>
@@ -16,4 +16,4 @@ class HomeHallway extends Scene {
   }
 }
 
-module.exports = new HomeHallway();
+export default new HomeHallway();
