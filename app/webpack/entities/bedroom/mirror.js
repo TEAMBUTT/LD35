@@ -2,6 +2,7 @@ import Entity from '../../Entity.js';
 import printMessage from '../../printMessage.js';
 import action from '../../action.js';
 import state from '../../state.js';
+import clothing from './clothing.js';
 
 export class Mirror extends Entity {
   constructor() {
@@ -18,11 +19,7 @@ export class Mirror extends Entity {
         "Look",
         () => {
           printMessage("You look in the oval mirror.");
-          if(state.wearing === "uniform") {
-            printMessage("You're in your work uniform.");
-          } else {
-            printMessage("You are in your pajamas. Not quite work appropriate.");
-          }
+          printMessage("You are in your <%= entity('clothing') %>.", {clothing});
         }
       ),
       action(
