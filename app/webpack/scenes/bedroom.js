@@ -6,6 +6,7 @@ import alarmClock from '../entities/bedroom/alarmClock.js';
 import mirror from '../entities/bedroom/mirror.js';
 import uniform from '../entities/bedroom/uniform.js';
 import pajamas from '../entities/bedroom/pajamas.js';
+import hat from '../entities/bedroom/hat.js';
 
 import homeHallway from '../scenes/homeHallway.js';
 import Door from '../entities/Door.js';
@@ -25,12 +26,16 @@ export class Bedroom extends Scene {
         <%= entity("mirror") %>.
       </div>
       <div>
-        <%= entity("bedroomDoor", "Your bedroom door") %> is closed, with your
-        Circle Burger hat on hanging on the doorknob.
+        <%= entity("bedroomDoor", "Your bedroom door") %> is closed<%
+        if(!state.wearingHat){
+          %>, with your
+          <%= entity("hat") %> hanging on the doorknob.
+        <% } %>
+        .
       </div>
     `;
 
-    return this.insertEntities(message, {alarmClock, bedroomDoor, mirror, uniform, pajamas});
+    return this.insertEntities(message, {alarmClock, bedroomDoor, mirror, uniform, pajamas, hat});
   }
 }
 
