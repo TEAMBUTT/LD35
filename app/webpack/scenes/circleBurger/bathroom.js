@@ -9,7 +9,7 @@ import floor from '../../entities/circleBurger/bathroom/floor.js';
 
 export class Bathroom extends Scene {
   descriptionMessage() {
-    const diningAreaDoor = new Door(diningArea);
+    const diningAreaDoor = new Door(diningArea, "Leave room.");
 
     const message = `
       You're in the bathroom.

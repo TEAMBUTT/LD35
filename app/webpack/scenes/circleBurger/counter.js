@@ -6,8 +6,8 @@ import Door from '../../entities/Door.js';
 
 export class DiningArea extends Scene {
   descriptionMessage() {
-    const diningAreaDoor = new Door(diningArea);
-    const kitchenDoor = new Door(kitchen);
+    const diningAreaDoor = new Door(diningArea, "Walk over.");
+    const kitchenDoor = new Door(kitchen, "Walk back.");
 
     const message = `
       The till is in front of you. An old lady, probably in her nineties, is

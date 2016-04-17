@@ -5,7 +5,7 @@ import Door from '../../entities/Door.js';
 
 export class Kitchen extends Scene {
   descriptionMessage() {
-    const counterDoor = new Door(counter);
+    const counterDoor = new Door(counter, "Walk over.");
 
     const message = `
       You are in the disgusting, grungy kitchen of the Circle Burger.
