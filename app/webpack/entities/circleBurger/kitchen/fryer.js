@@ -9,6 +9,8 @@ export class Fryer extends Entity {
   actions() {
     return [
       action("Fry potato wedges.", () => {
+        printMessage(`You put the potato wedges in the ${this.name()}.`);
+        printMessage(`Delicious fries come out.`);
         removeItem('potato wedges');
         addItem('fries');
       }, () => isInInventory("potato wedges"))
