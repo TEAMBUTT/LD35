@@ -1,0 +1,24 @@
+.results {
+  font-size: 24px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.results-table {
+  margin: auto;
+  text-align: left;
+
+  td {
+    padding: 0 0.5em;
+  }
+
+  .results-score {
+    text-align: right;
+  }
+}
+
+.play-again {
+  color: $color-accent-primary;
+  font-weight: bold;
+  text-decoration: none;
+}
