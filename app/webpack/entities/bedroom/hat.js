@@ -9,7 +9,10 @@ export class Hat extends Entity {
     return [
       action(
         "Put on.",
-        () => { state.wearingHat = true; },
+        () => {
+          printMessage("You put on the hat.")
+          state.wearingHat = true;
+        },
         () => !state.wearingHat
       )
     ];
