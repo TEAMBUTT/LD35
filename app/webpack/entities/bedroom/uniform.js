@@ -6,7 +6,11 @@ export class Uniform extends Entity {
   }
 
   name() {
-    return "uniform";
+    if(state.wetUniform) {
+      return "sopping wet uniform";
+    } else {
+      return "work uniform";
+    }
   }
 
   actions() {

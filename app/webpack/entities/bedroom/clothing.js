@@ -1,4 +1,6 @@
 import Entity, { printMessage, action, time, state } from "../../Entity.js";
+import uniform from './uniform.js';
+import pajamas from './pajamas.js';
 
 export class Clothing extends Entity {
   constructor() {
@@ -6,10 +8,10 @@ export class Clothing extends Entity {
   }
 
   name() {
-    if (state.wearing == "uniform") {
-      return "work uniform";
+    if(state.wearing == "uniform") {
+      return uniform.name();
     } else if (state.wearing == "pajamas") {
-      return "pajamas";
+      return pajamas.name();
     } else {
       return "birthday suit";
     }

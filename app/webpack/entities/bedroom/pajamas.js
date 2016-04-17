@@ -9,7 +9,11 @@ export class Pajamas extends Entity {
   }
 
   name() {
-    return "pajamas";
+    if(state.wetPajamas) {
+      return "sopping wet pajamas";
+    } else {
+      return "pajamas";
+    }
   }
 
   actions() {

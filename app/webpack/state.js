@@ -12,4 +12,8 @@ export default {
     running: false,
     atWork: false
   }
+  wet: false,
+  showered: false,
+  wetUniform: false,
+  wetPajamas: false,
 };
