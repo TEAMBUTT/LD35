@@ -1,5 +1,4 @@
 import Entity, { printMessage, action, time, state } from "Entity";
-import { addItem } from 'inventory';
 
 export class Sink extends Entity {
   name() {

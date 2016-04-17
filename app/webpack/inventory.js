@@ -1,9 +1,13 @@
-import { includes } from 'lodash';
+import { includes, without } from 'lodash';
 import state from './state.js';
 import printMessage from './printMessage.js';
 
 export function isInInventory(item) {
   return includes(state.inventory, item);
+};
+
+export function removeItem(item) {
+  state.inventory = without(state.inventory, item);
 };
 
 export function addItem(item) {
