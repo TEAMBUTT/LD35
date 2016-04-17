@@ -1,7 +1,4 @@
-import Entity from '../Entity.js';
-import printMessage from '../printMessage.js';
-import action from '../action.js';
-import state from '../state.js';
+import Entity, { printMessage, action, time, state } from "../Entity.js";
 
 export class Car extends Entity {
   name() {
@@ -13,6 +10,13 @@ export class Car extends Entity {
       action(
         "Drive to work.",
         () => {
+          if(state.luck < 7) {
+            state.currentTime.add(10, 'minutes');
+            printMessage("You arrive at work. Red lights all the way there.")
+          } else {
+            printMessage("You arrive at work.")
+          }
+          state.currentTime.add(15, 'minutes');
           state.car.atWork = true;
         },
         () => state.car.running && !state.car.atWork
@@ -20,6 +24,13 @@ export class Car extends Entity {
       action(
         "Drive to home.",
         () => {
+          if(state.luck < 7) {
+            state.currentTime.add(10, 'minutes');
+            printMessage("You arrive back home. Red lights all the way there.")
+          } else {
+            printMessage("You arrive back home.")
+          }
+          state.currentTime.add(15, 'minutes');
           state.car.atWork = false;
         },
         () => state.car.running && state.car.atWork
@@ -27,6 +38,8 @@ export class Car extends Entity {
       action(
         "Start the car.",
         () => {
+          printMessage("Rikatikatikatika Rikatikatikatikatika VRRRRROOOM VROOM.")
+          printMessage("The engine sputters into life.")
           state.car.running = true;
         },
         () => !state.car.running
@@ -34,6 +47,7 @@ export class Car extends Entity {
       action(
         "Stop the car.",
         () => {
+          printMessage("You stop the car.")
           state.car.running = false;
         },
         () => state.car.running
