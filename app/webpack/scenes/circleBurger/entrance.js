@@ -8,7 +8,7 @@ import state from '../../state.js';
 
 export class Entrance extends Scene {
   descriptionMessage() {
-    const parkingLotDoor = new Door(parkingLot, "Walk over.");
+    const parkingLotDoor = new Door(parkingLot, "Go back to your car.");
     const diningAreaDoor = new Door(diningArea);
 
     const message = `

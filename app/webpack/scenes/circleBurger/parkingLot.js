@@ -7,8 +7,8 @@ import state from '../../state.js';
 
 export class ParkingLot extends Scene {
   descriptionMessage() {
-    const carDoor = new Door(car);
-    const entranceDoor = new Door(entrance);
+    const carDoor = new Door(car, "Get in car.");
+    const entranceDoor = new Door(entrance, "Walk over.");
 
     const message = `
       You are in the Circle Burger parking lot.
