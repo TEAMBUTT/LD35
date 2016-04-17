@@ -1,1 +1,2 @@
-<%= debug @result.state %>
+<%= javascript_tag @result.state.to_json, class: 'js-result-state', type: 'application/json' %>
+<%= javascript_include_tag 'results' %>
