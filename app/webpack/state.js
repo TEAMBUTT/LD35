@@ -7,6 +7,7 @@ let state = window.state = {
 
   // Bedroom items
   alarmRinging: true,
+  mirrorSmashed: false,
 
   // Home bathroom items
   bathroomTowel: "clean",
@@ -31,6 +32,7 @@ let state = window.state = {
   // Personal items
   inventory: [],
   wearing: "pajamas",
+  wearingHat: false,
   wetUniform: false,
   wetPajamas: false,
   nastyBreath: true,
@@ -52,7 +54,12 @@ let state = window.state = {
   // Customers
   customers: {
     olderManFed: false,
-  }
+  },
+
+  // Doom
+  doom: {
+    started: false,
+  },
 };
 
 export function demerits() {
