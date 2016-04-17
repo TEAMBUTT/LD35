@@ -8,6 +8,7 @@ import Door from '../entities/Door.js';
 import cellPhone from '../entities/cellPhone.js';
 import garbage from '../entities/homeKitchen/garbage.js';
 import fridge from '../entities/homeKitchen/fridge.js';
+import cupboards from '../entities/homeKitchen/cupboards.js';
 
 export class HomeKitchen extends Scene {
   descriptionMessage() {
@@ -20,7 +21,8 @@ export class HomeKitchen extends Scene {
         awful, because you haven't taken your <%= entity("garbage") %> out
         since before last week's crazy bender.
       <% } %>
-      The <%= entity("fridge") %> is to your right.
+      The <%= entity("fridge") %> is to your right, surrounded by some
+      <%= entity("cupboards") %>.
       <br>
       The <%= entity("hallwayDoor", "door back to the hallway") %> is behind you.
       <% if (!isInInventory("cellphone")) { %>
@@ -28,7 +30,7 @@ export class HomeKitchen extends Scene {
       <% } %>
     `;
 
-    return this.insertEntities(message, {garbage, fridge, hallwayDoor, cellPhone});
+    return this.insertEntities(message, {garbage, fridge, cupboards, hallwayDoor, cellPhone});
   }
 }
 

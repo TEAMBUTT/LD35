@@ -24,6 +24,9 @@ let state = window.state = {
     "beer",
     "milk",
   ],
+  cupboardsInventory: [
+    "granolaBar",
+  ]
 };
 
 export default state;
