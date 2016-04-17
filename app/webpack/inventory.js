@@ -15,12 +15,11 @@ export function removeItem(item) {
 };
 
 export function addItem(item) {
-  if (state.wearing === "uniform" && !isInInventory(item)) {
+  if (state.wearing === "uniform") {
     state.inventory.push(item);
-    printMessage("You put it in your pocket.");
-  } else if (state.wearing !== "uniform") {
-    printMessage("You don't have any pockets.");
+    return true;
   } else {
-    printMessage("It's already in your inventory.");
+    printMessage("You can't store that. You don't have any pockets.");
+    return false;
   }
 };

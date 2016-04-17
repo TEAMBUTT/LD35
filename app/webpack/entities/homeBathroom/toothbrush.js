@@ -9,7 +9,9 @@ export class Toothbrush extends Entity {
   actions() {
     return [
       action("Put it in your pocket.", () => {
-        addItem("toothbrush");
+        if(addItem("toothbrush")) {
+          printMessage("You store the toothbrush in your pocket.");
+        }
       }),
       action(
         "Brush your teeth.",
