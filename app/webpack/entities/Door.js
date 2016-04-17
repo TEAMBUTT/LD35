@@ -1,6 +1,5 @@
-import Entity from '../Entity.js';
+import Entity, { printMessage, action, time, state } from "../../Entity.js";
 import { changeScene } from '../currentScene.js';
-import action from '../action.js';
 
 export default class Door extends Entity {
   constructor(destination, actionName) {
@@ -15,7 +14,10 @@ export default class Door extends Entity {
 
   actions() {
     return [
-      action(this.actionName, () => changeScene(this.destination))
+      action(this.actionName, () => {
+        changeScene(this.destination);
+        state.currentTime.add(1, 'minutes');
+      })
     ];
   }
 }
