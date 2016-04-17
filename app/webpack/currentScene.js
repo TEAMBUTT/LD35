@@ -1,8 +1,26 @@
-import bedroom from './scenes/bedroom.js';
 import { addMessage } from './messageQueue.js';
 import $ from 'jquery';
 
-let currentScene = bedroom;
+import bedroom from './scenes/bedroom.js';
+import car from './scenes/car.js';
+import garage from './scenes/garage.js';
+import homeBathroom from './scenes/homeBathroom.js';
+import homeHallway from './scenes/homeHallway.js';
+import homeKitchen from './scenes/homeKitchen.js';
+
+import queryString from 'query-string';
+
+const scenes = {
+  bedroom,
+  car,
+  garage,
+  homeBathroom,
+  homeHallway,
+  homeKitchen
+};
+
+let customScene = queryString.parse(location.search)['scene'];
+let currentScene = scenes[customScene] || bedroom;
 
 export function getCurrentScene() {
   return currentScene;
