@@ -29,7 +29,7 @@ export class AlarmClock extends Entity {
       ),
       action(
         "Look at the time.",
-        () => { printMessage(`It is now ${time()}.`) }
+        () => { printMessage(`It is now ${time()}. Your shift started at 4pm`) }
       )
     ];
   }
