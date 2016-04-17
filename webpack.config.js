@@ -7,7 +7,8 @@ var config = module.exports = {};
 config.context = __dirname;
 
 config.entry = {
-  application: './app/webpack/application.js',
+  game: './app/webpack/game.js',
+  results: './app/webpack/results.js',
 };
 
 config.output = {

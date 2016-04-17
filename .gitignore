@@ -4,4 +4,5 @@
 /tmp
 /spec/examples.txt
 /node_modules
-/app/assets/javascripts/application.js
+/app/assets/javascripts/results.js
+/app/assets/javascripts/game.js
