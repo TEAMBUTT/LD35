@@ -11,7 +11,7 @@ export default {
   car: {
     running: false,
     atWork: false
-  }
+  },
   wet: false,
   showered: false,
   wetUniform: false,
