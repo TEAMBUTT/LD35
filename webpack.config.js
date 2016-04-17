@@ -15,6 +15,12 @@ config.output = {
   filename: "[name].js"
 }
 
+config.resolve = {
+  root: [
+    path.join(__dirname, "app/webpack")
+  ]
+};
+
 config.module = {
   loaders: [{
     test: /\.js$/,
