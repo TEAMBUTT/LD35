@@ -1,6 +1,7 @@
 class Result < ActiveRecord::Base
+  CHARS = [*(?a..?z), *(?A..?Z), *(?0..?9)]
   before_save do
-    self.slug = SecureRandom.base64(6)
+    self.slug = Array.new(7){ CHARS.sample }.join
   end
 
   def to_param
