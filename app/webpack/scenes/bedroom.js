@@ -26,12 +26,13 @@ export class Bedroom extends Scene {
         <%= entity("mirror") %>.
       </div>
       <div>
-        <%= entity("bedroomDoor", "Your bedroom door") %> is closed<%
-        if(!state.wearingHat){
-          %>, with your
+        <%= entity("bedroomDoor", "Your bedroom door") %> is
+        <% if(!state.wearingHat){ %>
+          closed, with your
           <%= entity("hat") %> hanging on the doorknob.
+        <% } else { %>
+          closed.
         <% } %>
-        .
       </div>
     `;
 

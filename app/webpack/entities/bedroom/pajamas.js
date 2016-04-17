@@ -19,7 +19,7 @@ export class Pajamas extends Entity {
   actions() {
     return [
       action(
-        "Put on",
+        "Put on.",
         () => {
           state.wearing = "pajamas";
           printMessage(`You put your ${this.name()} back on. Going to bed?`);
