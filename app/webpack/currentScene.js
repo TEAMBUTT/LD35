@@ -7,6 +7,7 @@ import garage from './scenes/garage.js';
 import homeBathroom from './scenes/homeBathroom.js';
 import homeHallway from './scenes/homeHallway.js';
 import homeKitchen from './scenes/homeKitchen.js';
+import parkingLot from './scenes/circleBurger/parkingLot.js';
 
 import queryString from 'query-string';
 
@@ -16,7 +17,8 @@ const scenes = {
   garage,
   homeBathroom,
   homeHallway,
-  homeKitchen
+  homeKitchen,
+  parkingLot
 };
 
 let customScene = queryString.parse(location.search)['scene'];

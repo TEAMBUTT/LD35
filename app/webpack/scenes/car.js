@@ -1,12 +1,16 @@
 import Scene from '../Scene.js';
 
 import garage from './garage.js';
+import parkingLot from './circleBurger/parkingLot.js';
 import Door from '../entities/Door.js';
 import car from '../entities/car.js';
+import state from '../state.js';
 
 export class Car extends Scene {
   descriptionMessage() {
-    const carDoor = new Door(garage);
+    const carDoor = new Door(
+      state.car.atWork ? parkingLot : garage
+    );
 
     const message = `
       You are in <%= entity("car", "your car") %>.

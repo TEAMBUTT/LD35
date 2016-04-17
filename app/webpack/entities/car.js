@@ -11,6 +11,13 @@ export class Car extends Entity {
   actions() {
     return [
       action(
+        "Drive to work.",
+        () => {
+          state.car.atWork = true;
+        },
+        () => state.car.running && !state.car.atWork
+      ),
+      action(
         "Start the car",
         () => {
           state.car.running = true;
