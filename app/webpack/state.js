@@ -9,6 +9,7 @@ export default window.state = {
   inventory: [],
   wearing: "pajamas",
   luck: 10,
+  confidence: 10,
   car: {
     running: false,
     atWork: false

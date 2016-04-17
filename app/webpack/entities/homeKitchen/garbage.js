@@ -16,6 +16,7 @@ export class Garbage extends Entity {
           let message = "";
 
           if (state.wearing === "nothing") {
+            state.confidence -= 5;
             message += `
               The neighboors give you funny looks as you're taking out the
               garbage. It isn't until you're back inside that you realize
@@ -28,6 +29,7 @@ export class Garbage extends Entity {
               heckles you about the state of your lawn. What bad luck!
             `;
           } else {
+            state.confidence += 5;
             message += `
               As you're taking out the trash, you run into Ms. Cuboid. She
               complements you on your shirt.
