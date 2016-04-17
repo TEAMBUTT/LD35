@@ -38,6 +38,13 @@ let state = window.state = {
   uprightedSign: false,
   managerBailed: false,
 
+  // Work bathroom
+  sinkClean: false,
+  floorClean: false,
+  toiletClean: false,
+  toiletVeryClean: false,
+  cleanHands: false,
+
   // Personal items
   inventory: [],
   wearing: "pajamas",
@@ -77,6 +84,10 @@ export function results() {
 
   function a(score, description) { results.push([score, description]); }
 
+  if (state.mirrorSmashed) {
+    a(-77, "You broke a mirror. That's 7 years bad luck.");
+  }
+
   if (state.nastyBreath) {
     a(-10, "Your breath reeks. Try brushing your teeth next time.");
   } else {
@@ -99,6 +110,16 @@ export function results() {
     a(-10, "You got yout pajamas wet.");
   }
 
+  if (state.wearingHat) {
+    a(5, "You wore your hat.");
+  } else {
+    a(-5, "You forgot your hat at home.");
+  }
+
+  if (state.uprightedSign) {
+    a(5, "You fixed the sign outside the store.");
+  }
+
   if (!state.showered) {
     a(-10, "You didn't shower before going to work.");
   } else {
@@ -107,6 +128,30 @@ export function results() {
 
   if (state.car.running) {
     a(-10, "You left your car running. It was subsequently stolen. Good luck getting home!");
+  }
+
+  if (state.car.ruined) {
+    a(-50, "You smashed up your car and garage door.");
+  }
+
+  if (state.toiletClean && state.sinkClean && state.floorClean) {
+    if(state.toiletVeryClean) {
+      a(50, "You cleaned the Circle Burger bathroom to perfection. It's now a popular tourist destination.");
+    } else {
+      a(20, "You cleaned the Circle Burger bathroom.");
+    }
+  } else if (!state.toiletClean && !state.sinkClean && !state.floorClean) {
+    a(-50, "You left the Circle Burger bathroom filthy.");
+  } else {
+    if(!state.toiletClean) {
+      a(-10, "You forgot to clean the Circle Burger toilet.");
+    }
+    if(!state.sinkClean) {
+      a(-10, "You forgot to clean the Circle Burger sink.");
+    }
+    if(!state.floorClean) {
+      a(-10, "You forgot to clean the Circle Burger floor.");
+    }
   }
 
   return results;
