@@ -25,6 +25,7 @@ export class Pajamas extends Entity {
           printMessage(`You put your ${this.name()} back on. Going to bed?`);
           if(state.wet && !state.wetPajamas) {
             state.wetPajamas = true;
+            state.confidence -= 5;
             printMessage("You got them all wet!")
           }
         }
