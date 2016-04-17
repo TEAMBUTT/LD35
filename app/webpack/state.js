@@ -26,6 +26,11 @@ let state = window.state = {
     "granolaBar",
   ],
 
+  // Work kitchen items
+  prepInventory: [
+    "knife",
+  ],
+
   // Garage items
   garageDoorOpen: false,
 
