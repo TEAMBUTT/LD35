@@ -2,7 +2,7 @@ import Entity, { printMessage, action, time, state } from "../../Entity.js";
 
 export class Beer extends Entity {
   name() {
-    return 'Generic beer'
+    return 'A can of generic beer'
   }
 
   actions() {
