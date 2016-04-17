@@ -23,7 +23,7 @@ let template = _.template(`
 
 export default class {
   start() {
-    const frame = $('#game');
+    const frame = $('.main-content');
     frame.html(template({ demerits: demerits() }));
   }
 };

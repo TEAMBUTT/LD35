@@ -7,7 +7,7 @@ import state from "state";
 
 export default class {
   constructor() {
-    this.$frame = $('#game');
+    this.$frame = $('.main-content');
   }
   start() {
     this.messageBox = $('<div class="message-box">');
