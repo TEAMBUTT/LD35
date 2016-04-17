@@ -10,7 +10,7 @@ export class Car extends Scene {
   descriptionMessage() {
     const carDoor = new Door(
       state.car.atWork ? parkingLot : garage,
-      "Leave car"
+      "Leave car."
     );
 
     const message = `

@@ -9,7 +9,7 @@ import state from '../state.js';
 export class Garage extends Scene {
   descriptionMessage() {
     const hallwayDoor = new Door(homeHallway);
-    const carDoor = new Door(car, "Get in car");
+    const carDoor = new Door(car, "Get in car.");
 
     const message = `
       You are in the garage.

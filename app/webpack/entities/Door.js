@@ -5,7 +5,7 @@ export default class Door extends Entity {
   constructor(destination, actionName) {
     super();
     this.destination = destination;
-    this.actionName = actionName || "Enter door";
+    this.actionName = actionName || "Enter door.";
   }
 
   name() {
