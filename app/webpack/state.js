@@ -16,4 +16,5 @@ export default {
   showered: false,
   wetUniform: false,
   wetPajamas: false,
+  nastyBreath: true,
 };
