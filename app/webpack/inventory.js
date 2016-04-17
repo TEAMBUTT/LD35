@@ -2,8 +2,7 @@ import { includes, remove } from 'lodash';
 import state from 'state';
 import printMessage from 'printMessage';
 
-export function isInInventory(item, inventory) {
-  inventory = inventory || state.inventory;
+export function isInInventory(item, inventory = state.inventory) {
   if (inventory == state.inventory && state.wearing !== "uniform") {
     return false;
   } else {
@@ -11,13 +10,11 @@ export function isInInventory(item, inventory) {
   }
 };
 
-export function removeItem(item, origin) {
-  origin = origin || state.inventory
+export function removeItem(item, origin = state.inventory) {
   remove(origin, (v) => v === item);
 };
 
-export function addItem(item, destination) {
-  destination = destination || state.inventory
+export function addItem(item, destination = state.inventory) {
   if (destination == state.inventory) {
     if (state.wearing === "uniform") {
       destination.push(item);

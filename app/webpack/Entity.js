@@ -43,8 +43,7 @@ class Entity {
     return $element;
   }
 
-  placeholder(text = '') {
-    text = text || this.name();
+  placeholder(text = this.name()) {
     return `<span data-uuid="${this.uuid}">${text}</span>`;
   }
 

@@ -3,6 +3,7 @@ import Tooltip from 'Tooltip';
 import { onMessage, addMessage } from 'messageQueue';
 import { renderCurrentScene } from 'currentScene';
 import printMessage from 'printMessage';
+import state from "state";
 
 export default class {
   constructor() {

@@ -2,10 +2,10 @@ import Entity, { printMessage, action, time, state } from "Entity";
 import { changeScene } from 'currentScene';
 
 export default class Door extends Entity {
-  constructor(destination, actionName) {
+  constructor(destination, actionName = "Enter door.") {
     super();
     this.destination = destination;
-    this.actionName = actionName || "Enter door.";
+    this.actionName = actionName;
   }
 
   name() {
