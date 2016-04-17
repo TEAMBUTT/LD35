@@ -24,6 +24,8 @@ export class ParkingLot extends Scene {
       <% if (state.car.running) { %>
         It is running.
       <% } %>
+      <br>
+      There is a black van with tinted windows parked nearby.
     `;
 
     return this.insertEntities(message, {carDoor, entranceDoor});
