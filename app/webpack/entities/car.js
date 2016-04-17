@@ -26,7 +26,7 @@ export class Car extends Entity {
 
           if(state.luck < 7) {
             state.currentTime.add(10, 'minutes');
-            message += "Red lights all the way there.";
+            message += " Red lights all the way there.";
           }
 
           state.currentTime.add(15, 'minutes');
