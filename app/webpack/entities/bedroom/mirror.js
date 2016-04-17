@@ -15,7 +15,11 @@ export class Mirror extends Entity {
       action(
         "Look.",
         () => {
-          printMessage("You look in the oval mirror.");
+          if(state.mirrorSmashed) {
+            printMessage("You look at the smashed mirror.");
+          } else {
+            printMessage("You look in the oval mirror.");
+          }
           printMessage("You are in your <%= entity('clothing') %>.", {clothing});
         }
       ),
@@ -30,7 +34,9 @@ export class Mirror extends Entity {
         () => {
           printMessage("You smash the mirror. That's 7 years bad luck.");
           state.luck -= 7;
-        }
+          state.mirrorSmashed = true;
+        },
+        () => !state.mirrorSmashed
       )
     ];
   }
