@@ -1,4 +1,4 @@
-import Entity, { printMessage, action, time, state } from "Entity.js";
+import Entity, { printMessage, action, actionWithItem, time, state } from "Entity.js";
 import { addItem, removeItem, isInInventory } from 'inventory.js';
 
 export class Grill extends Entity {
@@ -8,16 +8,14 @@ export class Grill extends Entity {
 
   actions() {
     return [
-      action("Grill potato.", () => {
+      actionWithItem("Grill potato.", "potato wedges", () => {
         printMessage("HOT POTATO HOT POTATO HOT POTATO");
         printMessage("You drop the potato");
-        removeItem("potato wedges")
-      }, () => isInInventory("potato wedges")),
+      }),
 
-      action("Grill patty.", () => {
-        removeItem("raw patty")
+      actionWithItem("Grill patty.", "raw patty", () => {
         addItem("grilled patty")
-      }, () => isInInventory("raw patty"))
+      })
     ];
   }
 }

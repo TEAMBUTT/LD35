@@ -5,11 +5,11 @@ import { renderCurrentScene } from './currentScene.js';
 import { addMessage } from './messageQueue.js';
 
 import printMessage from "./printMessage";
-import action from "./action";
+import { action, actionWithItem } from "./action";
 import time from "./time";
 import state from "./state";
 
-export { printMessage, action, time, state }
+export { printMessage, action, actionWithItem, time, state }
 
 class Entity {
   constructor() {

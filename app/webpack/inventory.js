@@ -3,7 +3,11 @@ import state from './state.js';
 import printMessage from './printMessage.js';
 
 export function isInInventory(item) {
-  return includes(state.inventory, item);
+  if (state.wearing !== "uniform") {
+    return false
+  } else {
+    return includes(state.inventory, item);
+  }
 };
 
 export function removeItem(item) {
