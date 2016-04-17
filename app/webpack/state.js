@@ -6,6 +6,9 @@ let state = window.state = {
   closingTime: moment('2013-01-12 22:00'),
   currentTime: moment('2013-01-12 16:30'),
 
+  // Closing
+  afterClosingTime: false,
+
   // Bedroom items
   alarmRinging: true,
   mirrorSmashed: false,
