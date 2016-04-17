@@ -46,6 +46,9 @@ let state = window.state = {
 
   // Phone state
   unreadTexts: 3,
+
+  // Entrance stuff
+  managerBailed: false
 };
 
 export function demerits() {
