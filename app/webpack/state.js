@@ -1,26 +1,17 @@
 import moment from 'moment';
 
 let state = window.state = {
+  // Times
   currentTime: moment('2013-01-12 16:30'),
+
+  // Bedroom items
   alarmRinging: true,
+
+  // Home bathroom items
   bathroomTowel: "clean",
+
+  // Home kitchen items
   garbageOutside: false,
-  garageDoorOpen: false,
-  inventory: [],
-  wearing: "pajamas",
-  luck: 10,
-  confidence: 10,
-  car: {
-    running: false,
-    atWork: false,
-    ruined: false,
-  },
-  wet: false,
-  showered: false,
-  wetUniform: false,
-  wetPajamas: false,
-  nastyBreath: true,
-  unreadTexts: 3,
   fridgeInventory: [
     "beer",
     "milk",
@@ -28,6 +19,30 @@ let state = window.state = {
   cupboardsInventory: [
     "granolaBar",
   ]
+
+  // Garage items
+  garageDoorOpen: false,
+
+  // Personal items
+  inventory: [],
+  wearing: "pajamas",
+  wetUniform: false,
+  wetPajamas: false,
+  nastyBreath: true,
+  showered: false,
+  wet: false,
+  luck: 10,
+  confidence: 10,
+
+  // Car state
+  car: {
+    running: false,
+    atWork: false,
+    ruined: false,
+  },
+
+  // Phone state
+  unreadTexts: 3,
 };
 
 export function demerits() {
