@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import _ from 'lodash';
 
-import state, { demerits } from "../state";
+import state, { demerits } from "state";
 
 let template = _.template(`
   <div class="report-card-screen">

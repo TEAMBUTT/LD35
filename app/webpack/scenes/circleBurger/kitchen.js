@@ -1,7 +1,7 @@
-import Scene from '../../Scene.js';
+import Scene from 'Scene';
 
 import counter from './counter.js';
-import Door from '../../entities/Door.js';
+import Door from 'entities/Door';
 
 export class Kitchen extends Scene {
   descriptionMessage() {

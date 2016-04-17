@@ -1,8 +1,8 @@
 import $ from 'jquery';
-import Tooltip from '../Tooltip.js';
-import { onMessage, addMessage } from '../messageQueue.js';
-import { renderCurrentScene } from '../currentScene.js';
-import printMessage from '../printMessage.js';
+import Tooltip from 'Tooltip';
+import { onMessage, addMessage } from 'messageQueue';
+import { renderCurrentScene } from 'currentScene';
+import printMessage from 'printMessage';
 
 export default class {
   constructor() {

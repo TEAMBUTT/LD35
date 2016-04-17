@@ -1,5 +1,5 @@
-import Entity, { printMessage, action, time, state } from "../../Entity.js";
-import { addItem } from '../../inventory.js';
+import Entity, { printMessage, action, time, state } from "Entity";
+import { addItem } from 'inventory';
 
 export class GranolaBar extends Entity {
   name() {

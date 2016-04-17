@@ -1,4 +1,4 @@
-import Entity, { printMessage, action, time, state } from "../../../Entity.js";
+import Entity, { printMessage, action, time, state } from "Entity";
 
 export class SandwichBoard extends Entity {
   name() {

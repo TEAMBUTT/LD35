@@ -1,11 +1,11 @@
-import Scene from '../../Scene.js';
+import Scene from 'Scene';
 
-import diningArea from './diningArea.js';
-import Door from '../../entities/Door.js';
+import diningArea from './diningArea';
+import Door from 'entities/Door';
 
-import sink from '../../entities/circleBurger/bathroom/sink.js';
-import toilet from '../../entities/circleBurger/bathroom/toilet.js';
-import floor from '../../entities/circleBurger/bathroom/floor.js';
+import sink from 'entities/circleBurger/bathroom/sink';
+import toilet from 'entities/circleBurger/bathroom/toilet';
+import floor from 'entities/circleBurger/bathroom/floor';
 
 export class Bathroom extends Scene {
   descriptionMessage() {

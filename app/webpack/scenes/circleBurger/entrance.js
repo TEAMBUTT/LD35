@@ -1,12 +1,12 @@
-import Scene from '../../Scene.js';
+import Scene from 'Scene.js';
 
 import parkingLot from './parkingLot.js';
 import diningArea from './diningArea.js';
 import car from '../car.js';
-import state from '../../state.js';
+import state from 'state';
 
-import Door from '../../entities/Door.js';
-import sandwichBoard from '../../entities/circleBurger/entrance/sandwichBoard.js'
+import Door from 'entities/Door';
+import sandwichBoard from 'entities/circleBurger/entrance/sandwichBoard'
 
 export class Entrance extends Scene {
   descriptionMessage() {

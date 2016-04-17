@@ -1,10 +1,10 @@
-import Scene from '../Scene.js';
+import Scene from 'Scene';
 
 import garage from './garage.js';
 import parkingLot from './circleBurger/parkingLot.js';
-import Door from '../entities/Door.js';
-import car from '../entities/car.js';
-import state from '../state.js';
+import Door from 'entities/Door';
+import car from 'entities/car';
+import state from 'state';
 
 export class Car extends Scene {
   descriptionMessage() {

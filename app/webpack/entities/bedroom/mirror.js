@@ -1,4 +1,4 @@
-import Entity, { printMessage, action, time, state } from "../../Entity.js";
+import Entity, { printMessage, action, time, state } from "Entity";
 import clothing from './clothing.js';
 
 export class Mirror extends Entity {

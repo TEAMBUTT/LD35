@@ -1,14 +1,14 @@
 import $ from 'jquery';
 
-import Scene from '../Scene.js';
-import bedroom from '../scenes/bedroom.js';
-import homeHallway from '../scenes/homeHallway.js';
+import Scene from 'Scene';
+import bedroom from 'scenes/bedroom';
+import homeHallway from 'scenes/homeHallway';
 
-import Door from '../entities/Door.js';
-import cellPhone from '../entities/cellPhone.js';
-import garbage from '../entities/homeKitchen/garbage.js';
-import fridge from '../entities/homeKitchen/fridge.js';
-import cupboards from '../entities/homeKitchen/cupboards.js';
+import Door from 'entities/Door';
+import cellPhone from 'entities/cellPhone';
+import garbage from 'entities/homeKitchen/garbage';
+import fridge from 'entities/homeKitchen/fridge';
+import cupboards from 'entities/homeKitchen/cupboards';
 
 export class HomeKitchen extends Scene {
   descriptionMessage() {

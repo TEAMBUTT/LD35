@@ -1,8 +1,8 @@
-import Scene from '../../Scene.js';
+import Scene from 'Scene';
 
 import diningArea from './diningArea.js';
 import kitchen from './kitchen.js';
-import Door from '../../entities/Door.js';
+import Door from 'entities/Door';
 
 export class DiningArea extends Scene {
   descriptionMessage() {

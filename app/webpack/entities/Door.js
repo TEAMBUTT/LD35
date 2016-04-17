@@ -1,5 +1,5 @@
-import Entity, { printMessage, action, time, state } from "../Entity.js";
-import { changeScene } from '../currentScene.js';
+import Entity, { printMessage, action, time, state } from "Entity";
+import { changeScene } from 'currentScene';
 
 export default class Door extends Entity {
   constructor(destination, actionName) {

@@ -1,7 +1,4 @@
-import Entity from '../../Entity.js';
-import printMessage from '../../printMessage.js';
-import action from '../../action.js';
-import state from '../../state.js';
+import Entity, { printMessage, action, state } from 'Entity';
 
 export class Pajamas extends Entity {
   constructor() {

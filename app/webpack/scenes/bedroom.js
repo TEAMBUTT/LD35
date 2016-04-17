@@ -1,16 +1,16 @@
 import $ from 'jquery';
 
-import Scene from '../Scene.js';
+import Scene from 'Scene';
 
-import alarmClock from '../entities/bedroom/alarmClock.js';
-import mirror from '../entities/bedroom/mirror.js';
-import uniform from '../entities/bedroom/uniform.js';
-import pajamas from '../entities/bedroom/pajamas.js';
-import hat from '../entities/bedroom/hat.js';
+import alarmClock from 'entities/bedroom/alarmClock';
+import mirror from 'entities/bedroom/mirror';
+import uniform from 'entities/bedroom/uniform';
+import pajamas from 'entities/bedroom/pajamas';
+import hat from 'entities/bedroom/hat';
 
-import homeHallway from '../scenes/homeHallway.js';
-import Door from '../entities/Door.js';
-import state from '../state.js';
+import homeHallway from 'scenes/homeHallway';
+import Door from 'entities/Door';
+import state from 'state';
 
 export class Bedroom extends Scene {
   descriptionMessage() {

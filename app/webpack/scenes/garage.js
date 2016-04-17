@@ -1,10 +1,10 @@
-import Scene from '../Scene.js';
+import Scene from 'Scene';
 
 import homeHallway from './homeHallway.js';
 import car from './car.js';
-import garageDoor from "../entities/garageDoor.js"
-import Door from '../entities/Door.js';
-import state from '../state.js';
+import garageDoor from "entities/garageDoor"
+import Door from 'entities/Door';
+import state from 'state';
 
 export class Garage extends Scene {
   descriptionMessage() {

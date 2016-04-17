@@ -1,14 +1,14 @@
 import $ from 'jquery';
 
-import Scene from '../Scene.js';
-import state from '../state.js';
+import Scene from 'Scene';
+import state from 'state';
 
-import homeHallway from '../scenes/homeHallway.js';
+import homeHallway from 'scenes/homeHallway';
 
-import Door from '../entities/Door.js';
-import shower from '../entities/homeBathroom/shower.js';
-import towel from '../entities/homeBathroom/towel.js';
-import toothbrush from '../entities/homeBathroom/toothbrush.js';
+import Door from 'entities/Door';
+import shower from 'entities/homeBathroom/shower';
+import towel from 'entities/homeBathroom/towel';
+import toothbrush from 'entities/homeBathroom/toothbrush';
 
 export class HomeBathroom extends Scene {
   descriptionMessage() {

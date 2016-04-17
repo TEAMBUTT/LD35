@@ -1,4 +1,4 @@
-import Entity, { printMessage, action, time, state } from "../../Entity.js";
+import Entity, { printMessage, action, time, state } from "Entity";
 import beer from "./beer.js"
 import milk from "./milk.js"
 

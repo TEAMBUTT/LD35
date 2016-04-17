@@ -1,6 +1,6 @@
-import Entity, { printMessage, action, time, state } from "../Entity.js";
-import { addItem } from '../inventory.js';
-import texts from './texts.js';
+import Entity, { printMessage, action, time, state } from "Entity";
+import { addItem } from 'inventory';
+import texts from './texts';
 
 export class CellPhone extends Entity {
   constructor() {

@@ -1,11 +1,11 @@
 import $ from 'jquery';
 
-import Scene from '../Scene.js';
-import bedroom from '../scenes/bedroom.js';
-import bathroom from '../scenes/homeBathroom.js';
-import homeKitchen from '../scenes/homeKitchen.js';
-import garage from '../scenes/garage.js';
-import Door from '../entities/Door.js';
+import Scene from 'Scene';
+import bedroom from 'scenes/bedroom';
+import bathroom from 'scenes/homeBathroom';
+import homeKitchen from 'scenes/homeKitchen';
+import garage from 'scenes/garage';
+import Door from 'entities/Door';
 
 export class HomeHallway extends Scene {
   descriptionMessage() {

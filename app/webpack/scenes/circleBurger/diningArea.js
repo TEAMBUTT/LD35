@@ -1,11 +1,11 @@
-import Scene from '../../Scene.js';
+import Scene from 'Scene';
 
 import entrance from './entrance.js';
 import bathroom from './bathroom.js';
 import counter from './counter.js';
 
-import Door from '../../entities/Door.js';
-import olderMan from '../../entities/circleBurger/diningArea/olderMan.js'
+import Door from 'entities/Door';
+import olderMan from 'entities/circleBurger/diningArea/olderMan'
 
 export class DiningArea extends Scene {
   descriptionMessage() {

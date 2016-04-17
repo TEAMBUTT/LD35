@@ -1,4 +1,4 @@
-import Entity, { printMessage, action, time, state } from "../../Entity.js";
+import Entity, { printMessage, action, time, state } from "Entity";
 
 export class AlarmClock extends Entity {
   constructor() {

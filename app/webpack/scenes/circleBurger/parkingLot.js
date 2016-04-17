@@ -1,9 +1,9 @@
-import Scene from '../../Scene.js';
+import Scene from 'Scene';
 
 import entrance from './entrance.js';
 import car from '../car.js';
-import Door from '../../entities/Door.js';
-import state from '../../state.js';
+import Door from 'entities/Door';
+import state from 'state';
 
 export class ParkingLot extends Scene {
   descriptionMessage() {

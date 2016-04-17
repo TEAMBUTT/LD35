@@ -1,5 +1,5 @@
-import Entity, { printMessage, action, time, state } from "../../../Entity.js";
-import { isInInventory } from '../../../inventory.js';
+import Entity, { printMessage, action, time, state } from "Entity";
+import { isInInventory } from 'inventory';
 
 export class Toilet extends Entity {
   name() {
