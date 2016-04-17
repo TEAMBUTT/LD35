@@ -2,6 +2,7 @@ import moment from 'moment';
 
 let state = window.state = {
   // Times
+  shiftStartTime: moment('2013-01-12 16:00'),
   currentTime: moment('2013-01-12 16:30'),
 
   // Bedroom items

@@ -1,4 +1,5 @@
 import Scene from '../../Scene.js';
+import moment from 'moment';
 
 import parkingLot from './parkingLot.js';
 import diningArea from './diningArea.js';
@@ -12,10 +13,12 @@ export class ManagerLeaving extends Scene {
   descriptionMessage() {
     const entranceDoor = new Door(entrance, "Walk over.");
 
+    const diff = moment.duration(state.shiftStartTime.diff(state.currentTime)).humanize();
+
     const message = `
       As you walk up, your manager, Ronald Buss, comes running out of the Circle Burger.
       <br>
-      "You're late again," he shouts, "you were supposed be here X minutes ago!
+      "You're late again," he shouts, "you were supposed be here ${diff} ago!
       I've been covering for you! We uh... lost Trapezoid today too so it's
       been just me and I need to go deal with something."
       <br>
