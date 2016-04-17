@@ -15,22 +15,20 @@ export class Fridge extends Entity {
           let message = "";
 
           if (state.fridgeInventory.length === 0) {
-            message += "Your fridge is empty."
-            printMessage(message);
+            printMessage("Your fridge is empty.");
           } else {
-            message += "You see:"
-            message += "<ul>"
-            let entities = {};
-            if (_.includes(state.fridgeInventory, "beer")) {
-              message += `<li><%= entity("beer", "Generic beer") %></li>`;
-              entities.beer = beer;
-            }
-            if (_.includes(state.fridgeInventory, "milk")) {
-              message += `<li><%= entity("milk", "Expired milk") %></li>`
-              entities.milk = milk;
-            }
-            message += "</ul>"
-            printMessage(message, entities);
+            message = `
+            You see:
+            <ul>
+            <% if(_.includes(state.fridgeInventory, "beer")) { %>
+              <li><%= entity("beer") %></li>
+            <% } %>
+            <% if(_.includes(state.fridgeInventory, "milk")) { %>
+              <li><%= entity("milk") %></li>
+            <% } %>
+            </ul>
+            `
+            printMessage(message, {milk, beer});
           }
         }
       )
