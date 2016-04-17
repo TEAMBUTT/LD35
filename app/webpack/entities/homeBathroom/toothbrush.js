@@ -1,4 +1,5 @@
 import Entity, { printMessage, action, time, state } from "../../Entity.js";
+import { addItem } from '../../inventory.js';
 
 export class Toothbrush extends Entity {
   name() {
@@ -7,6 +8,9 @@ export class Toothbrush extends Entity {
 
   actions() {
     return [
+      action("Put it in your pocket.", () => {
+        addItem("toothbrush");
+      }),
       action(
         "Brush your teeth.",
         () => {

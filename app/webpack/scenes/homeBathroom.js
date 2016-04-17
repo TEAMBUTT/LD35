@@ -15,8 +15,10 @@ export class HomeBathroom extends Scene {
     const bathroomDoor = new Door(homeHallway);
     const message = `
       The <%= entity("shower", "shower") %> is to your left. a ${ state.bathroomTowel }
-      <%= entity("towel", "towel") %> hanging on the door. A
-      <%= entity("toothbrush") %> sits next to the sink on your right.
+      <%= entity("towel", "towel") %> hanging on the door.
+      <% if (!isInInventory("toothbrush")) { %>
+        A <%= entity("toothbrush") %> sits next to the sink on your right.
+      <% } %>
       <br>
       The <%= entity("bathroomDoor", "door back to the hallway") %> is behind you.
     `;
