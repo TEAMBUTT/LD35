@@ -2,24 +2,38 @@ import { includes, without } from 'lodash';
 import state from './state.js';
 import printMessage from './printMessage.js';
 
-export function isInInventory(item) {
-  if (state.wearing !== "uniform") {
-    return false
+export function isInInventory(item, inventory) {
+  inventory = inventory || state.inventory;
+  if (inventory == state.inventory && state.wearing !== "uniform") {
+    return false;
   } else {
-    return includes(state.inventory, item);
+    return includes(inventory, item);
   }
 };
 
-export function removeItem(item) {
-  state.inventory = without(state.inventory, item);
+export function removeItem(item, origin) {
+  origin = origin || state.inventory
+  origin = without(origin, item);
 };
 
-export function addItem(item) {
-  if (state.wearing === "uniform") {
-    state.inventory.push(item);
-    return true;
+export function addItem(item, destination) {
+  destination = destination || state.inventory
+  if (destination == state.inventory) {
+    if (state.wearing === "uniform") {
+      destination.push(item);
+      return true;
+    } else {
+      printMessage("You can't store that. You don't have any pockets.");
+      return false;
+    }
   } else {
-    printMessage("You can't store that. You don't have any pockets.");
-    return false;
+    destination.push(item);
+    return true;
+  }
+};
+
+export function transferItem(item, origin, destination) {
+  if (addItem(item, destination)) {
+    removeItem(item, origin);
   }
 };
