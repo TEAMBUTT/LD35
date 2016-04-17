@@ -82,7 +82,9 @@ let state = window.state = {
 export function results() {
   let results = [];
 
-  function a(score, description) { results.push([score, description]); }
+  function a(score, description) {
+    results.push({score, description});
+  }
 
   if (state.mirrorSmashed) {
     a(-77, "You broke a mirror. That's 7 years bad luck.");

@@ -9,13 +9,16 @@ let template = _.template(`
 
     <% if (results.length) { %>
       <section class="results">
-        <h3>Results</h3>
+        <h3 class="results-total-score">
+          Total score:
+          <%= _.sumBy(results, 'score') %>
+        </h3>
 
         <table class="results-table">
           <% _.each(results, function(result) { %>
             <tr>
-            <td><%= result[0] %></td>
-            <td><%= result[1] %></td>
+            <td class="results-score"><%= result.score %></td>
+            <td class="results-description"><%= result.description %></td>
             </tr>
           <% }) %>
         </table>
