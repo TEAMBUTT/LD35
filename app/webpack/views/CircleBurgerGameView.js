@@ -24,6 +24,8 @@ export default class {
       new Tooltip(el);
     });
 
-    this.$frame.scrollTop(this.$frame[0].scrollHeight);
+    this.$frame.animate({ scrollTop: this.$frame[0].scrollHeight}, 200, () => {
+      message.addClass("visible");
+    });
   }
 }
