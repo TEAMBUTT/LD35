@@ -26,6 +26,12 @@ export class ManagerLeaving extends Scene {
       <br>
       "This is your last chance. Get in there and help that lady that I left at
       the counter!"
+      <% if(state.wearing != "uniform") { %>
+      <br>"Where's your Uniform?!"
+      <% } %>
+      <% if(!state.wearingHat) { %>
+      <br>"Where's your Hat?!"
+      <% } %>
       <br>
       He hustles to his truck, jumps in, and speeds off. You're left standing
       at the edge of parking lot, a few steps from
