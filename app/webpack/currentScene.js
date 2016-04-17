@@ -46,6 +46,7 @@ export function getCurrentScene() {
 
 export function changeScene(scene) {
   currentScene = scene;
+  scene.onEnter();
 }
 
 export function renderCurrentScene() {

@@ -10,6 +10,8 @@ class Scene {
   insertEntities(message, entities) {
     return formatMessage(message, entities);
   }
+  onEnter() {
+  }
 };
 
 export default Scene;
