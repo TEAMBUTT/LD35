@@ -5,7 +5,7 @@
   line-height: 1.5;
 
   > .disabled {
-    $disabled-color: darken($color-foreground, 45);
+    $disabled-color: desaturate(lighten($color-background, 30), 60);
     pointer-events: none;
     color: $disabled-color;
 
