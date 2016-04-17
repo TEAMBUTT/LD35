@@ -1,6 +1,7 @@
 import Entity, { printMessage, action, time, state } from "Entity";
-import beer from "./beer.js"
-import milk from "./milk.js"
+import { isInInventory } from "inventory"
+import beer from "entities/homeKitchen/beer"
+import milk from "entities/homeKitchen/milk"
 
 export class Fridge extends Entity {
   name() {
@@ -12,22 +13,20 @@ export class Fridge extends Entity {
       action(
         "Open.",
         () => {
-          let message = "";
-
           if (state.fridgeInventory.length === 0) {
             printMessage("Your fridge is empty.");
           } else {
-            message = `
+            let message = `
             You see:
             <ul>
-            <% if(_.includes(state.fridgeInventory, "beer")) { %>
+            <% if(isInInventory("beer", state.fridgeInventory)) { %>
               <li><%= entity("beer") %></li>
             <% } %>
-            <% if(_.includes(state.fridgeInventory, "milk")) { %>
+            <% if(isInInventory("milk", state.fridgeInventory)) { %>
               <li><%= entity("milk") %></li>
             <% } %>
             </ul>
-            `
+            `;
             printMessage(message, {milk, beer});
           }
         }

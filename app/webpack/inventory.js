@@ -1,6 +1,6 @@
-import { includes, without } from 'lodash';
-import state from './state.js';
-import printMessage from './printMessage.js';
+import { includes, remove } from 'lodash';
+import state from 'state';
+import printMessage from 'printMessage';
 
 export function isInInventory(item, inventory) {
   inventory = inventory || state.inventory;
@@ -13,7 +13,7 @@ export function isInInventory(item, inventory) {
 
 export function removeItem(item, origin) {
   origin = origin || state.inventory
-  origin = without(origin, item);
+  remove(origin, (v) => v === item);
 };
 
 export function addItem(item, destination) {
@@ -35,5 +35,6 @@ export function addItem(item, destination) {
 export function transferItem(item, origin, destination) {
   if (addItem(item, destination)) {
     removeItem(item, origin);
+    return true;
   }
 };

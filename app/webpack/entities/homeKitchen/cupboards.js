@@ -1,5 +1,6 @@
 import Entity, { printMessage, action, time, state } from "Entity";
-import granolaBar from "./granolaBar.js"
+import { isInInventory } from "inventory";
+import granolaBar from "entities/homeKitchen/granolaBar";
 
 export class Cupboards extends Entity {
   name() {
@@ -11,21 +12,18 @@ export class Cupboards extends Entity {
       action(
         "Open.",
         () => {
-          let message = "";
-
           if (state.cupboardsInventory.length === 0) {
-            message += "The cupboards are empty."
-            printMessage(message);
+            printMessage("The cupboards are empty.");
           } else {
-            message += "You see:"
-            message += "<ul>"
-            let entities = {};
-            if (_.includes(state.cupboardsInventory, "granolaBar")) {
-              message += `<li><%= entity("granolaBar", "A single granola bar") %></li>`;
-              entities.granolaBar = granolaBar;
-            }
-            message += "</ul>"
-            printMessage(message, entities);
+            let message = `
+            You see:
+            <ul>
+            <% if(isInInventory("granolaBar", state.cupboardsInventory)) { %>
+              <li><%= entity("granolaBar", "A single granola bar") %></li>
+            <% } %>
+            </ul>
+            `;
+            printMessage(message, {granolaBar});
           }
         }
       )

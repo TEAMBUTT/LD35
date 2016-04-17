@@ -1,4 +1,5 @@
 import Entity, { printMessage, action, time, state } from "Entity";
+import { removeItem } from "inventory";
 
 export class Milk extends Entity {
   name() {
@@ -9,7 +10,7 @@ export class Milk extends Entity {
     return [
       action(
         "Consume.", () => {
-          _.remove(state.fridgeInventory, (v) => v === "milk");
+          removeItem("milk", state.fridgeInventory);
           printMessage("Bleh! Probably shouldn't have drank that.");
         }),
       action(

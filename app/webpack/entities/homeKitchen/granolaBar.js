@@ -1,5 +1,5 @@
 import Entity, { printMessage, action, time, state } from "Entity";
-import { addItem } from 'inventory';
+import { removeItem, transferItem } from 'inventory';
 
 export class GranolaBar extends Entity {
   name() {
@@ -11,14 +11,15 @@ export class GranolaBar extends Entity {
       action(
         "Put it in your pocket.",
         () => {
-          _.remove(state.cupboardsInventory, (v) => v === "granolaBar");
-          addItem("granolaBar");
+          if (transferItem("granolaBar", state.cupboardsInventory, state.inventory)) {
+            printMessage("You store the granola bar in your pocket.");
+          }
         }
       ),
       action(
         "Consume.",
         () => {
-          _.remove(state.cupboardsInventory, (v) => v === "granolaBar");
+          removeItem("granolaBar", state.cupboardsInventory);
           printMessage("You chew dejectedly on the dry, bland granola bar.");
         }
       )
