@@ -60,6 +60,7 @@ let state = window.state = {
   // Doom
   doom: {
     started: false,
+    progress: 0,
   },
 };
 

@@ -16,9 +16,21 @@ export class ParkingLot extends Scene {
       "Walk over."
     );
 
-    const message = `
+    let message = `
       You are in the Circle Burger parking lot.
       <br>
+    `;
+
+    if (state.doom.started && state.doom.progress === 0) {
+      state.doom.progress += 10;
+      message += `
+        A man stumbles past you. He doesn't look very well and is mumbling
+        something to himself in a language you don't understand. It sounds a
+        little like Latin.
+        <br>
+      `;
+    }
+    message += `
       The <%= entity("entranceDoor", "entrance to Circle Burger") %> is up ahead.
       <br>
       Your <%= entity("carDoor", state.car.ruined ? "beaten-up car" : "car") %>
