@@ -20,4 +20,8 @@ export default window.state = {
   wetPajamas: false,
   nastyBreath: true,
   unreadTexts: 3,
+  fridgeInventory: [
+    "beer",
+    "milk",
+  ],
 };
