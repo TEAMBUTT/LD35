@@ -22,7 +22,11 @@ export class Pajamas extends Entity {
         "Put on",
         () => {
           state.wearing = "pajamas";
-          printMessage('You put your pajamas back on. Going to bed?');
+          printMessage(`You put your ${this.name()} back on. Going to bed?`);
+          if(state.wet && !state.wetPajamas) {
+            state.wetPajamas = true;
+            printMessage("You got them all wet!")
+          }
         }
       )
     ];

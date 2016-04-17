@@ -19,7 +19,11 @@ export class Uniform extends Entity {
         "Put on.",
         () => {
           state.wearing = "uniform";
-          printMessage('You put on your uniform.');
+          printMessage(`You put on your ${this.name()}.`);
+          if(state.wet && !state.wetUniform) {
+            state.wetUniform = true;
+            printMessage("You got it all wet!")
+          }
         }
       )
     ];
