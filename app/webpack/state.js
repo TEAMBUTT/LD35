@@ -25,6 +25,7 @@ let state = window.state = {
 
   // Work entrance
   uprightedSign: false,
+  managerBailed: false,
 
   // Personal items
   inventory: [],
@@ -47,8 +48,10 @@ let state = window.state = {
   // Phone state
   unreadTexts: 3,
 
-  // Entrance stuff
-  managerBailed: false
+  // Customers
+  customers: {
+    olderManFed: false,
+  }
 };
 
 export function demerits() {

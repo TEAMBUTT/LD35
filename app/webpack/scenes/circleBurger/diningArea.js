@@ -3,7 +3,9 @@ import Scene from '../../Scene.js';
 import entrance from './entrance.js';
 import bathroom from './bathroom.js';
 import counter from './counter.js';
+
 import Door from '../../entities/Door.js';
+import olderMan from '../../entities/circleBurger/diningArea/olderMan.js'
 
 export class DiningArea extends Scene {
   descriptionMessage() {
@@ -19,7 +21,12 @@ export class DiningArea extends Scene {
       <br>
       A family of four is eating to your left.
       <br>
-      A sad-looking older man is sitting without any food to your right.
+      <% if (state.customers.olderManFed) { %>
+        An <%= entity("olderMan", "older man") %> sits contently to your right.
+      <% } else { %>
+        A sad-looking <%= entity("olderMan", "older man") %> is sitting without
+        any food to your right.
+      <% } %>
       <br>
       Some suspicious looking teenagers are seated at the window.
       <br>
@@ -28,7 +35,7 @@ export class DiningArea extends Scene {
       You can see the <%= entity("bathroomDoor", "bathroom door") %> from here.
     `;
 
-    return this.insertEntities(message, {entranceDoor, bathroomDoor, counterDoor});
+    return this.insertEntities(message, {entranceDoor, olderMan, bathroomDoor, counterDoor});
   }
 }
 
