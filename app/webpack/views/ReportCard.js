@@ -29,7 +29,7 @@ let template = _.template(`
 
 export default class {
   start() {
-    const frame = $('.main-content');
+    const frame = $('#report');
     frame.html(template({ results: results() }));
   }
 };
