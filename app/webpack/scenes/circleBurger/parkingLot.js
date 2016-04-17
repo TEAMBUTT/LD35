@@ -15,7 +15,7 @@ export class ParkingLot extends Scene {
       <br>
       The <%= entity("entranceDoor", "entrance to Circle Burger") %> is up ahead.
       <br>
-      Your <%= entity("carDoor", "car") %> is beside you.
+      Your <%= entity("carDoor", state.car.ruined ? "beaten-up car" : "car") %> is beside you.
       <% if (state.car.running) { %>
         It is running.
       <% } %>

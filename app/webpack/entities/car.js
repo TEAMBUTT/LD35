@@ -10,14 +10,28 @@ export class Car extends Entity {
       action(
         "Drive to work.",
         () => {
+          let message = "";
+
+          if (!state.garageDoorOpen) {
+            state.confidence -= 10;
+            state.garageDoorOpen = true;
+            state.car.ruined = true;
+            message += `
+              You crash into the closed garage door. D'oh! You decide to ignore
+              it and continue to work.
+            `;
+          } else {
+            message += "You arrive at work.";
+          }
+
           if(state.luck < 7) {
             state.currentTime.add(10, 'minutes');
-            printMessage("You arrive at work. Red lights all the way there.")
-          } else {
-            printMessage("You arrive at work.")
+            message += "Red lights all the way there.";
           }
+
           state.currentTime.add(15, 'minutes');
           state.car.atWork = true;
+          printMessage(message);
         },
         () => state.car.running && !state.car.atWork
       ),

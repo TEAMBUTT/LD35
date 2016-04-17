@@ -14,7 +14,7 @@ export class Car extends Scene {
     );
 
     const message = `
-      You are in <%= entity("car", "your car") %>.
+      You are in <%= entity("car", state.car.ruined ? "your dented car" : "your car") %>.
       You can <%= entity("carDoor", "get out") %>.
       <% if (state.car.running) { %>
         The car is running.

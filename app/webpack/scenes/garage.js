@@ -14,12 +14,18 @@ export class Garage extends Scene {
     const message = `
       You are in the garage.
       <br>
-      Your <%= entity("carDoor", "car") %> isn't in great shape,
-      but it runs, mostly.
+      Your <%= entity("carDoor", "car") %>
+      <% if (state.car.ruined) { %>
+        is ruined. Maybe next time you'll remember to open the garage door first.
+      <% } else { %>
+        isn't in great shape, but it runs, mostly.
+      <% } %>
       <br>
       You can go back to <%= entity("hallwayDoor", "the hallway") %>.
       <br>
-      Your <%= entity("garageDoor") %> is ${ state.garageDoorOpen ? "open" : "closed" }.
+      <% if (!state.car.ruined) { %>
+        Your <%= entity("garageDoor") %> is ${ state.garageDoorOpen ? "open" : "closed" }.
+      <% } %>
     `;
 
     return this.insertEntities(message, {hallwayDoor, garageDoor, carDoor});

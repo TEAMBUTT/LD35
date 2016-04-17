@@ -12,7 +12,8 @@ let state = window.state = {
   confidence: 10,
   car: {
     running: false,
-    atWork: false
+    atWork: false,
+    ruined: false,
   },
   wet: false,
   showered: false,
