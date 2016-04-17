@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-export default window.state = {
+let state = window.state = {
   currentTime: moment('2013-01-12 16:30'),
   alarmRinging: true,
   bathroomTowel: "clean",
@@ -25,3 +25,5 @@ export default window.state = {
     "milk",
   ],
 };
+
+export default state;
