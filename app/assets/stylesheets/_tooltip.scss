@@ -29,7 +29,12 @@
   }
 
   .action-label {
-    padding: 4px;
+    padding: 0.25em;
+    border-bottom: 2px solid $color-background;
+
+    &:last-child {
+      border-bottom: 0;
+    }
 
     &:hover {
       color: $color-foreground;
