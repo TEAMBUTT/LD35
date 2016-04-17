@@ -3,9 +3,10 @@ import { changeScene } from '../currentScene.js';
 import action from '../action.js';
 
 export default class Door extends Entity {
-  constructor(destination) {
+  constructor(destination, actionName) {
     super();
     this.destination = destination;
+    this.actionName = actionName || "Enter door";
   }
 
   name() {
@@ -14,7 +15,7 @@ export default class Door extends Entity {
 
   actions() {
     return [
-      action("Enter door.", () => changeScene(this.destination))
+      action(this.actionName, () => changeScene(this.destination))
     ];
   }
 }

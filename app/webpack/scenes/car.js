@@ -9,7 +9,8 @@ import state from '../state.js';
 export class Car extends Scene {
   descriptionMessage() {
     const carDoor = new Door(
-      state.car.atWork ? parkingLot : garage
+      state.car.atWork ? parkingLot : garage,
+      "Leave car"
     );
 
     const message = `
