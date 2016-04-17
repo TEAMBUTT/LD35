@@ -15,6 +15,6 @@ export function changeScene(scene) {
 export function renderCurrentScene() {
   addMessage(getCurrentScene().descriptionMessage());
 
-  /* I'm sorry. I blame jared */
+  /* I'm sorry. I blame Jared. */
   $('.message-box :not(.disabled)').addClass('to-hide')
 }
