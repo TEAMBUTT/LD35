@@ -29,4 +29,36 @@ let state = window.state = {
   ]
 };
 
+export function demerits() {
+  let demerits = [];
+
+  function a(string) { demerits.push(string); }
+
+  if (state.nastyBreath) {
+    a("Your breath reeks. Try brushing your teeth next time.");
+  }
+
+  if (state.alarmRinging) {
+    a("You left your alarm ringing! Your landlord says this is the last straw.");
+  }
+
+  if (!state.garbageOutside) {
+    a("You didn't take out the trash. A small flock of seagulls has moved into your kitchen.");
+  }
+
+  if (state.wetUniform) {
+    a("Your work uniform is wet. Your boss wasn't too pleased with that");
+  }
+
+  if (!state.showered) {
+    a("You didn't shower before going to work.");
+  }
+
+  if (state.car.running) {
+    a("You left your car running. It was subsequently stolen. Good luck getting home!");
+  }
+
+  return demerits;
+}
+
 export default state;
