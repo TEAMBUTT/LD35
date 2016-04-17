@@ -17,6 +17,7 @@ export class Prep extends Entity {
         addItem("raw patty");
       }),
       action("Assemble burger.", () => {
+        printMessage("You make a burger from the grilled patty and a bun. Order up!");
         removeItem("grilled patty")
         addItem("burger")
       }, () => isInInventory("grilled patty"))
