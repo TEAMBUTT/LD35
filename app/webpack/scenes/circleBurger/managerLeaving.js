@@ -39,6 +39,7 @@ export class ManagerLeaving extends Scene {
     `;
 
     state.managerBailed = true;
+    state.currentTime.add(15, 'minutes');
 
     return this.insertEntities(message, {entranceDoor});
   }
