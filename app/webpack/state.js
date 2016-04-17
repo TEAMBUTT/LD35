@@ -23,6 +23,9 @@ let state = window.state = {
   // Garage items
   garageDoorOpen: false,
 
+  // Work entrance
+  uprightedSign: false,
+
   // Personal items
   inventory: [],
   wearing: "pajamas",
