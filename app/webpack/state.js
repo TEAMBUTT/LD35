@@ -4,6 +4,7 @@ export default window.state = {
   currentTime: moment('2013-01-12 16:30'),
   alarmRinging: true,
   bathroomTowel: "clean",
+  garbageOutside: false,
   garageDoorOpen: false,
   inventory: [],
   wearing: "pajamas",
