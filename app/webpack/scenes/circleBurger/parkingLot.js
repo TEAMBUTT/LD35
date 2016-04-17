@@ -1,7 +1,7 @@
 import Scene from 'Scene';
 
-import entrance from './entrance.js';
-import car from '../car.js';
+import entrance from 'scenes/circleBurger/entrance.js';
+import car from 'scenes/car.js';
 import Door from 'entities/Door';
 import state from 'state';
 

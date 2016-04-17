@@ -1,8 +1,8 @@
 import Scene from 'Scene.js';
 
-import parkingLot from './parkingLot.js';
-import diningArea from './diningArea.js';
-import car from '../car.js';
+import parkingLot from 'scenes/circleBurger/parkingLot.js';
+import diningArea from 'scenes/circleBurger/diningArea.js';
+import car from 'scenes/car.js';
 import state from 'state';
 
 import Door from 'entities/Door';
