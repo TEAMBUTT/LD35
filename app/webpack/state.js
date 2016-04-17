@@ -19,4 +19,5 @@ export default window.state = {
   wetUniform: false,
   wetPajamas: false,
   nastyBreath: true,
+  unreadTexts: 3,
 };

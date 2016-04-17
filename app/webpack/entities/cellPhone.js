@@ -1,5 +1,6 @@
 import Entity, { printMessage, action, time, state } from "../Entity.js";
 import { addItem } from '../inventory.js';
+import texts from './texts.js';
 
 export class CellPhone extends Entity {
   constructor() {
@@ -16,7 +17,9 @@ export class CellPhone extends Entity {
         addItem("cellphone");
       }),
       action("Check time.", () => printMessage(`It is now ${time()}.`)),
-      action("Check for notificatoins.", () => printMessage('You have 3 unread texts.'))
+      action("Check for notifications.", () => {
+        printMessage('You have <%= entity("texts") %>', {texts});
+      })
     ];
   }
 }
