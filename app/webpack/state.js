@@ -18,7 +18,7 @@ let state = window.state = {
   ],
   cupboardsInventory: [
     "granolaBar",
-  ]
+  ],
 
   // Garage items
   garageDoorOpen: false,
