@@ -1,4 +1,4 @@
-import Entity, { printMessage, action, time, state } from "Entity";
+import Entity, { printMessage, action, actionWithItem, time, state } from "Entity";
 import { addItem, removeItem, isInInventory } from 'inventory.js';
 
 export class Customer extends Entity {
@@ -23,13 +23,19 @@ export class Customer extends Entity {
       action("Talk.", () => {
         printMessage('Old lady: I want a hamburger.');
       }),
-      action("Give burger.", () => {
+
+      actionWithItem("Give fries.", "fries", () => {
+        printMessage(`I didn't ask for this`);
+        printMessage(`The lady storms off`);
+        state.oldLadyServerd = true;
+      }),
+
+      actionWithItem("Give burger.", "burger", () => {
         printMessage('Humph. About time.');
-        removeItem('burger');
         printMessage('The lady gives pays you for the burger.');
         addItem('$10');
         state.oldLadyServerd = true;
-      }, () => isInInventory('burger')),
+      }),
     ];
   }
 }
