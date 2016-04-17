@@ -1,0 +1,38 @@
+import Scene from '../../Scene.js';
+
+import parkingLot from './parkingLot.js';
+import diningArea from './diningArea.js';
+import car from '../car.js';
+import state from '../../state.js';
+
+import Door from '../../entities/Door.js';
+import entrance from './entrance.js';
+
+export class ManagerLeaving extends Scene {
+  descriptionMessage() {
+    const entranceDoor = new Door(entrance, "Walk over.");
+
+    const message = `
+      As you walk up, your manager, Ronald Buss, comes running out of the Circle Burger.
+      <br>
+      "You're late again," he shouts, "you were supposed be here X minutes ago!
+      I've been covering for you! We uh... lost Trapezoid today too so it's
+      been just me and I need to go deal with something."
+      <br>
+      He sounds enormously exhasperated and his hands are shaking.
+      <br>
+      "This is your last chance. Get in there and help that lady that I left at
+      the counter!"
+      <br>
+      He hustles to his truck, jumps in, and speeds off. You're left standing
+      at the edge of parking lot, a few steps from
+      <%= entity("entranceDoor", "the entrance") %>.
+    `;
+
+    state.managerBailed = true;
+
+    return this.insertEntities(message, {entranceDoor});
+  }
+}
+
+export default new ManagerLeaving();

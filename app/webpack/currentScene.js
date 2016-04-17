@@ -13,6 +13,7 @@ import diningArea from './scenes/circleBurger/diningArea.js';
 import bathroom from './scenes/circleBurger/bathroom.js';
 import counter from './scenes/circleBurger/counter.js';
 import kitchen from './scenes/circleBurger/kitchen.js';
+import managerLeaving from './scenes/circleBurger/managerLeaving.js';
 
 import queryString from 'query-string';
 
@@ -28,7 +29,8 @@ const scenes = {
   diningArea,
   bathroom,
   counter,
-  kitchen
+  kitchen,
+  managerLeaving
 };
 
 let customScene = queryString.parse(location.search)['scene'];
