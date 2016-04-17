@@ -9,7 +9,7 @@ import olderMan from '../../entities/circleBurger/diningArea/olderMan.js'
 
 export class DiningArea extends Scene {
   descriptionMessage() {
-    const entranceDoor = new Door(entrance, "Leave the Circle Burger");
+    const entranceDoor = new Door(entrance, "Leave the Circle Burger.");
     const bathroomDoor = new Door(bathroom);
     const counterDoor = new Door(counter);
 
