@@ -8,7 +8,7 @@ export class SandwichBoard extends Entity {
   actions() {
     return [
       action(
-        "Upright.", () => {
+        "Put upright.", () => {
           state.uprightedSign = true;
         },
         () => !state.uprightedSign
