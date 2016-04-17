@@ -11,7 +11,7 @@ export class DiningArea extends Scene {
   descriptionMessage() {
     const entranceDoor = new Door(entrance, "Leave the Circle Burger.");
     const bathroomDoor = new Door(bathroom);
-    const counterDoor = new Door(counter);
+    const counterDoor = new Door(counter, "Walk around.");
 
     const message = `
       You are standing in the dining area.
