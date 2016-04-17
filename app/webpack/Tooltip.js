@@ -44,7 +44,7 @@ class Tooltip {
     let left = this.$target.offset().left;
     let right = left + this.$target.outerWidth();
     let top = this.$target.offset().top;
-    let bottom = top + this.$target.outerWidth();
+    let bottom = top + this.$target.outerHeight();
 
     if (left < gutter) {
       this.fixOverflow(left - gutter);
@@ -52,7 +52,7 @@ class Tooltip {
     if (right > (windowWidth - gutter)) {
       this.fixOverflow(right - windowWidth + gutter);
     }
-    if (bottom > (windowHeight + gutter)) {
+    if (bottom > (windowHeight - 50 - gutter)) {
       this.$target.addClass("tooltip-up");
     }
   }
