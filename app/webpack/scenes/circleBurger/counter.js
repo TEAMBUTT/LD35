@@ -27,7 +27,7 @@ let customers = [
     additionalDescription: "He's staring at the menu like he has never seen one before.",
     handle: 'alien',
     desiredItem: 'burger',
-    dialog: `Guy: Hello. Could I have a ham..... burger?`,
+    dialog: `Guy: Hello. Could I have a ham... burger?`,
     acceptDialog: "Guy: <i>Fasinating... I will take this back to my home planet.... I mean to go.</i>",
   }),
 
