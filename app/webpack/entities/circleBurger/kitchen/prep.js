@@ -48,7 +48,7 @@ export class Prep extends Entity {
         }
       ),
       action("Get patty.", () => {
-        printMessage("You grab a raw patty");
+        printMessage("You grab a raw patty.");
         addItem('raw patty', state.prepInventory);
         state.currentTime.add(5, 'minutes');
         touchFood();
@@ -60,13 +60,13 @@ export class Prep extends Entity {
         removeItem("cheese burger");
         removeItem("bacon cheese burger");
       }, () => hasBurger()),
-      convertAction("Assemble burger", "grilled patty", "burger", () => {
+      convertAction("Assemble burger.", "grilled patty", "burger", () => {
         printMessage("You make a burger from the grilled patty and a bun. Order up!");
       }),
-      convertAction("Add bacon to burger", "burger", "bacon burger", () => { printMessage("You add bacon to the burger"); }),
-      convertAction("Add cheese to burger", "burger", "cheese burger", () => { printMessage("You add cheese to the burger"); }),
-      convertAction("Add cheese to burger", "bacon burger", "bacon cheese burger", () => { printMessage("You add cheese to the burger"); }),
-      convertAction("Add bacon to burger", "cheese burger", "bacon cheese burger", () => { printMessage("You add bacon to the burger"); })
+      convertAction("Add bacon to burger.", "burger", "bacon burger", () => { printMessage("You add bacon to the burger."); }),
+      convertAction("Add cheese to burger.", "burger", "cheese burger", () => { printMessage("You add cheese to the burger."); }),
+      convertAction("Add cheese to burger.", "bacon burger", "bacon cheese burger", () => { printMessage("You add cheese to the burger."); }),
+      convertAction("Add bacon to burger.", "cheese burger", "bacon cheese burger", () => { printMessage("You add bacon to the burger."); })
     ];
   }
 }
