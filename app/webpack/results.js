@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import state from 'state';
+import state, {updateState} from 'state';
 import { extend } from 'lodash';
 import ReportCard from 'views/ReportCard';
 
@@ -8,7 +8,7 @@ $(() => {
   let data = $('.js-result-state').html();
   data = data.replace("//<![CDATA[", "").replace("//]]>", "");
   data = JSON.parse(data);
-  extend(state, data);
+  updateState(data);
 
   (new ReportCard()).start()
 })

@@ -1,4 +1,5 @@
 import moment from 'moment';
+import {extend} from 'lodash';
 
 let state = window.state = {
   // Times
@@ -103,6 +104,15 @@ let state = window.state = {
     started: false,
     progress: 0,
   },
+};
+
+export function updateState(newState){
+  extend(state, newState);
+  extend(state, {
+    shiftStartTime: moment(state.shiftStartTime),
+    closingTime: moment(state.closingTime),
+    currentTime: moment(state.currentTime)
+  });
 };
 
 export default state;
