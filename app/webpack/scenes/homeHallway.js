@@ -10,10 +10,10 @@ import Door from 'entities/Door';
 export class HomeHallway extends Scene {
   name(){ return "HomeHallway"; }
   descriptionMessage() {
-    const bedroomDoor = new Door(bedroom);
-    const bathroomDoor = new Door(bathroom);
-    const kitchenDoor = new Door(homeKitchen);
-    const garageDoor = new Door(garage);
+    const bedroomDoor = new Door(bedroom, "Enter bedroom.");
+    const bathroomDoor = new Door(bathroom, "Enter bathroom.");
+    const kitchenDoor = new Door(homeKitchen, "Enter kitchen.");
+    const garageDoor = new Door(garage, "Enter garage.");
 
     const message = `
       You are in the hallway outside your <%= entity("bedroomDoor", "bedroom") %>.

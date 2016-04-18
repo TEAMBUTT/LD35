@@ -15,7 +15,7 @@ import state from 'state';
 export class Bedroom extends Scene {
   name(){ return "Bedroom"; }
   descriptionMessage() {
-    const bedroomDoor = new Door(homeHallway);
+    const bedroomDoor = new Door(homeHallway, "Enter hallway.");
     const message = `
       <div>
         Your <%= entity("alarmClock") %> is ${ state.alarmRinging ? "ringing" : "silent" } beside you on the bedside table.

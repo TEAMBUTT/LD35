@@ -14,7 +14,7 @@ import cupboards from 'entities/homeKitchen/cupboards';
 export class HomeKitchen extends Scene {
   name(){ return "HomeKitchen"; }
   descriptionMessage() {
-    const hallwayDoor = new Door(homeHallway);
+    const hallwayDoor = new Door(homeHallway, "Enter hallway.");
     const phoneGlowing = state.mirrorSmashed && state.alarmRinging &&
       isInInventory("granolaBar") && !state.doom.started;
 
