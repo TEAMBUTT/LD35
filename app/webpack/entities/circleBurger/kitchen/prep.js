@@ -1,6 +1,26 @@
 import Entity, { printMessage, action, actionWithItem, time, state } from "Entity.js";
 import { addItem, removeItem, transferItem, isInInventory } from 'inventory.js';
 
+function convertAction(label, from, to, callback) {
+  return actionWithItem(label, from, () => {
+    addItem(to, state.prepInventory);
+    state.currentTime.add(5, 'minutes');
+    callback();
+  }, state.prepInventory);
+}
+
+function inPrepInventory(item) {
+  return isInInventory(item, state.prepInventory);
+}
+
+function hasBurger() {
+  return _.some(['burger', 'bacon burger', 'cheese burger', 'bacon cheese burger'], inPrepInventory);
+}
+
+function hasBurgerOrPatty() {
+  return hasBurger() || inPrepInventory("raw patty") || inPrepInventory("grilled patty");
+}
+
 export class Prep extends Entity {
   name() {
     return 'prep area';
@@ -21,14 +41,23 @@ export class Prep extends Entity {
       ),
       action("Get patty.", () => {
         printMessage("You grab a raw patty");
-        addItem("raw patty", state.prepInventory);
+        addItem('raw patty', state.prepInventory);
         state.currentTime.add(5, 'minutes');
-      }),
-      actionWithItem("Assemble burger.", "grilled patty", () => {
+      }, () => !hasBurgerOrPatty()),
+      action("Throw out burger.", () => {
+        printMessage("You throw the burger in the trash.");
+        removeItem("burger");
+        removeItem("bacon burger");
+        removeItem("cheese burger");
+        removeItem("bacon cheese burger");
+      }, () => hasBurger()),
+      convertAction("Assemble burger", "grilled patty", "burger", () => {
         printMessage("You make a burger from the grilled patty and a bun. Order up!");
-        addItem("burger", state.prepInventory)
-        state.currentTime.add(5, 'minutes');
-      }, state.prepInventory),
+      }),
+      convertAction("Add bacon to burger", "burger", "bacon burger", () => { printMessage("You add bacon to the burger"); }),
+      convertAction("Add cheese to burger", "burger", "cheese burger", () => { printMessage("You add cheese to the burger"); }),
+      convertAction("Add cheese to burger", "bacon burger", "bacon cheese burger", () => { printMessage("You add cheese to the burger"); }),
+      convertAction("Add bacon to burger", "cheese burger", "bacon cheese burger", () => { printMessage("You add bacon to the burger"); }),
       action(
         "Take the knife.",
         () => {

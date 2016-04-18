@@ -12,7 +12,7 @@ export class Counter extends Scene {
 
     const message = `
       The till is in front of you.
-      <% if(!state.oldLadyServerd) { %>
+      <% if(!state.customers.oldLadyServed) { %>
         <%= entity('customer') %>, ${customer.shortDescription()}, is waiting to order.
         ${customer.additionalDescription()}
         Behind her

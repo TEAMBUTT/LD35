@@ -74,6 +74,7 @@ let state = window.state = {
   // Customers
   customers: {
     olderManFed: false,
+    olderLadyServed: false,
   },
 
   // Doom
