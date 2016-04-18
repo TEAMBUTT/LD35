@@ -16,7 +16,7 @@ export default class Door extends Entity {
     return [
       action(this.actionName, () => {
         changeScene(this.destination);
-        state.currentTime.add(Math.floor(1, 'minutes');
+        state.currentTime.add(Math.floor(1, 'minutes'));
       })
     ];
   }
