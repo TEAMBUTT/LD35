@@ -13,7 +13,7 @@ import toothbrush from 'entities/homeBathroom/toothbrush';
 export class HomeBathroom extends Scene {
   name(){ return "HomeBathroom"; }
   descriptionMessage() {
-    const bathroomDoor = new Door(homeHallway, "Enter hallway.);
+    const bathroomDoor = new Door(homeHallway, "Enter hallway.");
     const message = `
       The <%= entity("shower", "shower") %> is to your left. a ${ state.bathroomTowel }
       <%= entity("towel", "towel") %> hanging on the door.
