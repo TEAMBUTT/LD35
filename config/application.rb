@@ -33,5 +33,7 @@ module LudumButts
     config.active_record.raise_in_transactional_callbacks = true
 
     config.assets.precompile += %w( results.js game.js )
+
+    config.action_dispatch.default_headers = { 'X-Frame-Options' => 'ALLOWALL' }
   end
 end
