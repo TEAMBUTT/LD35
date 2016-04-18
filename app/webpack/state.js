@@ -74,6 +74,7 @@ let state = window.state = {
   showered: false,
   wet: false,
   publicIndecency: false,
+  gotRaise: false,
   luck: 10,
   confidence: 10,
 

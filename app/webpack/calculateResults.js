@@ -100,6 +100,10 @@ export default function calculateResults() {
     a(-50, "You smashed up your car and garage door.");
   }
 
+  if (state.gotRaise) {
+    a(100, "You got a raise! Nice.");
+  }
+
   if (state.toiletClean && state.sinkClean && state.floorClean) {
     if(state.toiletVeryClean) {
       a(50, "You cleaned the Circle Burger bathroom to perfection. It's now a popular tourist destination.");

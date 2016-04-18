@@ -52,6 +52,31 @@ export class ManagerConversation extends Entity {
             }
           }
         ));
+        if (state.confidence >= 20) {
+          _actions.push(action(
+            "Ask for a raise.",
+            () => {
+              state.manager.progress += 1;
+              state.currentTime.add(5, "minutes");
+              printMessage(`
+                Brimming with confidence, you ask your manager for a raise.
+              `);
+              if (state.luck < 7) {
+                printMessage(`
+                  Your manager laughs in your face.
+                  <br>
+                  "You're lucky I don't fire you right now!"
+                `);
+              } else {
+                state.gotRaise = true;
+                printMessage(`
+                  "What confidence! Today's your lucky day. Let's talk numbers
+                  when I get back."
+                `);
+              }
+            }
+          ));
+        }
         break;
     }
     return _actions;
