@@ -15,7 +15,7 @@ export class Kitchen extends Scene {
     const outBackDoor = new Door(outBack, "Go out back.");
 
     let message;
-    if (state.doom.started && state.doom.progress === 20) {
+    if (state.doom.started && state.doom.progress === 30) {
       message = `
         You enter the kitchen. It is bathed in darkness, for some reason the
         lights are turned off. The <%= entity("lightSwitch") %> is on the wall
