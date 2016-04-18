@@ -13,7 +13,7 @@ export default class Door extends NormalDoor {
         state.currentTime.add(Math.floor((Math.random() * 5) + 1), 'minutes');
       }),
 
-      action("Lock the door. (This ends the game. You can't go back.)", () => {
+      action("Lock the door. (This ends the game.)", () => {
         if(confirm("Closing the Circle Burger ends the day.\n\nAre you sure you've done enough to keep your job?")) {
           state.doorLocked = true;
 
