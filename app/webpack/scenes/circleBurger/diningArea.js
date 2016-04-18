@@ -5,11 +5,12 @@ import bathroom from './bathroom.js';
 import counter from './counter.js';
 
 import Door from 'entities/Door';
+import CircleBurgerDoor from 'entities/circleBurger/Door'
 import olderMan from 'entities/circleBurger/diningArea/olderMan'
 
 export class DiningArea extends Scene {
   descriptionMessage() {
-    const entranceDoor = new Door(entrance, "Leave the Circle Burger.");
+    const entranceDoor = new CircleBurgerDoor(entrance, "Leave the Circle Burger.");
     const bathroomDoor = new Door(bathroom);
     const counterDoor = new Door(counter, "Walk around.");
 
