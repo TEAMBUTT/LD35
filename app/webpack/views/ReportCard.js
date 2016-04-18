@@ -7,7 +7,7 @@ import calculateResults from "calculateResults";
 let template = _.template(`
   <div class="report-card-screen">
     <section class="results">
-      <h1>Employee performance review</h1>
+      <h1>Employee Performance Review</h1>
       <table class="results-table">
         <% _.each(results, function(result) { %>
           <tr>
