@@ -7,6 +7,7 @@ import Door from 'entities/Door';
 import fryer from 'entities/circleBurger/kitchen/fryer';
 import prep from 'entities/circleBurger/kitchen/prep';
 import clock from 'entities/circleBurger/kitchen/clock';
+import note from 'entities/circleBurger/kitchen/note';
 import grill from 'entities/circleBurger/kitchen/grill';
 import lightSwitch from 'entities/circleBurger/kitchen/lightSwitch';
 import knife from 'entities/circleBurger/kitchen/knife';
@@ -38,7 +39,8 @@ export class Kitchen extends Scene {
         <% if (state.doom.started && state.doom.progress == 10 && isInInventory("knife", state.prepInventory)) { %>
           There's a <%= entity('knife') %> sticking up in the cutting board.
         <% } %>
-        There's a folded note with your name on it sitting on the prep station.
+        There's a folded <%= entity('note') %> with your name on it sitting on
+        the prep station.
         <br>
         <% if (state.doom.started && state.doom.progress == 20 && isInInventory("knife")) { %>
           There's a customer by <%= entity("counterDoor", "the counter") %> calling to you.
@@ -60,7 +62,8 @@ export class Kitchen extends Scene {
       lightSwitch,
       knife,
       clock,
-      customer
+      customer,
+      note
     });
   }
 }
