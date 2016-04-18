@@ -111,7 +111,8 @@ export function updateState(newState){
   extend(state, {
     shiftStartTime: moment(state.shiftStartTime),
     closingTime: moment(state.closingTime),
-    currentTime: moment(state.currentTime)
+    currentTime: moment(state.currentTime),
+    lightsOutTime: state.lightsOutTime ? moment(state.lightsOutTime) : state.lightsOutTime
   });
 };
 

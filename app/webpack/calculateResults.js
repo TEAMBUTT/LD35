@@ -39,8 +39,16 @@ export default function calculateResults() {
     a(-5, "You forgot your hat at home.");
   }
 
-  if (state.lightsOutTime.isBefore(state.closingTime.clone().minus(5, 'minutes'))) {
-    a(-25, "You turned the open sign off too early.");
+  if (state.lightsOutTime) {
+    if (state.lightsOutTime.isBefore(state.closingTime.clone().subtract(5, 'minutes'))) {
+      a(-10, "You turned the open sign off too early.");
+    } else if (state.lightsOutTime.isAfter(state.closingTime.clone().add(5, 'minutes'))) {
+      a(-10, "You turned the open sign off too late.");
+    } else {
+      a(15, "You turned off the open sign on time.");
+    }
+  } else {
+    a(-25, "You left the open sign on.");
   }
 
   if (state.lockedIn) {
