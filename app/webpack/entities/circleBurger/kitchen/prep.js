@@ -12,7 +12,7 @@ export class Prep extends Entity {
         "Cut potatoes.",
         () => {
           printMessage("You cut the potato into wedges. You have changed their shape!");
-          addItem("potato wedges");
+          addItem("potato wedges", state.prepInventory);
         },
         () => {
           return isInInventory("knife") || isInInventory("knife", state.prepInventory);
@@ -20,13 +20,13 @@ export class Prep extends Entity {
       ),
       action("Get patty.", () => {
         printMessage("You grab a raw patty");
-        addItem("raw patty");
+        addItem("raw patty", state.prepInventory);
       }),
       action("Assemble burger.", () => {
         printMessage("You make a burger from the grilled patty and a bun. Order up!");
-        removeItem("grilled patty")
-        addItem("burger")
-      }, () => isInInventory("grilled patty")),
+        removeItem("grilled patty", state.prepInventory)
+        addItem("burger", state.prepInventory)
+      }, () => isInInventory("grilled patty"), state.prepInventory),
       action(
         "Take the knife.",
         () => {
