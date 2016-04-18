@@ -27,7 +27,7 @@ let state = window.state = {
   ],
 
   // Till
-  amountInTill = 15.75,
+  amountInTill: 15.75,
 
   // Work kitchen items
   prepInventory: [
