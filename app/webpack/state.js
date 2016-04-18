@@ -138,6 +138,12 @@ export function results() {
     a(-5, "You forgot your hat at home.");
   }
 
+  if (state.lockedIn) {
+    a(-5, "You locked yourself in the store.");
+  } else {
+    a(5, "You locked up the store.");
+  }
+
   if (state.uprightedSign) {
     a(5, "You fixed the sign outside the store.");
   }
