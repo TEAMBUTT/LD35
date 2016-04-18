@@ -24,5 +24,8 @@
     "query-string": "^4.1.0",
     "uuid": "^2.0.2",
     "webpack": "^1.12.15"
+  },
+  "devDependencies": {
+    "empty-module": "0.0.2"
   }
 }

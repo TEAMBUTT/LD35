@@ -29,4 +29,8 @@ config.module = {
     loader: "babel-loader",
     query: { presets: ['es2015'] }
   }]
-}
+};
+
+config.plugins = [
+  new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en)$/)
+];
