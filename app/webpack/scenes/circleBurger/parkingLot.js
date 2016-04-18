@@ -8,6 +8,13 @@ import Door from 'entities/Door';
 import state from 'state';
 
 export class ParkingLot extends Scene {
+  onEnter() {
+    super();
+    if(state.wearing == "nothing") {
+      state.publicIndecency = true;
+    }
+  },
+
   descriptionMessage() {
     const carDoor = new Door(car, "Get in car.");
     const vanDoor = new Door(van, "Approach the van.");

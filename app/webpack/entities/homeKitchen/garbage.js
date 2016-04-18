@@ -16,6 +16,7 @@ export class Garbage extends Entity {
           let message = "";
 
           if (state.wearing === "nothing") {
+            state.publicIndecency = true;
             state.confidence -= 5;
             message += `
               The neighboors give you funny looks as you're taking out the

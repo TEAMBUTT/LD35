@@ -11,6 +11,10 @@ export default function calculateResults() {
     a(-77, "You broke a mirror. That's 7 years bad luck.");
   }
 
+  if (state.publicIndency) {
+    a(-50, "You were cited for public indecency.");
+  }
+
   if (state.nastyBreath) {
     a(-10, "Your breath reeks. Try brushing your teeth next time.");
   } else {

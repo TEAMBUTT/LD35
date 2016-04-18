@@ -68,6 +68,7 @@ let state = window.state = {
   nastyBreath: true,
   showered: false,
   wet: false,
+  publicIndecency: false,
   luck: 10,
   confidence: 10,
 

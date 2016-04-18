@@ -24,7 +24,7 @@ export class Clothing extends Entity {
         () => {
           printMessage("You strip.");
           state.wearing = "nothing";
-          state.currentTime.add(20, "minutes");
+          state.currentTime.add(5, "minutes");
         },
         () => (state.wearing != "nothing")
       )
