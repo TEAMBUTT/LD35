@@ -8,7 +8,14 @@
     on Facebook
   </a>
   or
-  <a href="https://twitter.com/share?<%= {url: result_url(@result), text: 'I completed a Shift at the #CircleBurger'}.to_query %>" target="_blank">
+  <%
+    text = if @result.state['doom']['progress'] == 100
+             'I inadvertently caused the apocalypse at the #CircleBurger'
+           else
+             'I completed a Shift at the #CircleBurger'
+           end
+  %>
+  <a href="https://twitter.com/share?<%= {url: result_url(@result), text: text}.to_query %>" target="_blank">
     on Twitter
   </a>
 </div>
