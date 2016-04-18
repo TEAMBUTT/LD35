@@ -11,13 +11,13 @@ export class Grill extends Entity {
       actionWithItem("Grill potato.", "potato wedges", () => {
         printMessage("HOT POTATO HOT POTATO HOT POTATO");
         printMessage("You drop the potato");
-        state.currentTime.add(10, 'minutes');
+        state.currentTime.add(5, 'minutes');
       }, state.prepInventory),
 
       actionWithItem("Grill patty.", "raw patty", () => {
         printMessage("You grill a patty.");
         addItem("grilled patty", state.prepInventory);
-        state.currentTime.add(15, 'minutes');
+        state.currentTime.add(5, 'minutes');
       }, state.prepInventory)
     ];
   }

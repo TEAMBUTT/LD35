@@ -40,7 +40,7 @@ export class Prep extends Entity {
         () => {
           printMessage("You cut the potato into wedges. You have changed their shape!");
           addItem("potato wedges", state.prepInventory);
-          state.currentTime.add(15, 'minutes');
+          state.currentTime.add(5, 'minutes');
           touchFood();
         },
         () => {

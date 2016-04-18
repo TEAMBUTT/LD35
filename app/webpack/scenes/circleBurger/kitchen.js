@@ -6,6 +6,7 @@ import Door from 'entities/Door';
 
 import fryer from 'entities/circleBurger/kitchen/fryer';
 import prep from 'entities/circleBurger/kitchen/prep';
+import clock from 'entities/circleBurger/kitchen/clock';
 import grill from 'entities/circleBurger/kitchen/grill';
 import lightSwitch from 'entities/circleBurger/kitchen/lightSwitch';
 import knife from 'entities/circleBurger/kitchen/knife';
@@ -26,6 +27,9 @@ export class Kitchen extends Scene {
       message = `
         You are in the disgusting, grungy kitchen of the Circle Burger.
         <br>
+        The <%= entity("clock") %> on the wall says it is
+        <%= state.currentTime.format("hh:mm a") %>.
+        <br>
         In front of you is the <%= entity('fryer') %> and <%= entity('grill') %>.
         Behind you is the <%= entity('prep') %>.
         <% if (state.doom.started && state.doom.progress == 10 && isInInventory("knife", state.prepInventory)) { %>
@@ -42,7 +46,16 @@ export class Kitchen extends Scene {
       `;
     }
 
-    return this.insertEntities(message, {counterDoor, outBackDoor, fryer, prep, grill, lightSwitch, knife});
+    return this.insertEntities(message, {
+      counterDoor,
+      outBackDoor,
+      fryer,
+      prep,
+      grill,
+      lightSwitch,
+      knife,
+      clock
+    });
   }
 }
 
