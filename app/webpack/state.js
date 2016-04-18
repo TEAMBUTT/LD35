@@ -34,6 +34,7 @@ let state = window.state = {
   amountInTill: 15.75,
 
   // Work kitchen items
+  foodSafe: true,
   prepInventory: [
     "knife",
   ],
@@ -200,6 +201,10 @@ export function results() {
 
   if(state.olderManFed) {
     a(10, "You gave an older man your Granola Bar. Aren't you nice.");
+  }
+
+  if(!state.foodSafe) {
+    a(-30, "You handled food without washing your hands.");
   }
 
   let servedCustomers = filter(state.customers, { served: true })
