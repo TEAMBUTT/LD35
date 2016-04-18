@@ -8,6 +8,7 @@ import Door from 'entities/Door';
 import CircleBurgerDoor from 'entities/circleBurger/Door'
 import doomDoor from 'entities/circleBurger/diningArea/doomDoor'
 import olderMan from 'entities/circleBurger/diningArea/olderMan'
+import clock from 'entities/circleBurger/kitchen/clock'
 import OpenSign from 'entities/circleBurger/OpenSign'
 import { nextCustomer } from 'entities/customers';
 
@@ -21,7 +22,7 @@ export class DiningArea extends Scene {
     let customer = nextCustomer();
 
     const message = `
-      You are standing in the dining area.
+      You are standing in the dining area. The <%= entity("clock") %> shows <%= state.currentTime.format("hh:mm a") %>.
       <br>
       Ahead of you is <%= entity("counterDoor", "the counter") %>.
       <% if(customer) { %>
@@ -31,7 +32,6 @@ export class DiningArea extends Scene {
         <br>
         A family of four is eating to your left.
       <% } %>
-      <br>
       <% if (state.olderManFed) { %>
         An <%= entity("olderMan", "older man") %> sits contently to your right.
       <% } else { %>
@@ -42,7 +42,6 @@ export class DiningArea extends Scene {
         <% } %>
       <% } %>
       <% if (state.currentTime.isBefore(state.teensLeaveTime)) { %>
-        <br>
         Some suspicious looking teenagers are seated at the window.
       <% } %>
       <br>
@@ -65,7 +64,8 @@ export class DiningArea extends Scene {
       counterDoor,
       doomDoor,
       openSign,
-      customer
+      customer,
+      clock
     });
   }
 }

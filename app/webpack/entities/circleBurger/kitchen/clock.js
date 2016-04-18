@@ -12,6 +12,12 @@ export class Clock extends Entity {
   actions() {
     return [
       action(
+        "Stare at the clock for 1 hour.",
+        () => {
+          state.currentTime.add(1, 'hour')
+        }
+      ),
+      action(
         "Stare at the clock until closing.",
         () => {
           state.currentTime = state.closingTime.clone().subtract(5, 'minutes');
