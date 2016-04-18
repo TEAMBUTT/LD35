@@ -83,6 +83,11 @@ let state = window.state = {
       served: false,
       fed: false,
       angry: false
+    },
+    tinfoil: {
+      served: false,
+      fed: false,
+      angry: false
     }
   },
 

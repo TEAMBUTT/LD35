@@ -10,11 +10,11 @@ let customers = [
   new Customer({
     indefiniteArticle: 'An old lady',
     definiteArticle: 'the lady',
-    shortDescription: 'probably in her nineties',
+    shortDescription: ', probably in her nineties, ',
     additionalDescription: "She's tapping her foot impatiently.",
     handle: 'oldLady',
-    desiredItem: 'cheese burger',
-    dialog: "Old lady: <i>I'd like a cheeseburger</i>",
+    desiredItem: 'fries',
+    dialog: "Old lady: <i>I'd like some fries</i>",
     acceptDialog: "<i>Humph. About time</i>",
   }),
 
@@ -27,6 +27,17 @@ let customers = [
     desiredItem: 'burger',
     dialog: `Guy: Hello. Could I have a ham..... burger?`,
     acceptDialog: "Guy: <i>Fasinating... I will take this back to my home planet.... I mean to go.</i>",
+  }),
+
+  new Customer({
+    indefiniteArticle: 'A man',
+    definiteArticle: 'the man',
+    shortDescription: 'wearing a tinfoil hat',
+    additionalDescription: "He's muttering about a way to start the end times.",
+    handle: 'tinfoil',
+    desiredItem: 'bacon cheese burger',
+    dialog: `Man: I need a bacon cheese burger. Quick! There isn't much time left.`,
+    acceptDialog: "Guy: <i>Just in time! Thank you.</i>",
   })
 ];
 
@@ -40,7 +51,7 @@ export class Counter extends Scene {
     const message = `
       The till is in front of you.
       <% if(customer) { %>
-        <%= entity('customer') %>, <%= customer.shortDescription %>, is waiting to order.
+        <%= entity('customer') %> <%= customer.shortDescription %> is waiting to order.
         <%= customer.additionalDescription %>
       <% } %>
       Behind the counter
