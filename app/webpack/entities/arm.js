@@ -13,9 +13,9 @@ export class Arm extends Entity {
         () => {
           state.doom.progress += 10; // Progress: 50
           printMessage(`
-            You carve a pentagram on your arm. As you stare blankly at the
-            mutilated flesh, you wonder what possesed you to do this to
-            yourself.
+            You take the knife out of your pocket and carve a pentagram on your
+            arm. As you stare blankly at the mutilated flesh, you wonder what
+            possesed you to do this to yourself.
           `);
         },
         () => {
