@@ -1,7 +1,7 @@
 .message-box {
   @include user-select(none);
   padding: 10px;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.5;
 
   > .disabled {
