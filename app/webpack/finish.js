@@ -1,11 +1,7 @@
 import $ from 'jquery';
 import state from 'state';
 
-function finished() {
-  return state.finished;
-}
-
-function finish() {
+export default function finish() {
   state.finished = true;
 
   $.ajax({
@@ -18,7 +14,3 @@ function finish() {
     document.location.href = data.location;
   });
 }
-
-window.finish = finish;
-
-export default finish;
