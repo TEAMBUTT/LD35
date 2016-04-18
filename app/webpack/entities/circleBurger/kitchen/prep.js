@@ -57,17 +57,7 @@ export class Prep extends Entity {
       convertAction("Add bacon to burger", "burger", "bacon burger", () => { printMessage("You add bacon to the burger"); }),
       convertAction("Add cheese to burger", "burger", "cheese burger", () => { printMessage("You add cheese to the burger"); }),
       convertAction("Add cheese to burger", "bacon burger", "bacon cheese burger", () => { printMessage("You add cheese to the burger"); }),
-      convertAction("Add bacon to burger", "cheese burger", "bacon cheese burger", () => { printMessage("You add bacon to the burger"); }),
-      action(
-        "Take the knife.",
-        () => {
-          if (transferItem("knife", state.prepInventory, state.inventory)) {
-            printMessage("You put the knife in your pocket.");
-            state.currentTime.add(5, 'minutes');
-          }
-        },
-        () => isInInventory("knife", state.prepInventory)
-      )
+      convertAction("Add bacon to burger", "cheese burger", "bacon cheese burger", () => { printMessage("You add bacon to the burger"); })
     ];
   }
 }

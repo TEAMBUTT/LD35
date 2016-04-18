@@ -19,10 +19,10 @@ export class CellPhone extends Entity {
       action(
         "Check time.",
         () => {
-          if (state.mirrorSmashed && state.alarmRinging && state.showered &&
+          if (state.mirrorSmashed && state.alarmRinging &&
               isInInventory("granolaBar") && !state.doom.started) {
             state.doom.started = true;
-            printMessage("It is now 6:66pm.");
+            printMessage("It is now 6:66pm. Weird.");
           } else {
             printMessage(`It is now ${time()}.`)
           }

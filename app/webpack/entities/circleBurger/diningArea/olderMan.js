@@ -1,5 +1,5 @@
 import Entity, { printMessage, action, time, state } from "Entity";
-import { isinInventory, removeItem } from "inventory";
+import { isInInventory, removeItem } from "inventory";
 
 export class OlderMan extends Entity {
   name() {
@@ -10,7 +10,7 @@ export class OlderMan extends Entity {
     return [
       action(
         "Give granola bar.", () => {
-          if (state.doom.started && state.doom.progress === 20) {
+          if (state.doom.started && state.doom.progress === 70) {
             state.doom.progress += 10;
             printMessage(`
               The eldery man won't take the granola bar. His eyes fixated on

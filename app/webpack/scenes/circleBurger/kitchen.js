@@ -8,6 +8,7 @@ import fryer from 'entities/circleBurger/kitchen/fryer';
 import prep from 'entities/circleBurger/kitchen/prep';
 import grill from 'entities/circleBurger/kitchen/grill';
 import lightSwitch from 'entities/circleBurger/kitchen/lightSwitch';
+import knife from 'entities/circleBurger/kitchen/knife';
 
 export class Kitchen extends Scene {
   descriptionMessage() {
@@ -15,7 +16,7 @@ export class Kitchen extends Scene {
     const outBackDoor = new Door(outBack, "Go out back.");
 
     let message;
-    if (state.doom.started && state.doom.progress === 30) {
+    if (state.doom.started && state.doom.progress === 50) {
       message = `
         You enter the kitchen. It is bathed in darkness, for some reason the
         lights are turned off. The <%= entity("lightSwitch") %> is on the wall
@@ -27,14 +28,21 @@ export class Kitchen extends Scene {
         <br>
         In front of you is the <%= entity('fryer') %> and <%= entity('grill') %>.
         Behind you is the <%= entity('prep') %>.
+        <% if (state.doom.started && state.doom.progress == 10 && isInInventory("knife", state.prepInventory)) { %>
+          There's a <%= entity('knife') %> sticking up in the cutting board.
+        <% } %>
         There's a folded note with your name on it sitting on the prep station.
         <br>
-        Around the corner from you is <%= entity("counterDoor", "the counter") %>.
+        <% if (state.doom.started && state.doom.progress == 20 && isInInventory("knife")) { %>
+          There's a customer by <%= entity("counterDoor", "the counter") %> calling to you.
+        <% } else { %>
+          Around the corner from you is <%= entity("counterDoor", "the counter") %>.
+        <% } %>
         The <%= entity("outBackDoor", "back door") %> is behind you.
       `;
     }
 
-    return this.insertEntities(message, {counterDoor, outBackDoor, fryer, prep, grill, lightSwitch});
+    return this.insertEntities(message, {counterDoor, outBackDoor, fryer, prep, grill, lightSwitch, knife});
   }
 }
 

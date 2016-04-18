@@ -11,7 +11,7 @@ export class Arm extends Entity {
       action(
         "Carve.",
         () => {
-          state.doom.progress += 10;
+          state.doom.progress += 10; // Progress: 60
           printMessage(`
             You carve a pentagram on your arm. As you stare blankly at the
             mutilated flesh, you wonder what possesed you to do this to
@@ -19,7 +19,7 @@ export class Arm extends Entity {
           `);
         },
         () => {
-          return state.doom.started && state.doom.progress === 10 &&
+          return state.doom.started && state.doom.progress === 50 &&
             isInInventory("knife");
         }
       )

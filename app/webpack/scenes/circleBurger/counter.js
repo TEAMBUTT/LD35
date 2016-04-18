@@ -5,6 +5,7 @@ import diningArea from './diningArea.js';
 import kitchen from './kitchen.js';
 import Door from 'entities/Door';
 import Customer from 'entities/circleBurger/Customer';
+import scaredCustomer from 'entities/circleBurger/scaredCustomer';
 
 let customers = [
   new Customer({
@@ -50,9 +51,15 @@ export class Counter extends Scene {
 
     const message = `
       The till is in front of you.
-      <% if(customer) { %>
-        <%= entity('customer') %> <%= customer.shortDescription %> is waiting to order.
-        <%= customer.additionalDescription %>
+      <% if (state.doom.started && state.doom.progress === 20) { %>
+        <%= entity("scaredCustomer", "The customer") %> calling to you has a
+        worried look on their face.
+        <br>
+      <% } else { %>
+        <% if(customer) { %>
+          <%= entity('customer') %> <%= customer.shortDescription %> is waiting to order.
+          <%= customer.additionalDescription %>
+        <% } %>
       <% } %>
       Behind the counter
       is the <%= entity("diningAreaDoor", "dining area") %>.
@@ -60,7 +67,7 @@ export class Counter extends Scene {
       Behind you is the way to the <%= entity("kitchenDoor", "kitchen") %>.
     `;
 
-    return this.insertEntities(message, {diningAreaDoor, kitchenDoor, customer});
+    return this.insertEntities(message, {diningAreaDoor, kitchenDoor, customer, scaredCustomer});
   }
 }
 

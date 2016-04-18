@@ -22,7 +22,7 @@ export class ParkingLot extends Scene {
     `;
 
     if (state.doom.started && state.doom.progress === 0) {
-      state.doom.progress += 10;
+      state.doom.progress += 10; // Progress: 10
       message += `
         A man stumbles past you. He doesn't look very well and is mumbling
         something to himself in a language you don't understand. It sounds a
