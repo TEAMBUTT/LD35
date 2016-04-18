@@ -35,7 +35,7 @@ const customers = [
     handle: 'tinfoil',
     desiredItem: 'bacon cheese burger',
     dialog: `Man: I need a bacon cheese burger. Quick! There isn't much time left.`,
-    acceptDialog: "Guy: <i>There'd better be no granola in this.</i>",
+    acceptDialog: "Guy: <i>There'd better be no granola in this. It's the devil's food.</i>",
     leaveTime: moment('2013-01-12 21:00'),
   })
 ];
