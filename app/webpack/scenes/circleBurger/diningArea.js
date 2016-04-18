@@ -30,6 +30,9 @@ export class DiningArea extends Scene {
       <% } else { %>
         A sad-looking <%= entity("olderMan", "older man") %> is sitting without
         any food to your right.
+        <% if (state.doom.started && state.doom.progress === 50) { %>
+          You feel compelled to interact with him.
+        <% } %>
       <% } %>
       <br>
       Some suspicious looking teenagers are seated at the window.
