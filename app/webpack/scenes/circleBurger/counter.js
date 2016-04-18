@@ -33,11 +33,11 @@ let customers = [
     indefiniteArticle: 'A man',
     definiteArticle: 'the man',
     shortDescription: 'wearing a tinfoil hat',
-    additionalDescription: "He's muttering about a way to start the end times.",
+    additionalDescription: "He's muttering about a way to start the end times. Something about ringing and mirrors.",
     handle: 'tinfoil',
     desiredItem: 'bacon cheese burger',
     dialog: `Man: I need a bacon cheese burger. Quick! There isn't much time left.`,
-    acceptDialog: "Guy: <i>Just in time! Thank you.</i>",
+    acceptDialog: "Guy: <i>There'd better be no granola in this.</i>",
   })
 ];
 
