@@ -40,6 +40,7 @@ let state = window.state = {
   // Work entrance
   uprightedSign: false,
   managerBailed: false,
+  doorLocked: false,
 
   // Work bathroom
   sinkClean: false,

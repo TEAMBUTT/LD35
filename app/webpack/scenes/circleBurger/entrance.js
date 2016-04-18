@@ -7,11 +7,12 @@ import state from 'state';
 
 import Door from 'entities/Door';
 import sandwichBoard from 'entities/circleBurger/entrance/sandwichBoard'
+import CircleBurgerDoor from 'entities/circleBurger/Door'
 
 export class Entrance extends Scene {
   descriptionMessage() {
     const parkingLotDoor = new Door(parkingLot, "Go back to your car.");
-    const diningAreaDoor = new Door(diningArea);
+    const diningAreaDoor = new CircleBurgerDoor(diningArea);
 
     const message = `
       You are in standing in front of <%= entity("diningAreaDoor", "the door") %>
