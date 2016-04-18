@@ -43,7 +43,7 @@ export class ManagerLeaving extends Scene {
       <%= entity("entranceDoor", "the entrance") %>.
     `;
 
-    state.managerBailed = true;
+    state.manager.bailed = true;
     state.currentTime.add(15, 'minutes');
 
     return this.insertEntities(message, {entranceDoor});

@@ -20,7 +20,7 @@ export class ParkingLot extends Scene {
     const carDoor = new Door(car, "Get in car.");
     const vanDoor = new Door(van, "Approach the van.");
     const entranceDoor = new Door(
-      state.managerBailed ? entrance : managerLeaving,
+      state.manager.bailed ? entrance : managerLeaving,
       "Walk over."
     );
 
