@@ -26,6 +26,9 @@ let state = window.state = {
     "granolaBar",
   ],
 
+  // Till
+  amountInTill = 15.75,
+
   // Work kitchen items
   prepInventory: [
     "knife",

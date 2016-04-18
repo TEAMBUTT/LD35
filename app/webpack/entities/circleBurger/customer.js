@@ -28,15 +28,15 @@ export class Customer extends Entity {
       actionWithItem("Give fries.", "fries", () => {
         printMessage(`I didn't ask for this`);
         printMessage(`The lady storms off`);
-        state.oldLadyServerd = true;
+        state.oldLadyServed = true;
         state.currentTime.add(5, 'minutes');
       }, state.prepInventory),
 
       actionWithItem("Give burger.", "burger", () => {
         printMessage('Humph. About time.');
-        printMessage('The lady gives pays you for the burger.');
-        addItem('$10');
-        state.oldLadyServerd = true;
+        printMessage('The lady pays for the burger.');
+        state.amountInTill += 8.50;
+        state.oldLadyServed = true;
         state.currentTime.add(5, 'minutes');
       }, state.prepInventory),
     ];
