@@ -22,7 +22,7 @@ export class DiningArea extends Scene {
       <br>
       A family of four is eating to your left.
       <br>
-      <% if (state.customers.olderManFed) { %>
+      <% if (state.olderManFed) { %>
         An <%= entity("olderMan", "older man") %> sits contently to your right.
       <% } else { %>
         A sad-looking <%= entity("olderMan", "older man") %> is sitting without

@@ -1,4 +1,5 @@
 import moment from 'moment';
+import { filter } from 'lodash';
 
 let state = window.state = {
   // Times
@@ -73,8 +74,8 @@ let state = window.state = {
   unreadTexts: 3,
 
   // Customers
+  olderManFed: false,
   customers: {
-    olderManFed: false,
     oldLady: {
       served: false,
       fed: false,
@@ -180,6 +181,25 @@ export function results() {
     if(!state.floorClean) {
       a(-10, "You forgot to clean the Circle Burger floor.");
     }
+  }
+
+  if(state.olderManFed) {
+    a(10, "You gave an older man your Granola Bar. Aren't you nice.");
+  }
+
+  let servedCustomers = filter(state.customers, { served: true })
+  let angryCustomers = filter(state.customers, { angry: true })
+  let fedCustomers = filter(state.customers, { fed: true })
+  let unservedCustomers = filter(state.customers, { served: false })
+
+  if(fedCustomers.length) {
+    a(fedCustomers.length*10, `You fed ${fedCustomers.length} customers.`);
+  }
+  if(angryCustomers.length) {
+    a(-angryCustomers.length*10, `You gave ${angryCustomers.length} customers the wrong item.`);
+  }
+  if(unservedCustomers.length) {
+    a(-20 * unservedCustomers.length, `You didn't serve ${unservedCustomers.length} customers.`);
   }
 
   return results;

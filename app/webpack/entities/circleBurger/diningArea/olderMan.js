@@ -10,7 +10,7 @@ export class OlderMan extends Entity {
       action(
         "Give granola bar.", () => {
           _.remove(state.inventory, (v) => v === "granolaBar");
-          state.customers.olderManFed = true;
+          state.olderManFed = true;
           printMessage("The eldery man takes the granola bar and smiles.");
           state.currentTime.add(15, 'minutes');
         },
