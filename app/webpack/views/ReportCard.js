@@ -1,7 +1,8 @@
 import $ from 'jquery';
 import _ from 'lodash';
 
-import state, { results } from "state";
+import state from "state";
+import calculateResults from "calculateResults";
 
 let template = _.template(`
   <div class="report-card-screen">
@@ -35,6 +36,6 @@ let template = _.template(`
 export default class {
   start() {
     const frame = $('#report');
-    frame.html(template({ results: results() }));
+    frame.html(template({ results: calculateResults() }));
   }
 };
