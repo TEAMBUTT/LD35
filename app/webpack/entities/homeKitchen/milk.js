@@ -12,10 +12,12 @@ export class Milk extends Entity {
         "Consume.", () => {
           removeItem("milk", state.fridgeInventory);
           printMessage("Bleh! Probably shouldn't have drank that.");
+          state.currentTime.add(5, 'minutes');
         }),
       action(
         "Smell.", () => {
           printMessage("It smells odd, but you can't remember what fresh milk smells like.");
+          state.currentTime.add(5, 'minutes');
         }
       )
     ];

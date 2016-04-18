@@ -13,6 +13,7 @@ export class Fridge extends Entity {
       action(
         "Open.",
         () => {
+          state.currentTime.add(5, 'minutes');
           if (state.fridgeInventory.length === 0) {
             printMessage("Your fridge is empty.");
           } else {

@@ -10,6 +10,7 @@ export class Towel extends Entity {
       action(
         "Dry yourself.",
         () => {
+          state.currentTime.add(5, 'minutes');
           if (state.wet) {
             state.wet = false;
             state.bathroomTowel = "damp";

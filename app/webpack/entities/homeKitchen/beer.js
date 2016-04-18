@@ -14,6 +14,7 @@ export class Beer extends Entity {
           removeItem("beer", state.fridgeInventory);
           state.confidence += 5;
           printMessage("Delicious!");
+          state.currentTime.add(15, 'minutes');
         }
       )
     ];

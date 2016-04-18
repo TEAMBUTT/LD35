@@ -16,6 +16,7 @@ export class GarageDoor extends Entity {
         () => {
           state.garageDoorOpen = true;
           printMessage("You open the garage door. It's a nice day out.");
+          state.currentTime.add(5, 'minutes');
         },
         () => !state.garageDoorOpen
       ),
@@ -24,6 +25,7 @@ export class GarageDoor extends Entity {
         () => {
           state.garageDoorOpen = false;
           printMessage("For some reason, you close the garage door again.");
+          state.currentTime.add(5, 'minutes');
         },
         () => state.garageDoorOpen
       )

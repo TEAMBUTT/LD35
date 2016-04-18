@@ -10,7 +10,7 @@ export class Shower extends Entity {
       action(
         'Wash yourself.',
         () => {
-          state.currentTime.add(10, 'minutes');
+          state.currentTime.add(20, 'minutes');
           let message = "";
 
           if (state.showered) {

@@ -26,10 +26,12 @@ export class CellPhone extends Entity {
           } else {
             printMessage(`It is now ${time()}.`)
           }
+          state.currentTime.add(5, 'minutes');
         }
       ),
       action("Check for notifications.", () => {
         printMessage('You have <%= entity("texts") %>', {texts});
+        state.currentTime.add(2, 'minutes');
       })
     ];
   }

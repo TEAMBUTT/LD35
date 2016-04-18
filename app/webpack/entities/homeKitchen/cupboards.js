@@ -12,6 +12,7 @@ export class Cupboards extends Entity {
       action(
         "Open.",
         () => {
+          state.currentTime.add(1, 'minutes');
           if (state.cupboardsInventory.length === 0) {
             printMessage("The cupboards are empty.");
           } else {

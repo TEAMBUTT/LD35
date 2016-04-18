@@ -11,7 +11,7 @@ export class Garbage extends Entity {
         "Take out the trash.",
         () => {
           state.garbageOutside = true;
-          state.currentTime.add(5, 'minutes');
+          state.currentTime.add(10, 'minutes');
 
           let message = "";
 
@@ -23,7 +23,7 @@ export class Garbage extends Entity {
               you're naked.
             `;
           } else if (state.luck < 10) {
-            state.currentTime.add(15, 'minutes');
+            state.currentTime.add(20, 'minutes');
             message += `
               As you're taking out the trash, you run into Mr. Spheroid. He
               heckles you about the state of your lawn. What bad luck!

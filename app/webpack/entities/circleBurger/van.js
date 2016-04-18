@@ -9,8 +9,10 @@ export class Van extends Entity {
     return [
       action(
         "Knock on the window.",
-        () =>
-          printMessage("You see some movement inside the van, but there's no respones.")
+        () => {
+          printMessage("You see some movement inside the van, but there's no respones.");
+          state.currentTime.add(5, 'minutes');
+        }
       )
     ];
   }

@@ -55,6 +55,7 @@ export class Car extends Entity {
           printMessage("Rikatikatikatika Rikatikatikatikatika VRRRRROOOM VROOM.")
           printMessage("The engine sputters into life.")
           state.car.running = true;
+          state.currentTime.add(5, 'minutes');
         },
         () => !state.car.running
       ),
@@ -63,6 +64,7 @@ export class Car extends Entity {
         () => {
           printMessage("You stop the car.")
           state.car.running = false;
+          state.currentTime.add(5, 'minutes');
         },
         () => state.car.running
       )

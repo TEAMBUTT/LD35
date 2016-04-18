@@ -12,6 +12,7 @@ export class Hat extends Entity {
         () => {
           printMessage("You put on the hat.")
           state.wearingHat = true;
+          state.currentTime.add(2, 'minutes');
         },
         () => !state.wearingHat
       )

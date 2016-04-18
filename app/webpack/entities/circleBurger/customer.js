@@ -22,12 +22,14 @@ export class Customer extends Entity {
     return [
       action("Talk.", () => {
         printMessage('Old lady: I want a hamburger.');
+        state.currentTime.add(5, 'minutes');
       }),
 
       actionWithItem("Give fries.", "fries", () => {
         printMessage(`I didn't ask for this`);
         printMessage(`The lady storms off`);
         state.oldLadyServerd = true;
+        state.currentTime.add(5, 'minutes');
       }),
 
       actionWithItem("Give burger.", "burger", () => {
@@ -35,6 +37,7 @@ export class Customer extends Entity {
         printMessage('The lady gives pays you for the burger.');
         addItem('$10');
         state.oldLadyServerd = true;
+        state.currentTime.add(5, 'minutes');
       }),
     ];
   }

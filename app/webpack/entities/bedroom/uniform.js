@@ -24,6 +24,7 @@ export class Uniform extends Entity {
             state.wetUniform = true;
             state.confidence -= 5;
             printMessage("You got it all wet!")
+            state.currentTime.add(10, 'minutes');
           }
         }
       )

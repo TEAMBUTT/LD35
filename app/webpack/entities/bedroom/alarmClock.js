@@ -24,12 +24,16 @@ export class AlarmClock extends Entity {
         () => {
           state.alarmRinging = false;
           printMessage('You turn the alarm clock off.');
+          state.currentTime.add(1, 'minutes');
         },
         () => state.alarmRinging
       ),
       action(
         "Look at the time.",
-        () => { printMessage(`It is now ${time()}. Your shift started at 4pm`) }
+        () => {
+          printMessage(`It is now ${time()}. Your shift started at 4pm`)
+          state.currentTime.add(1, 'minutes');
+        }
       )
     ];
   }

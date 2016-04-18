@@ -13,6 +13,7 @@ export class Fryer extends Entity {
         printMessage(`Delicious fries come out.`);
         removeItem('potato wedges');
         addItem('fries');
+        state.currentTime.add(20, 'minutes');
       }, () => isInInventory("potato wedges"))
     ];
   }
