@@ -17,6 +17,8 @@ export class Shower extends Entity {
             message += "Again?! Okay . . .<br>"
           }
 
+          message += "You take a hot shower. ";
+
           if (state.wearing === "uniform") {
             state.wetUniform = true;
             state.confidence -= 5;

@@ -16,8 +16,8 @@ let customers = [
     additionalDescription: "She's tapping her foot impatiently.",
     handle: 'oldLady',
     desiredItem: 'fries',
-    dialog: "Old lady: <i>I'd like some fries</i>",
-    acceptDialog: "<i>Humph. About time</i>",
+    dialog: "Old lady: <em>I'd like some fries.</em>",
+    acceptDialog: "<em>Humph. About time!</em>",
   }),
 
   new Customer({
@@ -28,7 +28,7 @@ let customers = [
     handle: 'alien',
     desiredItem: 'burger',
     dialog: `Guy: Hello. Could I have a ham... burger?`,
-    acceptDialog: "Guy: <i>Fasinating&hellip;I will take this back to my home planet&hellip;I mean to go.</i>",
+    acceptDialog: "Guy: <em>Fasinating&hellip;I will take this back to my home planet&hellip;I mean to go.</em>",
   }),
 
   new Customer({

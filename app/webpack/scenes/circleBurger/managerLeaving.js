@@ -24,10 +24,10 @@ export class ManagerLeaving extends Scene {
       <br>
       He sounds enormously exhasperated and his hands are shaking.
       <br>
-      "This is your last chance. Get in there help the customers and lock up or you're through.
+      "This is your last chance. Get in there, help the customers, and lock up or you're through."
       <% if(state.wearing == "nothing") { %>
-      <br>&hellip;are&hellip;are you naked?
-      <br>For the love of god get dressed!
+      <br>"&hellip;are&hellip;are you naked?"
+      <br>"For the love of god get dressed!"
       <% } else { %>
         <% if(state.wearing != "uniform") { %>
         <br>"Where's your Uniform?!"

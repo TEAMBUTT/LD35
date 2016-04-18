@@ -33,7 +33,7 @@ export class Customer extends Entity {
   actions() {
     if (state.wearing == "nothing") {
       return [action("Talk.", () => {
-        printMessage(`${capitalize(this.definiteArticle)} seems uncomfirtable with your nudism.`);
+        printMessage(`${capitalize(this.definiteArticle)} seems uncomfortable with your nudism.`);
         state.currentTime.add(5, 'minutes');
       })];
     }
@@ -44,7 +44,7 @@ export class Customer extends Entity {
       })],
       map(foodItems, (item) => {
         return actionWithItem(`Give ${item}.`, item, () => {
-          printMessage(`You give ${this.definiteArticle} the ${item}`);
+          printMessage(`You give ${this.definiteArticle} the ${item}.`);
           if (item == this.desiredItem) {
             printMessage(this.acceptDialog);
             printMessage(`${capitalize(this.definiteArticle)} pays for the ${item}.`);
@@ -53,8 +53,8 @@ export class Customer extends Entity {
             this.state().fed = true;
             state.currentTime.add(5, 'minutes');
           } else {
-            printMessage(`<i>I didn't ask for this, I asked for a ${this.desiredItem}</t>`);
-            printMessage(`${capitalize(this.definiteArticle)} storms off`);
+            printMessage(`<em>I didn't ask for this, I asked for a ${this.desiredItem}!</em>`);
+            printMessage(`${capitalize(this.definiteArticle)} storms off.`);
             this.state().served = true;
             this.state().angry = true;
             state.currentTime.add(5, 'minutes');

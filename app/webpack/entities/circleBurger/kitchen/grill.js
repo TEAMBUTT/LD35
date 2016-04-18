@@ -9,8 +9,8 @@ export class Grill extends Entity {
   actions() {
     return [
       actionWithItem("Grill potato.", "potato wedges", () => {
-        printMessage("HOT POTATO HOT POTATO HOT POTATO");
-        printMessage("You drop the potato");
+        printMessage("HOT POTATO! HOT POTATO! HOT POTATO!");
+        printMessage("You drop the potato.");
         state.currentTime.add(5, 'minutes');
       }, state.prepInventory),
 

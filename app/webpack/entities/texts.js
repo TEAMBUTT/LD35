@@ -18,7 +18,7 @@ export class Texts extends Entity {
       action("Read.", () => {
         state.unreadTexts -= 1;
         printMessage(this.texts()[state.unreadTexts]);
-        printMessage('You have <%= entity("texts") %>', {texts: this});
+        printMessage('You have <%= entity("texts") %>.', {texts: this});
         state.currentTime.add(1, 'minutes');
       }, () => state.unreadTexts )
     ];
