@@ -74,7 +74,16 @@ let state = window.state = {
   // Customers
   customers: {
     olderManFed: false,
-    olderLadyServed: false,
+    oldLady: {
+      served: false,
+      fed: false,
+      angry: false
+    },
+    alien: {
+      served: false,
+      fed: false,
+      angry: false
+    }
   },
 
   // Doom

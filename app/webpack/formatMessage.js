@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import { addMessage } from './messageQueue.js';
-import { each } from 'lodash';
+import { extend, each } from 'lodash';
 import state from './state.js';
 import { isInInventory } from './inventory.js';
 
@@ -12,6 +12,8 @@ export default function formatMessage(message, entities) {
     state: state,
     isInInventory: isInInventory
   };
+
+  extend(helpers, entities);
 
   message = _.template(message)(helpers);
   message = $('<div class="message scene-description">').append(message);
