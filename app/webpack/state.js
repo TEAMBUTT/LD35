@@ -10,6 +10,8 @@ let state = window.state = {
   // Closing
   afterClosingTime: false,
   lockedIn: false,
+  closedEarly: false,
+  closedLate: false,
 
   // Bedroom items
   alarmRinging: true,
@@ -143,6 +145,14 @@ export function results() {
     a(-25, "You locked yourself in the store.");
   } else {
     a(5, "You locked up the store.");
+  }
+
+  if (state.closedEarly) {
+    a(-25, "You closed before closing time. (10:00pm)");
+  } else if (state.closedLate) {
+    a(-25, "You took more than an hour to close up the shop.");
+  } else {
+    a(5, "You closed up at the right time.");
   }
 
   if (state.uprightedSign) {

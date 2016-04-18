@@ -15,9 +15,21 @@ export default class Door extends NormalDoor {
 
       action("Lock the door. (This ends the game. You can't go back.)", () => {
         state.doorLocked = true;
+
         if (this.destination === entrance) {
           state.lockedIn = true;
         }
+
+        if (state.currentTime.isBefore(state.closingTime)) {
+          state.closedEarly = true;
+        }
+
+        if (state.currentTime.isAfter(
+              state.closingTime.clone().add(1, 'hour')
+            )) {
+          state.closedLate = true;
+        }
+
         finish();
       })
     ];
