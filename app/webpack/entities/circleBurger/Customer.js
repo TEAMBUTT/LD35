@@ -3,6 +3,8 @@ import { addItem, removeItem, isInInventory } from 'inventory.js';
 import { capitalize, concat, map, extend } from 'lodash';
 
 let foodItems = [
+  'raw patty',
+  'grilled patty',
   'burger',
   'bacon burger',
   'cheese burger',
