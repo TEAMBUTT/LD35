@@ -22,8 +22,10 @@ export class DiningArea extends Scene {
       <br>
       Ahead of you is <%= entity("counterDoor", "the counter") %>. There's an
       old lady waiting to order.
-      <br>
-      A family of four is eating to your left.
+      <% if (state.currentTime.isBefore(state.familyLeavesTime)) { %>
+        <br>
+        A family of four is eating to your left.
+      <% } %>
       <br>
       <% if (state.olderManFed) { %>
         An <%= entity("olderMan", "older man") %> sits contently to your right.
@@ -34,8 +36,10 @@ export class DiningArea extends Scene {
           You feel compelled to interact with him.
         <% } %>
       <% } %>
-      <br>
-      Some suspicious looking teenagers are seated at the window.
+      <% if (state.currentTime.isBefore(state.teensLeaveTime)) { %>
+        <br>
+        Some suspicious looking teenagers are seated at the window.
+      <% } %>
       <br>
       The <%= entity("entranceDoor", "door to go outside") %> is behind you.
       <br>

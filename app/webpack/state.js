@@ -9,6 +9,8 @@ let state = window.state = {
   closingTime: moment('2013-01-12 22:00'),
   currentTime: moment('2013-01-12 16:30'),
   lightsOutTime: false,
+  familyLeavesTime: moment('2013-01-12 20:30'),
+  teensLeaveTime: moment('2013-01-12 21:15'),
 
   // Closing
   afterClosingTime: false,
@@ -115,6 +117,8 @@ export function updateState(newState){
     shiftStartTime: moment(state.shiftStartTime),
     closingTime: moment(state.closingTime),
     currentTime: moment(state.currentTime),
+    familyLeavesTime: moment(state.familyLeavesTime),
+    teensLeaveTime: moment(state.teensLeaveTime),
     lightsOutTime: state.lightsOutTime ? moment(state.lightsOutTime) : state.lightsOutTime
   });
 };
