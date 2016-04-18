@@ -16,6 +16,10 @@ export class OlderMan extends Entity {
               The eldery man won't take the granola bar. His eyes fixated on
               your arm.
             `);
+            printMessage(`
+              As you turn away, you hear a strange noise coming from the back
+              of the restaurant.
+            `);
           } else {
             removeItem("granolaBar");
             state.customers.olderManFed = true;
