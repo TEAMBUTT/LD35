@@ -140,7 +140,7 @@ export function results() {
   }
 
   if (state.lockedIn) {
-    a(-5, "You locked yourself in the store.");
+    a(-25, "You locked yourself in the store.");
   } else {
     a(5, "You locked up the store.");
   }
