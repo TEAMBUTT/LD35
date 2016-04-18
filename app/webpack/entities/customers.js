@@ -1,4 +1,5 @@
 import { find } from 'lodash';
+import moment from 'moment';
 import Customer from 'entities/circleBurger/Customer';
 
 const customers = [
@@ -11,6 +12,7 @@ const customers = [
     desiredItem: 'fries',
     dialog: "Old lady: <em>I'd like some fries.</em>",
     acceptDialog: "<em>Humph. About time!</em>",
+    leaveTime: moment('2013-01-12 20:00'),
   }),
 
   new Customer({
@@ -22,6 +24,7 @@ const customers = [
     desiredItem: 'burger',
     dialog: `Guy: Hello. Could I have a ham... burger?`,
     acceptDialog: "Guy: <em>Fasinating&hellip;I will take this back to my home planet&hellip;I mean to go.</em>",
+    leaveTime: moment('2013-01-12 21:30'),
   }),
 
   new Customer({
@@ -33,9 +36,10 @@ const customers = [
     desiredItem: 'bacon cheese burger',
     dialog: `Man: I need a bacon cheese burger. Quick! There isn't much time left.`,
     acceptDialog: "Guy: <i>There'd better be no granola in this.</i>",
+    leaveTime: moment('2013-01-12 21:00'),
   })
 ];
 
 export function nextCustomer() {
-  return find(customers, (customer) => !customer.hasBeenServed());
+  return find(customers, (customer) => customer.isInLine());
 }

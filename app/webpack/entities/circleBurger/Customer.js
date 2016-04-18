@@ -30,6 +30,10 @@ export class Customer extends Entity {
     return this.state().served;
   }
 
+  isInLine() {
+    return !this.hasBeenServed() && state.currentTime.isBefore(this.leaveTime);
+  }
+
   actions() {
     if (state.wearing == "nothing") {
       return [action("Talk.", () => {
