@@ -24,8 +24,7 @@ export class ManagerLeaving extends Scene {
       <br>
       He sounds enormously exhasperated and his hands are shaking.
       <br>
-      "This is your last chance. Get in there and help that lady that I left at
-      the counter!"
+      "This is your last chance. Get in there help the customers and lock up or you're through.
       <% if(state.wearing != "uniform") { %>
       <br>"Where's your Uniform?!"
       <% } %>
