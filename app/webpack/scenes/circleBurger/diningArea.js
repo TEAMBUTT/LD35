@@ -9,6 +9,7 @@ import CircleBurgerDoor from 'entities/circleBurger/Door'
 import doomDoor from 'entities/circleBurger/diningArea/doomDoor'
 import olderMan from 'entities/circleBurger/diningArea/olderMan'
 import OpenSign from 'entities/circleBurger/OpenSign'
+import { nextCustomer } from 'entities/customers';
 
 export class DiningArea extends Scene {
   name(){ return "DiningArea"; }
@@ -16,13 +17,16 @@ export class DiningArea extends Scene {
     const entranceDoor = new CircleBurgerDoor(entrance, "Leave the Circle Burger.");
     const bathroomDoor = new Door(bathroom);
     const counterDoor = new Door(counter, "Walk around.");
-    const openSign = new OpenSign(true)
+    const openSign = new OpenSign(true);
+    let customer = nextCustomer();
 
     const message = `
       You are standing in the dining area.
       <br>
-      Ahead of you is <%= entity("counterDoor", "the counter") %>. There's an
-      old lady waiting to order.
+      Ahead of you is <%= entity("counterDoor", "the counter") %>.
+      <% if(customer) { %>
+        There's <%= customer.indefiniteArticle.toLowerCase() %> waiting to order.
+      <% } %>
       <% if (state.currentTime.isBefore(state.familyLeavesTime)) { %>
         <br>
         A family of four is eating to your left.
@@ -60,7 +64,8 @@ export class DiningArea extends Scene {
       bathroomDoor,
       counterDoor,
       doomDoor,
-      openSign
+      openSign,
+      customer
     });
   }
 }

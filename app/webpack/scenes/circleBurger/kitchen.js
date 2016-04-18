@@ -10,12 +10,14 @@ import clock from 'entities/circleBurger/kitchen/clock';
 import grill from 'entities/circleBurger/kitchen/grill';
 import lightSwitch from 'entities/circleBurger/kitchen/lightSwitch';
 import knife from 'entities/circleBurger/kitchen/knife';
+import { nextCustomer } from 'entities/customers';
 
 export class Kitchen extends Scene {
   name(){ return "Kitchen"; }
   descriptionMessage() {
     const counterDoor = new Door(counter, "Walk over.");
     const outBackDoor = new Door(outBack, "Go out back.");
+    const customer = nextCustomer();
 
     let message;
     if (state.doom.started && state.doom.progress === 50) {
@@ -40,6 +42,8 @@ export class Kitchen extends Scene {
         <br>
         <% if (state.doom.started && state.doom.progress == 20 && isInInventory("knife")) { %>
           There's a customer by <%= entity("counterDoor", "the counter") %> calling to you.
+        <% } else if(customer) { %>
+          There's <%= customer.indefiniteArticle.toLowerCase() %> waiting to order at <%= entity("counterDoor", "the counter") %>.
         <% } else { %>
           Around the corner from you is <%= entity("counterDoor", "the counter") %>.
         <% } %>
@@ -55,7 +59,8 @@ export class Kitchen extends Scene {
       grill,
       lightSwitch,
       knife,
-      clock
+      clock,
+      customer
     });
   }
 }
