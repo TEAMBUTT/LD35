@@ -10,14 +10,14 @@ let template = _.template(`
 
 export default class {
   start() {
-    const frame = $('#game');
+    const frame = $('.main-content');
 
     // TODO: remove this when we actually want to have an intro
     return Promise.resolve();
 
     return new Promise((resolve, reject) => {
       frame.html(this.html('The second game by butt.team'));
-      setTimeout(() => frame.html(this.html('A Shift at the Circle Burger')), 2000);
+      setTimeout(() => frame.html(this.html('Shift at the Circle Burger')), 2000);
       setTimeout(() => {
         frame.empty();
         resolve();
