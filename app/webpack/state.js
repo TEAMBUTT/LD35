@@ -32,6 +32,7 @@ let state = window.state = {
 
   // Till
   amountInTill: 15.75,
+  amountStolen: 0.00,
 
   // Work kitchen items
   foodSafe: true,
@@ -220,6 +221,11 @@ export function results() {
   }
   if(unservedCustomers.length) {
     a(-20 * unservedCustomers.length, `You didn't serve ${unservedCustomers.length} customers.`);
+  }
+
+  if(state.amountStolen > 0.00) {
+    a(state.amountStolen*100, `You "found" $${state.amountStolen.toFixed(2)}. Sweet!`);
+    a(-state.amountStolen*100, `$${state.amountStolen.toFixed(2)} was missing from the till. That's coming out of your paycheck.`);
   }
 
   return results;
