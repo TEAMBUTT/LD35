@@ -20,7 +20,7 @@ export default class Door extends NormalDoor {
           state.lockedIn = true;
         }
 
-        if (state.currentTime.isBefore(state.closingTime)) {
+        if (state.currentTime.isBefore(state.closingTime.clone().subtract(5, 'minutes'))) {
           state.closedEarly = true;
         }
 
