@@ -9,11 +9,11 @@ import state from 'state';
 
 export class ParkingLot extends Scene {
   onEnter() {
-    super();
+    super.onEnter();
     if(state.wearing == "nothing") {
       state.publicIndecency = true;
     }
-  },
+  }
 
   descriptionMessage() {
     const carDoor = new Door(car, "Get in car.");
