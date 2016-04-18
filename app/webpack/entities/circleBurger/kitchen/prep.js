@@ -1,4 +1,4 @@
-import Entity, { printMessage, action, time, state } from "Entity.js";
+import Entity, { printMessage, action, actionWithItem, time, state } from "Entity.js";
 import { addItem, removeItem, transferItem, isInInventory } from 'inventory.js';
 
 export class Prep extends Entity {
@@ -22,11 +22,10 @@ export class Prep extends Entity {
         printMessage("You grab a raw patty");
         addItem("raw patty", state.prepInventory);
       }),
-      action("Assemble burger.", () => {
+      actionWithItem("Assemble burger.", "grilled patty", () => {
         printMessage("You make a burger from the grilled patty and a bun. Order up!");
-        removeItem("grilled patty", state.prepInventory)
         addItem("burger", state.prepInventory)
-      }, () => isInInventory("grilled patty"), state.prepInventory),
+      }, state.prepInventory),
       action(
         "Take the knife.",
         () => {

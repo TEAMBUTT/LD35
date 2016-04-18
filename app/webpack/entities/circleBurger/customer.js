@@ -30,7 +30,7 @@ export class Customer extends Entity {
         printMessage(`The lady storms off`);
         state.oldLadyServerd = true;
         state.currentTime.add(5, 'minutes');
-      }),
+      }, state.prepInventory),
 
       actionWithItem("Give burger.", "burger", () => {
         printMessage('Humph. About time.');
@@ -38,7 +38,7 @@ export class Customer extends Entity {
         addItem('$10');
         state.oldLadyServerd = true;
         state.currentTime.add(5, 'minutes');
-      }),
+      }, state.prepInventory),
     ];
   }
 }

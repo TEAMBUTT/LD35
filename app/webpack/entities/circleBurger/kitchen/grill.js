@@ -18,7 +18,7 @@ export class Grill extends Entity {
         printMessage("You grill a patty.");
         addItem("grilled patty", state.prepInventory);
         state.currentTime.add(15, 'minutes');
-      })
+      }, state.prepInventory)
     ];
   }
 }
