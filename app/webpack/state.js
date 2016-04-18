@@ -12,6 +12,7 @@ let state = window.state = {
   lockedIn: false,
   closedEarly: false,
   closedLate: false,
+  openSignOn: true,
 
   // Bedroom items
   alarmRinging: true,

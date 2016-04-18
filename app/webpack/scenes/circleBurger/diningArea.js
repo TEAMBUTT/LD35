@@ -7,12 +7,14 @@ import counter from './counter.js';
 import Door from 'entities/Door';
 import CircleBurgerDoor from 'entities/circleBurger/Door'
 import olderMan from 'entities/circleBurger/diningArea/olderMan'
+import OpenSign from 'entities/circleBurger/OpenSign'
 
 export class DiningArea extends Scene {
   descriptionMessage() {
     const entranceDoor = new CircleBurgerDoor(entrance, "Leave the Circle Burger.");
     const bathroomDoor = new Door(bathroom);
     const counterDoor = new Door(counter, "Walk around.");
+    const openSign = new OpenSign(true)
 
     const message = `
       You are standing in the dining area.
@@ -34,9 +36,17 @@ export class DiningArea extends Scene {
       The <%= entity("entranceDoor", "door to go outside") %> is behind you.
       <br>
       You can see the <%= entity("bathroomDoor", "bathroom door") %> from here.
+      <br>
+      The <%= entity("openSign") %> is accessible from here.
     `;
 
-    return this.insertEntities(message, {entranceDoor, olderMan, bathroomDoor, counterDoor});
+    return this.insertEntities(message, {
+      entranceDoor,
+      olderMan,
+      bathroomDoor,
+      counterDoor,
+      openSign
+    });
   }
 }
 
