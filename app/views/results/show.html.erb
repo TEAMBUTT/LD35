@@ -13,5 +13,7 @@
   </a>
 </div>
 
-<%= javascript_tag @result.state.to_json, class: 'js-result-state', type: 'application/json' %>
-<%= javascript_include_tag 'results' %>
+<% content_for :footer_js do %>
+  <%= javascript_tag @result.state.to_json, class: 'js-result-state', type: 'application/json' %>
+  <%= javascript_include_tag 'results' %>
+<% end %>
