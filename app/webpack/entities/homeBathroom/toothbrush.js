@@ -17,10 +17,7 @@ export class Toothbrush extends Entity {
       action(
         "Brush your teeth.",
         () => {
-          state.nastyBreath = false
-          state.confidence += 5;
-          printMessage('Your breath is now minty fresh. Take that, gingivitis!');
-          state.currentTime.add(10, 'minutes');
+          printMessage('No time! Do it on your way to work.');
         }
       )
     ];

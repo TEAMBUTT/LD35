@@ -1,5 +1,5 @@
 import Entity, { printMessage, action, time, state } from "Entity";
-import { isInInventory } from 'inventory';
+import { isInInventory, removeItem, addItem } from 'inventory';
 
 export class Toilet extends Entity {
   name() {
@@ -20,6 +20,8 @@ export class Toilet extends Entity {
         if(isInInventory("toothbrush")) {
           state.toiletVeryClean = true;
           printMessage('You use the toothbrush to really scrub it clean.');
+          removeItem('toothbrush')
+          addItem('dirty toothbrush')
         }
       }),
       action("Wash hands.", () => {
