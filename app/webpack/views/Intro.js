@@ -17,7 +17,7 @@ export default class {
 
     return new Promise((resolve, reject) => {
       frame.html(this.html('The second game by butt.team'));
-      setTimeout(() => frame.html(this.html('Work Shift')), 2000);
+      setTimeout(() => frame.html(this.html('A Shift at the Circle Burger')), 2000);
       setTimeout(() => {
         frame.empty();
         resolve();
