@@ -6,6 +6,7 @@ let state = window.state = {
   shiftStartTime: moment('2013-01-12 16:00'),
   closingTime: moment('2013-01-12 22:00'),
   currentTime: moment('2013-01-12 16:30'),
+  lightsOutTime: false,
 
   // Closing
   afterClosingTime: false,

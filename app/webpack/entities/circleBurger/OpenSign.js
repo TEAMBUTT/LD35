@@ -30,6 +30,13 @@ export default class OpenSign extends Entity {
           state.openSignOn = false;
         },
         () => accessible && state.openSignOn
+      ),
+      action(
+        "Turn it on.", () => {
+          printMessage("You flick the switch a few times but nothing happens.");
+          printMessage("It must be broken.");
+        },
+        () => accessible && !state.openSignOn
       )
     ];
   }
