@@ -12,8 +12,9 @@ export default class {
   start() {
     const frame = $('.main-content');
 
-    // TODO: remove this when we actually want to have an intro
-    return Promise.resolve();
+    if($('html').data('environment') == 'development') {
+      return Promise.resolve();
+    }
 
     return new Promise((resolve, reject) => {
       frame.html(this.html('The second game by butt.team'));
