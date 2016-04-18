@@ -33,6 +33,7 @@ class Entity {
       const $action = $(`<div class="action-label">${action.label}</div>`);
 
       $action.on('click', () => {
+        ga('send', 'event', 'Action', 'click', `${text} - ${action.label}`);
         action.callback();
         renderCurrentScene();
       });

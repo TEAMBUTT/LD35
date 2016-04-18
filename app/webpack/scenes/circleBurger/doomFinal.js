@@ -3,6 +3,7 @@ import Scene from 'Scene';
 import mysteriousMan from "entities/circleBurger/mysteriousMan";
 
 export class DoomFinal extends Scene {
+  name(){ return "DoomFinal"; }
   descriptionMessage() {
     const message = `
       You are standing in the dining area.

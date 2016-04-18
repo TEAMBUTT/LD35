@@ -7,6 +7,7 @@ import state from 'state';
 import Door from 'entities/Door';
 
 export class Van extends Scene {
+  name(){ return "Van"; }
   descriptionMessage() {
     const parkingLotDoor = new Door(parkingLot, "Walk back to your car.");
 

@@ -13,6 +13,7 @@ import Door from 'entities/Door';
 import state from 'state';
 
 export class Bedroom extends Scene {
+  name(){ return "Bedroom"; }
   descriptionMessage() {
     const bedroomDoor = new Door(homeHallway);
     const message = `

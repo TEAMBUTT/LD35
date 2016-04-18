@@ -12,6 +12,7 @@ import lightSwitch from 'entities/circleBurger/kitchen/lightSwitch';
 import knife from 'entities/circleBurger/kitchen/knife';
 
 export class Kitchen extends Scene {
+  name(){ return "Kitchen"; }
   descriptionMessage() {
     const counterDoor = new Door(counter, "Walk over.");
     const outBackDoor = new Door(outBack, "Go out back.");

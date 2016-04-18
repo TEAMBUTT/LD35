@@ -44,6 +44,7 @@ let customers = [
 ];
 
 export class Counter extends Scene {
+  name(){ return "Counter"; }
   descriptionMessage() {
     const diningAreaDoor = new Door(diningArea, "Walk over.");
     const kitchenDoor = new Door(kitchen, "Walk back.");

@@ -8,6 +8,7 @@ import garage from 'scenes/garage';
 import Door from 'entities/Door';
 
 export class HomeHallway extends Scene {
+  name(){ return "HomeHallway"; }
   descriptionMessage() {
     const bedroomDoor = new Door(bedroom);
     const bathroomDoor = new Door(bathroom);

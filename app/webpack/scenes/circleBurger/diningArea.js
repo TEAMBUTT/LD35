@@ -11,6 +11,7 @@ import olderMan from 'entities/circleBurger/diningArea/olderMan'
 import OpenSign from 'entities/circleBurger/OpenSign'
 
 export class DiningArea extends Scene {
+  name(){ return "DiningArea"; }
   descriptionMessage() {
     const entranceDoor = new CircleBurgerDoor(entrance, "Leave the Circle Burger.");
     const bathroomDoor = new Door(bathroom);

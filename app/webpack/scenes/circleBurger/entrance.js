@@ -11,6 +11,7 @@ import OpenSign from 'entities/circleBurger/OpenSign'
 import CircleBurgerDoor from 'entities/circleBurger/Door'
 
 export class Entrance extends Scene {
+  name(){ return "Entrance"; }
   descriptionMessage() {
     const parkingLotDoor = new Door(parkingLot, "Go back to your car.");
     const diningAreaDoor = new CircleBurgerDoor(diningArea);

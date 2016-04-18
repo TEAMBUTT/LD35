@@ -7,6 +7,7 @@ import body from "entities/circleBurger/dumpster/body";
 import doomDoor from "entities/circleBurger/dumpster/doomDoor";
 
 export class Dumpster extends Scene {
+  name(){ return "Dumpster"; }
   descriptionMessage() {
     let message;
 

@@ -7,6 +7,7 @@ import car from 'entities/car';
 import state from 'state';
 
 export class Car extends Scene {
+  name(){ return "Car"; }
   descriptionMessage() {
     const carDoor = new Door(
       state.car.atWork ? parkingLot : garage,

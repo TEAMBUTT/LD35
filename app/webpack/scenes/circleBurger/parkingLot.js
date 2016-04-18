@@ -8,6 +8,7 @@ import Door from 'entities/Door';
 import state from 'state';
 
 export class ParkingLot extends Scene {
+  name(){ return "ParkingLot"; }
   onEnter() {
     super.onEnter();
     if(state.wearing == "nothing") {

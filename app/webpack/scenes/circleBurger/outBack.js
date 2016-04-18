@@ -5,6 +5,7 @@ import dumpster from "scenes/circleBurger/dumpster";
 import Door from 'entities/Door';
 
 export class OutBack extends Scene {
+  name(){ return "OutBack"; }
   descriptionMessage() {
     const kitchenDoor = new Door(kitchen, "Go back inside.");
     const dumpsterDoor = new Door(dumpster, "Approach.");

@@ -10,6 +10,7 @@ import Door from '../../entities/Door.js';
 import entrance from './entrance.js';
 
 export class ManagerLeaving extends Scene {
+  name(){ return "ManagerLeaving"; }
   descriptionMessage() {
     const entranceDoor = new Door(entrance, "Walk over.");
 

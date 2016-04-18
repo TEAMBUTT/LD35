@@ -11,6 +11,7 @@ import fridge from 'entities/homeKitchen/fridge';
 import cupboards from 'entities/homeKitchen/cupboards';
 
 export class HomeKitchen extends Scene {
+  name(){ return "HomeKitchen"; }
   descriptionMessage() {
     const hallwayDoor = new Door(homeHallway);
     const message = `

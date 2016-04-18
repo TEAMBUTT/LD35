@@ -9,6 +9,7 @@ import floor from 'entities/circleBurger/bathroom/floor';
 import mirror from 'entities/circleBurger/bathroom/mirror';
 
 export class Bathroom extends Scene {
+  name(){ return "Bathroom"; }
   descriptionMessage() {
     const diningAreaDoor = new Door(diningArea, "Leave room.");
 

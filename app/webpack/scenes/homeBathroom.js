@@ -11,6 +11,7 @@ import towel from 'entities/homeBathroom/towel';
 import toothbrush from 'entities/homeBathroom/toothbrush';
 
 export class HomeBathroom extends Scene {
+  name(){ return "HomeBathroom"; }
   descriptionMessage() {
     const bathroomDoor = new Door(homeHallway);
     const message = `
