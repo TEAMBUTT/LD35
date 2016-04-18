@@ -1,4 +1,4 @@
-import { filter } from 'lodash';
+import { includes, filter } from 'lodash';
 
 export default function calculateResults() {
   let results = [];
@@ -53,6 +53,14 @@ export default function calculateResults() {
     }
   } else {
     a(-25, "You left the open sign on.");
+  }
+
+  if (!state.fridgeInventory.length) {
+    a(-25, "You drank rancid milk and a beer before work. You felt sick all shift.");
+  } else if (includes(state.fridgeInventory, 'milk')) {
+    a(-5, "You had a beer right before work.");
+  } else if (includes(state.fridgeInventory, 'beer')) {
+    a(-10, "You drank rancid milk.");
   }
 
   if (state.lockedIn) {
