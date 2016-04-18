@@ -17,7 +17,7 @@ export class Floor extends Entity {
         state.currentTime.add(5, 'minutes');
       }),
       action("Pee.", () => {
-        printMessage('You... pee on the floor.');
+        printMessage('You&hellip;pee on the floor.');
         printMessage('Gross. The floor is covered in pee.');
         state.floorClean = false;
         state.currentTime.add(5, 'minutes');

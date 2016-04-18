@@ -26,7 +26,7 @@ export class ManagerLeaving extends Scene {
       <br>
       "This is your last chance. Get in there help the customers and lock up or you're through.
       <% if(state.wearing == "nothing") { %>
-      <br>..are.... are you naked?
+      <br>&hellip;are&hellip;are you naked?
       <br>For the love of god get dressed!
       <% } else { %>
         <% if(state.wearing != "uniform") { %>

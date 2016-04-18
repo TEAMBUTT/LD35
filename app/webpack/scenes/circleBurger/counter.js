@@ -28,7 +28,7 @@ let customers = [
     handle: 'alien',
     desiredItem: 'burger',
     dialog: `Guy: Hello. Could I have a ham... burger?`,
-    acceptDialog: "Guy: <i>Fasinating... I will take this back to my home planet.... I mean to go.</i>",
+    acceptDialog: "Guy: <i>Fasinating&hellip;I will take this back to my home planet&hellip;I mean to go.</i>",
   }),
 
   new Customer({

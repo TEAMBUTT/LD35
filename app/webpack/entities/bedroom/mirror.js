@@ -27,7 +27,7 @@ export class Mirror extends Entity {
       action(
         "Talk.",
         () => {
-          printMessage("Mirror mirror on the wall...<br/>It isn't that kind of mirror.");
+          printMessage("Mirror mirror on the wall&hellip;<br/>It isn't that kind of mirror.");
           state.currentTime.add(5, 'minutes');
         }
       ),
