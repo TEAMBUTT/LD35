@@ -39,6 +39,10 @@ export default function calculateResults() {
     a(-5, "You forgot your hat at home.");
   }
 
+  if (state.lightsOutTime.isBefore(state.closingTime.clone().minus(5, 'minutes'))) {
+    a(-25, "You turned the open sign off too early.");
+  }
+
   if (state.lockedIn) {
     if (state.closedEarly) {
       a(-50, "You locked up early, with you and a few customers still inside.");

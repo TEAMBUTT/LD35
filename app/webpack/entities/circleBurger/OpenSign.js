@@ -28,6 +28,7 @@ export default class OpenSign extends Entity {
           printMessage("You hit the switch on the back of the sign.");
           printMessage("The sign flickers off.");
           state.openSignOn = false;
+          state.lightsOutTime = state.currentTime.clone();
         },
         () => accessible && state.openSignOn
       ),
