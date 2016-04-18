@@ -34,6 +34,7 @@ module LudumButts
 
     config.assets.precompile += %w( results.js game.js )
 
+    config.action_dispatch.perform_deep_munge = false
     config.action_dispatch.default_headers = { 'X-Frame-Options' => 'ALLOWALL' }
   end
 end
