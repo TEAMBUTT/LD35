@@ -28,7 +28,7 @@ export class OlderMan extends Entity {
           state.currentTime.add(15, 'minutes');
         },
         () => {
-          if (state.doom.started {
+          if (state.doom.started) {
             return state.doom.progress === 50;
           } else {
             return isInInventory("granolaBar");
