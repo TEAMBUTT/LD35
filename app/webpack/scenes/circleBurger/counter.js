@@ -7,6 +7,7 @@ import Door from 'entities/Door';
 import Customer from 'entities/circleBurger/Customer';
 import scaredCustomer from 'entities/circleBurger/scaredCustomer';
 import till from 'entities/circleBurger/till';
+import clock from 'entities/circleBurger/kitchen/clock';
 import { nextCustomer } from 'entities/customers';
 
 export class Counter extends Scene {
@@ -29,13 +30,17 @@ export class Counter extends Scene {
           <%= customer.additionalDescription %>
         <% } %>
       <% } %>
+      <br/>
       Behind the counter
       is the <%= entity("diningAreaDoor", "dining area") %>.
+      <br>
+      The <%= entity("clock") %> on the wall says it is
+      <%= state.currentTime.format("hh:mm a") %>.
       <br>
       Behind you is the way to the <%= entity("kitchenDoor", "kitchen") %>.
     `;
 
-    return this.insertEntities(message, {diningAreaDoor, kitchenDoor, customer, scaredCustomer, till});
+    return this.insertEntities(message, {diningAreaDoor, kitchenDoor, customer, scaredCustomer, till, clock});
   }
 }
 
