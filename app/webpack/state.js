@@ -142,17 +142,22 @@ export function results() {
   }
 
   if (state.lockedIn) {
-    a(-25, "You locked yourself in the store.");
+    if (state.closedEarly) {
+      a(-50, "You locked up early, with you and a few customers still inside.");
+    } else if (state.closedLate) {
+      a(-25, "You took more than an hour to close up the shop.");
+      a(-25, "You locked yourself inside the shop.");
+    } else {
+      a(-25, "You locked up on time, but you were still in the shop.");
+    }
   } else {
-    a(5, "You locked up the store.");
-  }
-
-  if (state.closedEarly) {
-    a(-25, "You closed before closing time. (10:00pm)");
-  } else if (state.closedLate) {
-    a(-25, "You took more than an hour to close up the shop.");
-  } else {
-    a(5, "You closed up at the right time.");
+    if (state.closedEarly) {
+      a(-25, "You locked up early, while customers were still inside.");
+    } else if (state.closedLate) {
+      a(-25, "You took more than an hour to close up the shop.");
+    } else {
+      a(5, "You closed up at the right time.");
+    }
   }
 
   if (state.uprightedSign) {
