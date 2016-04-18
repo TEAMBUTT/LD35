@@ -16,6 +16,10 @@
   font-weight: normal;
   z-index: $z-index-tooltips;
 
+  @media only screen and (max-width: 640px) {
+    width: 80vw;
+  }
+
   &:not(.open) {
     display: none;
   }
