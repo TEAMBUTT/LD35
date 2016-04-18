@@ -10,6 +10,9 @@ export class Fryer extends Entity {
     return [
       actionWithItem("Fry potato wedges.", "potato wedges", () => {
         printMessage(`You put the potato wedges in the ${this.name()}.`);
+        if(state.wearing == "nothing") {
+          printMessage("You strongly regret being naked.");
+        }
         printMessage(`Delicious fries come out.`);
         addItem('fries', state.prepInventory);
         state.currentTime.add(20, 'minutes');

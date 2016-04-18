@@ -29,6 +29,12 @@ export class Customer extends Entity {
   }
 
   actions() {
+    if (state.wearing == "nothing") {
+      return [action("Talk.", () => {
+        printMessage(`${capitalize(this.definiteArticle)} seems uncomfirtable with your nudism.`);
+        state.currentTime.add(5, 'minutes');
+      })];
+    }
     return concat([
       action("Talk.", () => {
         printMessage(this.dialog);
