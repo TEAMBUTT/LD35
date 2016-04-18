@@ -26,7 +26,12 @@ export class HomeKitchen extends Scene {
       <br>
       The <%= entity("hallwayDoor", "door back to the hallway") %> is behind you.
       <% if (!isInInventory("cellphone")) { %>
-        <%= entity("cellPhone", "Your cellphone") %> is on the counter.
+        <%= entity("cellPhone", "Your cellphone") %>
+        <% if (state.mirrorSmashed && state.alarmRinging && isInInventory("granolaBar") && !state.doom.started) { %>
+          glows an eerie red.
+        <% } else { %>
+          is on the counter.
+        <% } %>
       <% } %>
     `;
 
