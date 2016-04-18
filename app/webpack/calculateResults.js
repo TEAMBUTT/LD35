@@ -143,7 +143,9 @@ export default function calculateResults() {
   if(angryCustomers.length) {
     a(-angryCustomers.length*10, `You gave ${angryCustomers.length} customers the wrong item.`);
   }
-  if(unservedCustomers.length) {
+  if(!servedCustomers.length) {
+    a(-20 * unservedCustomers.length, `You didn't serve any customers.`);
+  } else if(unservedCustomers.length) {
     a(-20 * unservedCustomers.length, `You didn't serve ${unservedCustomers.length} customers.`);
   }
 
