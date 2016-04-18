@@ -30,5 +30,15 @@
   color: $color-accent-primary;
   font-weight: bold;
   text-decoration: none;
-}
 
+  .red-glow > & {
+    @include animation(glow 1s infinite alternate);
+    color: $color-red;
+
+    @include keyframes(glow) {
+      to {
+        text-shadow: -1px 1px 16px lighten($color-red, 5);
+      }
+    }
+  }
+}

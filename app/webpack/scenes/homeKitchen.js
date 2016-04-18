@@ -1,6 +1,7 @@
 import $ from 'jquery';
 
 import Scene from 'Scene';
+import { isInInventory } from "inventory";
 import bedroom from 'scenes/bedroom';
 import homeHallway from 'scenes/homeHallway';
 
@@ -14,6 +15,9 @@ export class HomeKitchen extends Scene {
   name(){ return "HomeKitchen"; }
   descriptionMessage() {
     const hallwayDoor = new Door(homeHallway);
+    const phoneGlowing = state.mirrorSmashed && state.alarmRinging &&
+      isInInventory("granolaBar") && !state.doom.started;
+
     const message = `
       You are in the kitchen. It smells
       <% if (state.garbageOutside) { %>
@@ -27,16 +31,18 @@ export class HomeKitchen extends Scene {
       <br>
       The <%= entity("hallwayDoor", "door back to the hallway") %> is behind you.
       <% if (!isInInventory("cellphone")) { %>
-        <%= entity("cellPhone", "Your cellphone") %>
-        <% if (state.mirrorSmashed && state.alarmRinging && isInInventory("granolaBar") && !state.doom.started) { %>
+        <% if (phoneGlowing) { %>
+          <span class="red-glow">
+            <%= entity("cellPhone", "Your cellphone") %>
+          </span>
           glows an eerie red.
         <% } else { %>
-          is on the counter.
+          <%= entity("cellPhone", "Your cellphone") %> is on the counter.
         <% } %>
       <% } %>
     `;
 
-    return this.insertEntities(message, {garbage, fridge, cupboards, hallwayDoor, cellPhone});
+    return this.insertEntities(message, {garbage, fridge, cupboards, hallwayDoor, cellPhone, phoneGlowing});
   }
 }
 
