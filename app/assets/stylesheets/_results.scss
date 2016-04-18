@@ -17,6 +17,12 @@
   }
 }
 
+.results-total-score {
+  &.doom {
+    font-size: 48px;
+  }
+}
+
 .play-again {
   color: $color-accent-primary;
   font-weight: bold;
