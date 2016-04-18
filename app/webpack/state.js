@@ -8,6 +8,7 @@ let state = window.state = {
 
   // Closing
   afterClosingTime: false,
+  lockedIn: false,
 
   // Bedroom items
   alarmRinging: true,
