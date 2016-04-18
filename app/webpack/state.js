@@ -2,6 +2,8 @@ import moment from 'moment';
 import {extend} from 'lodash';
 
 let state = window.state = {
+  finished: false,
+
   // Times
   shiftStartTime: moment('2013-01-12 16:00'),
   closingTime: moment('2013-01-12 22:00'),

@@ -1,6 +1,7 @@
 import { addMessage } from './messageQueue.js';
 import $ from 'jquery';
 
+import state from 'state';
 import bedroom from './scenes/bedroom.js';
 import car from './scenes/car.js';
 import garage from './scenes/garage.js';
@@ -50,8 +51,10 @@ export function changeScene(scene) {
 }
 
 export function renderCurrentScene() {
-  addMessage(getCurrentScene().descriptionMessage());
+  if(!state.finished) {
+    addMessage(getCurrentScene().descriptionMessage());
+  }
 
   /* I'm sorry. I blame Jared. */
-  $('.message-box :not(.disabled)').addClass('to-hide')
+  $('.message-box .message:not(.disabled)').addClass('to-hide')
 }

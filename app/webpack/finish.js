@@ -1,7 +1,13 @@
 import $ from 'jquery';
 import state from 'state';
 
+function finished() {
+  return state.finished;
+}
+
 function finish() {
+  state.finished = true;
+
   $.ajax({
     method: "POST",
     url: "/results",
