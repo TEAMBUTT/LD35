@@ -10,6 +10,7 @@ export class SandwichBoard extends Entity {
       action(
         "Put upright.", () => {
           state.uprightedSign = true;
+          state.currentTime.add(10, 'minutes');
         },
         () => !state.uprightedSign
       )

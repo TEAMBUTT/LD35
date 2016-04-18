@@ -19,6 +19,7 @@ export class Mirror extends Entity {
           } else {
             printMessage("You can't quite bring yourself to look at your reflection.");
           }
+          state.currentTime.add(5, 'minutes');
         },
         () => {
           return state.doom.started && state.doom.progress >= 10;

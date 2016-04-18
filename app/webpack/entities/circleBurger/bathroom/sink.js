@@ -15,10 +15,12 @@ export class Sink extends Entity {
       action("Clean.", () => {
         printMessage('You clean the sink');
         state.sinkClean = true;
+        state.currentTime.add(5, 'minutes');
       }),
       action("Wash hands.", () => {
         printMessage('Employees must, and you oblige by washing your hands.');
         state.cleanHands = true;
+        state.currentTime.add(5, 'minutes');
       }),
       action("Brush teeth.", () => {
         state.nastyBreath = false
