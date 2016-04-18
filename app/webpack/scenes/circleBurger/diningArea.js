@@ -6,6 +6,7 @@ import counter from './counter.js';
 
 import Door from 'entities/Door';
 import CircleBurgerDoor from 'entities/circleBurger/Door'
+import doomDoor from 'entities/circleBurger/diningArea/doomDoor'
 import olderMan from 'entities/circleBurger/diningArea/olderMan'
 import OpenSign from 'entities/circleBurger/OpenSign'
 
@@ -35,7 +36,12 @@ export class DiningArea extends Scene {
       <br>
       The <%= entity("entranceDoor", "door to go outside") %> is behind you.
       <br>
-      You can see the <%= entity("bathroomDoor", "bathroom door") %> from here.
+      <% if (state.doom.started && state.doom.progress === 30) { %>
+        The <%= entity("doomDoor", "bathroom door") %> is down the hall. You
+        can hear the strange, gutteral sounds from where you're standing.
+      <% } else { %>
+        You can see the <%= entity("bathroomDoor", "bathroom door") %> from here.
+      <% } %>
       <br>
       The <%= entity("openSign") %> is accessible from here.
     `;
@@ -45,6 +51,7 @@ export class DiningArea extends Scene {
       olderMan,
       bathroomDoor,
       counterDoor,
+      doomDoor,
       openSign
     });
   }

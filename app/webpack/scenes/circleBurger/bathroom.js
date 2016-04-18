@@ -14,6 +14,10 @@ export class Bathroom extends Scene {
 
     const message = `
       You're in the bathroom.
+      <% if (state.doom.started && state.doom.progress === 40) { %>
+        Alone. Who or what was making all of that noise?
+        <br>
+      <% } %>
       There is a <%= entity('sink')%>, <%= entity('toilet') %>, and <%= entity('floor') %>.
       <% if (state.doom.started && state.doom.progress >= 10) { %>
         A <%= entity("mirror") %> hangs above the sink.

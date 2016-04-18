@@ -11,13 +11,15 @@ export class Mirror extends Entity {
       action(
         "Look.",
         () => {
-          if (state.doom.progress === 10) {
+          if (state.doom.progress === 40) {
             printMessage(`
               You look at your reflection in the mirror. There appears to be
               something on your <%= entity("arm") %>.
             `, {arm});
-          } else {
+          } else if (state.doom.progress > 40) {
             printMessage("You can't quite bring yourself to look at your reflection.");
+          } else {
+            printMessage("You admire your reflection.");
           }
           state.currentTime.add(5, 'minutes');
         },

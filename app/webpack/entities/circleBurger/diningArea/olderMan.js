@@ -10,8 +10,8 @@ export class OlderMan extends Entity {
     return [
       action(
         "Give granola bar.", () => {
-          if (state.doom.started && state.doom.progress === 70) {
-            state.doom.progress += 10;
+          if (state.doom.started && state.doom.progress === 50) {
+            state.doom.progress += 10; // Progress: 60
             printMessage(`
               The eldery man won't take the granola bar. His eyes fixated on
               your arm.
