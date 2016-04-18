@@ -1,6 +1,6 @@
 import Entity, { printMessage, action, state } from "Entity";
 import { changeScene } from 'currentScene';
-import diningArea from 'scenes/circleBurger/diningArea';
+import doomFinal from 'scenes/circleBurger/doomFinal';
 
 export class DoomDoor extends Entity {
   name() {
@@ -17,7 +17,7 @@ export class DoomDoor extends Entity {
             You make your way back through the kitchen, past the counter to the
             dining area.
           `);
-          changeScene(diningArea);
+          changeScene(doomFinal);
         }
       )
     ];
