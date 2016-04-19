@@ -1,4 +1,5 @@
 import { addMessage } from './messageQueue.js';
+import printMessage from 'printMessage';
 import $ from 'jquery';
 
 import state from 'state';
@@ -52,6 +53,11 @@ export function changeScene(scene) {
 
 export function renderCurrentScene() {
   if(!state.finished) {
+    if (!state.afterClosingTime && state.currentTime.isSameOrAfter(state.closingTime.clone().subtract(5, 'minutes'))) {
+      printMessage("You realize that it must be time to close up shop by now.");
+      state.afterClosingTime = true;
+    }
+
     addMessage(getCurrentScene().descriptionMessage());
   }
 

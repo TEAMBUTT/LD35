@@ -16,10 +16,6 @@ class Scene {
   }
   onEnter() {
     ga('send', 'event', 'Scene', 'enter', this.name());
-    if (!state.afterClosingTime && state.currentTime.isAfter(state.closingTime)) {
-      printMessage("You realize that it must be time to close up shop by now.");
-      state.afterClosingTime = true;
-    }
   }
 };
 
