@@ -57,10 +57,12 @@ export default function calculateResults() {
 
   if (!state.fridgeInventory.length) {
     a(-25, "You drank rancid milk and a beer before work. You felt sick all shift.");
-  } else if (includes(state.fridgeInventory, 'milk')) {
-    a(-5, "You had a beer right before work.");
-  } else if (includes(state.fridgeInventory, 'beer')) {
-    a(-10, "You drank rancid milk.");
+  } else {
+    if (!includes(state.fridgeInventory, 'beer')) {
+      a(-5, "You had a beer right before work.");
+    } else if (!includes(state.fridgeInventory, 'milk')) {
+      a(-10, "You drank rancid milk.");
+    }
   }
 
   if (state.lockedIn) {
