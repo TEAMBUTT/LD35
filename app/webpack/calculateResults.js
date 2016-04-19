@@ -126,7 +126,9 @@ export default function calculateResults() {
     }
   }
 
-  if(state.olderManFed) {
+  // Check state.customers because we were incorrectly storing this information
+  // there for a little bit.
+  if(state.olderManFed || state.customers.olderManFed) {
     a(10, "You gave an older man your Granola Bar. Aren't you nice.");
   }
 
