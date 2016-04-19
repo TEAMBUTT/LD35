@@ -1,4 +1,5 @@
 import { includes, filter } from 'lodash';
+import moment from 'moment';
 
 export default function calculateResults() {
   let results = [];
@@ -44,10 +45,11 @@ export default function calculateResults() {
   }
 
   if (state.lightsOutTime) {
+    const diff = moment.duration(state.closingTime.diff(state.lightsOutTime)).humanize();
     if (state.lightsOutTime.isBefore(state.closingTime.clone().subtract(5, 'minutes'))) {
-      a(-10, "You turned the open sign off too early.");
+      a(-10, `You turned the open sign off ${diff} too early.`);
     } else if (state.lightsOutTime.isAfter(state.closingTime.clone().add(5, 'minutes'))) {
-      a(-10, "You turned the open sign off too late.");
+      a(-10, `You turned the open sign off ${diff} too late.`);
     } else {
       a(15, "You turned off the open sign on time.");
     }
