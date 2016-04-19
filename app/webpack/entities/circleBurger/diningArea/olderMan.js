@@ -22,7 +22,7 @@ export class OlderMan extends Entity {
             `);
           } else {
             removeItem("granolaBar");
-            state.customers.olderManFed = true;
+            state.olderManFed = true;
             printMessage("The eldery man takes the granola bar and smiles.");
           }
           state.currentTime.add(15, 'minutes');
