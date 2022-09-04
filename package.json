@@ -14,6 +14,7 @@
   "license": "UNLICENSED",
   "homepage": "https://github.com/TEAMBUTT/LD35#readme",
   "devDependencies": {
+    "bourbon": "^4.3.4",
     "css-loader": "^6.7.1",
     "sass": "^1.54.8",
     "sass-loader": "^13.0.2",
