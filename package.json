@@ -3,7 +3,8 @@
   "version": "6.6.6",
   "private": true,
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack watch"
   },
   "repository": {
     "type": "git",
