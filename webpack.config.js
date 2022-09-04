@@ -6,6 +6,7 @@ module.exports = {
   mode: 'production',
   plugins: [
     new HtmlWebpackPlugin({
+      favicon: "./src/favicon.ico"
     }),
   ],
   resolve: {
