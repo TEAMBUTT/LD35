@@ -8,6 +8,7 @@ import printMessage from "./printMessage";
 import { action, actionWithItem } from "./action";
 import time from "./time";
 import state from "./state";
+import ga from "./ga";
 
 export { printMessage, action, actionWithItem, time, state }
 
