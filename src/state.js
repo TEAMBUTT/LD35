@@ -1,16 +1,16 @@
-import moment from 'moment';
 import {extend} from 'lodash';
+import {Time} from 'time';
 
 let state = window.state = {
   finished: false,
 
   // Times
-  shiftStartTime: moment('2013-01-12 16:00'),
-  closingTime: moment('2013-01-12 22:00'),
-  currentTime: moment('2013-01-12 16:30'),
+  shiftStartTime: new Time(16, 0),
+  closingTime: new Time(22, 0),
+  currentTime: new Time(16, 60),
   lightsOutTime: false,
-  familyLeavesTime: moment('2013-01-12 20:30'),
-  teensLeaveTime: moment('2013-01-12 21:15'),
+  familyLeavesTime: new Time(20, 30),
+  teensLeaveTime: new Time(21, 15),
 
   // Closing
   afterClosingTime: false,

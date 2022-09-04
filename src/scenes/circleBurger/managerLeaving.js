@@ -1,5 +1,4 @@
 import Scene from 'Scene';
-import moment from 'moment';
 import state from 'state';
 
 import parkingLot from 'scenes/circleBurger/parkingLot';
@@ -15,7 +14,7 @@ export class ManagerLeaving extends Scene {
   descriptionMessage() {
     const entranceDoor = new Door(entrance, "Walk over.");
 
-    const diff = moment.duration(state.shiftStartTime.diff(state.currentTime)).humanize();
+    const diff = state.shiftStartTime.diff(state.currentTime);
 
     let message;
     switch (state.manager.progress) {
