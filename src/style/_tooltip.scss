@@ -7,7 +7,8 @@
 }
 
 .tooltip-content {
-  @include position(absolute, null null null 50%);
+  position: absolute;
+  left: 50%;
   transform: translatex(-50%);
   width: 25vw;
   min-width: 150px;

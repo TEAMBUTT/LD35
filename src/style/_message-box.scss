@@ -35,7 +35,7 @@
     animation: glow 1s infinite alternate;
     color: $color-red;
 
-    @include keyframes(glow) {
+    @keyframes glow {
       to {
         text-shadow: -1px 1px 16px lighten($color-red, 5);
       }
