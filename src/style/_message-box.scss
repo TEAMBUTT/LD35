@@ -1,5 +1,5 @@
 .message-box {
-  @include user-select(none);
+  user-select: none;
   padding: 10px;
   font-size: 22px;
   line-height: 1.5;
@@ -19,7 +19,7 @@
 .message {
   margin: 1em 0;
   opacity: 0;
-  @include transition(opacity 0.2s ease-in-out);
+  transition: opacity 0.2s ease-in-out;
 
   &.visible {
     opacity: 1;
@@ -32,7 +32,7 @@
   text-decoration: none;
 
   .red-glow > & {
-    @include animation(glow 1s infinite alternate);
+    animation: glow 1s infinite alternate;
     color: $color-red;
 
     @include keyframes(glow) {

@@ -8,7 +8,7 @@
 
 .tooltip-content {
   @include position(absolute, null null null 50%);
-  @include transform(translatex(-50%));
+  transform: translatex(-50%);
   width: 25vw;
   min-width: 150px;
   color: $color-background;
