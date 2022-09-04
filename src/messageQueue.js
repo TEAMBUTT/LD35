@@ -1,5 +1,3 @@
-import { each } from 'lodash';
-
 const callbacks = [];
 
 export function onMessage(callback) {
@@ -7,5 +5,5 @@ export function onMessage(callback) {
 }
 
 export function addMessage(message) {
-  each(callbacks, (callback) => callback(message));
+  callbacks.forEach((callback) => callback(message));
 }

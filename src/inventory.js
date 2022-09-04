@@ -1,4 +1,5 @@
-import { includes, remove } from 'lodash';
+import includes from 'lodash/includes';
+import remove from 'lodash/remove';
 import state from 'state';
 import printMessage from 'printMessage';
 

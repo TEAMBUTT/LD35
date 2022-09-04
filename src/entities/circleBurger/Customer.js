@@ -1,6 +1,10 @@
 import Entity, { printMessage, action, actionWithItem, time, state } from "Entity";
 import { addItem, removeItem, isInInventory } from 'inventory.js';
-import { capitalize, concat, map, extend } from 'lodash';
+
+import capitalize from 'lodash/capitalize';
+import concat from 'lodash/concat';
+import map from 'lodash/map';
+import extend from 'lodash/extend';
 
 let foodItems = [
   'raw patty',

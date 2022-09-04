@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { template } from 'lodash';
+import template from 'lodash/template';
 import Promise from "bluebird";
 
 let html = template(`

@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { template } from 'lodash';
+import template from 'lodash/template';
 
 import state from "state";
 import calculateResults from "calculateResults";

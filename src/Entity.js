@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import { v4 as uuidv4 } from 'uuid';
-import { each, filter } from 'lodash';
+import each from 'lodash/each';
+import filter from 'lodash/filter';
 import { renderCurrentScene } from './currentScene.js';
 import { addMessage } from './messageQueue.js';
 

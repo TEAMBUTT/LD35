@@ -1,6 +1,10 @@
 import $ from 'jquery';
 import { addMessage } from './messageQueue.js';
-import { extend, each, template } from 'lodash';
+
+import extend from 'lodash/extend';
+import each from 'lodash/each';
+import template from 'lodash/template';
+
 import state from './state.js';
 import { isInInventory } from './inventory.js';
 

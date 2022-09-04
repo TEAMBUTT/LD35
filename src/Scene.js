@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import { each, map, mapValues, assign } from 'lodash';
 import state from 'state';
 import formatMessage from 'formatMessage';
 import printMessage from 'printMessage';
