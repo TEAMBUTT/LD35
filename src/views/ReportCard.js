@@ -29,7 +29,7 @@ let template = _.template(`
 
 export default class {
   start() {
-    const frame = $('#report');
+    const frame = $('.main-content');
     if (state.doom.progress === 100) {
       $(".main-content").addClass("doom");
       let doomResults = [
