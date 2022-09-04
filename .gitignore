@@ -6,6 +6,4 @@
 /node_modules
 /app/assets/javascripts/
 
-dist/index.html
-dist/bundle.js
-dist/bundle.js.LICENSE.txt
+/dist/
