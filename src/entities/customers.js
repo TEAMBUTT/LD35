@@ -1,4 +1,3 @@
-import { find } from 'lodash';
 import {Time} from 'time';
 import Customer from 'entities/circleBurger/Customer';
 
@@ -41,5 +40,5 @@ const customers = [
 ];
 
 export function nextCustomer() {
-  return find(customers, (customer) => customer.isInLine());
+  return customers.find((customer) => customer.isInLine());
 }

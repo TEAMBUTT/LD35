@@ -1,4 +1,3 @@
-import { find, negate } from 'lodash';
 import Scene from 'Scene';
 
 import diningArea from './diningArea.js';

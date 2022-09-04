@@ -1,5 +1,3 @@
-import { includes, filter } from 'lodash';
-
 export default function calculateResults() {
   let results = [];
 
@@ -59,9 +57,9 @@ export default function calculateResults() {
   if (!state.fridgeInventory.length) {
     a(-25, "You drank rancid milk and a beer before work. You felt sick all shift.");
   } else {
-    if (!includes(state.fridgeInventory, 'beer')) {
+    if (!state.fridgeInventory.includes('beer')) {
       a(-5, "You had a beer right before work.");
-    } else if (!includes(state.fridgeInventory, 'milk')) {
+    } else if (!state.fridgeInventory.includes('milk')) {
       a(-10, "You drank rancid milk.");
     }
   }
@@ -137,10 +135,10 @@ export default function calculateResults() {
     a(-30, "You handled food without washing your hands.");
   }
 
-  let servedCustomers = filter(state.customers, { served: true })
-  let angryCustomers = filter(state.customers, { angry: true })
-  let fedCustomers = filter(state.customers, { fed: true })
-  let unservedCustomers = filter(state.customers, { served: false })
+  let servedCustomers = state.customers.filter((x) => x.served);
+  let angryCustomers = state.customers.filter((x) => x.angry);
+  let fedCustomers = state.customers.filter((x) => x.fed);
+  let unservedCustomers = state.customers.filter((x) => !x.served);
 
   if(fedCustomers.length) {
     a(fedCustomers.length*10, `You fed ${fedCustomers.length} customers.`);
