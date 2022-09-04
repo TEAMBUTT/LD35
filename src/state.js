@@ -115,16 +115,4 @@ let state = window.state = {
   },
 };
 
-export function updateState(newState){
-  extend(state, newState);
-  extend(state, {
-    shiftStartTime: moment(state.shiftStartTime),
-    closingTime: moment(state.closingTime),
-    currentTime: moment(state.currentTime),
-    familyLeavesTime: moment(state.familyLeavesTime),
-    teensLeaveTime: moment(state.teensLeaveTime),
-    lightsOutTime: state.lightsOutTime ? moment(state.lightsOutTime) : state.lightsOutTime
-  });
-};
-
 export default state;
