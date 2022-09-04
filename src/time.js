@@ -1,5 +1,5 @@
 import state from './state.js';
 
-export default function time() {
+export function currentTime() {
   return state.currentTime.format('h:mma');
 };

@@ -1,4 +1,5 @@
 import Entity, { printMessage, action, time, state } from "Entity";
+import { currentTime } from "time";
 
 export class AlarmClock extends Entity {
   constructor() {
@@ -15,7 +16,7 @@ export class AlarmClock extends Entity {
         "Snooze.",
         () => {
           state.currentTime.add(10, 'minutes');
-          printMessage(`You sleep for another 10 minutes before the alarm clock rings again. It's now ${time()}.`);
+          printMessage(`You sleep for another 10 minutes before the alarm clock rings again. It's now ${currentTime()}.`);
         },
         () => state.alarmRinging
       ),
@@ -31,7 +32,7 @@ export class AlarmClock extends Entity {
       action(
         "Look at the time.",
         () => {
-          printMessage(`It is now ${time()}. Your shift started at 4pm`)
+          printMessage(`It is now ${currentTime()}. Your shift started at 4pm`)
           state.currentTime.add(1, 'minutes');
         }
       )

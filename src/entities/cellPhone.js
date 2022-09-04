@@ -1,6 +1,7 @@
-import Entity, { printMessage, action, time, state } from "Entity";
+import Entity, { printMessage, action, state } from "Entity";
 import { addItem, isInInventory } from 'inventory';
 import texts from './texts';
+import { currentTime } from 'time';
 
 export class CellPhone extends Entity {
   constructor() {
@@ -24,7 +25,7 @@ export class CellPhone extends Entity {
             state.doom.started = true;
             printMessage("It is now 6:66pm. Weird.");
           } else {
-            printMessage(`It is now ${time()}.`)
+            printMessage(`It is now ${currentTime()}.`)
           }
           state.currentTime.add(5, 'minutes');
         }
