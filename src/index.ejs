@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <title>Shift at the Circle Burger</title>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <meta content='#022431' name='theme-color'>
+
+    <%= htmlWebpackPlugin.tags.headTags %>
   </head>
   <body>
     <div class="main-content">
@@ -14,6 +15,6 @@
       A game by <a href="https://butt.team">butt.team</a>
     </footer>
 
-    <script src="bundle.js"></script>
+    <%= htmlWebpackPlugin.tags.bodyTags %>
   </body>
 </html>
