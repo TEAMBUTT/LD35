@@ -1,10 +1,10 @@
 import $ from 'jquery';
-import _ from 'lodash';
+import { template } from 'lodash';
 
 import state from "state";
 import calculateResults from "calculateResults";
 
-let template = _.template(`
+let html = template(`
   <div class="report-card-screen">
     <section class="results">
       <h1>Employee Performance Review</h1>
@@ -41,9 +41,9 @@ export default class {
         { score: 250, description: "Met the mysterious stranger." },
         { score: -1383, description: "Might have inadvertently started the apocalypse." },
       ];
-      frame.html(template({ results: doomResults }));
+      frame.html(html({ results: doomResults }));
     } else {
-      frame.html(template({ results: calculateResults() }));
+      frame.html(html({ results: calculateResults() }));
     }
   }
 };

@@ -1,8 +1,8 @@
 import $ from 'jquery';
-import _ from 'lodash';
+import { template } from 'lodash';
 import Promise from "bluebird";
 
-let template = _.template(`
+let html = template(`
   <div class="intro-screen">
     <div class="intro-screen-title"><%= text %></div>
   </div>
@@ -12,9 +12,8 @@ export default class {
   start() {
     const frame = $('.main-content');
 
-    if($('html').data('environment') == 'development') {
-      return Promise.resolve();
-    }
+    //// For development:
+    //return Promise.resolve();
 
     return new Promise((resolve, reject) => {
       frame.html(this.html('The second game by butt.team'));
@@ -26,6 +25,6 @@ export default class {
     });
   }
   html(text) {
-    return template({ text });
+    return html({ text });
   }
 };
