@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import { each, filter } from 'lodash';
 import { renderCurrentScene } from './currentScene.js';
 import { addMessage } from './messageQueue.js';
@@ -13,7 +13,7 @@ export { printMessage, action, actionWithItem, time, state }
 
 class Entity {
   constructor() {
-    this.uuid = uuid.v4();
+    this.uuid = uuidv4();
   }
 
   html(text) {
