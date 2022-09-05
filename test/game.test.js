@@ -1,6 +1,6 @@
 import {describe, expect, test} from '@jest/globals';
-import CircleBurgerGameView from 'views/CircleBurgerGameView';
 
+import CircleBurgerGameView from 'views/CircleBurgerGameView';
 import { scenes, changeScene, renderCurrentScene } from 'currentScene';
 import finish from 'finish';
 

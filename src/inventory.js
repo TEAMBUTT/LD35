@@ -1,5 +1,3 @@
-import includes from 'lodash/includes';
-import remove from 'lodash/remove';
 import state from 'state';
 import printMessage from 'printMessage';
 
@@ -7,12 +5,15 @@ export function isInInventory(item, inventory = state.inventory) {
   if (inventory == state.inventory && state.wearing !== "uniform") {
     return false;
   } else {
-    return includes(inventory, item);
+    return inventory.includes(item);
   }
 };
 
 export function removeItem(item, origin = state.inventory) {
-  remove(origin, (v) => v === item);
+  const index = origin.indexOf(item);
+  if (index > -1) {
+    origin.splice(index, 1);
+  }
 };
 
 export function addItem(item, destination = state.inventory) {
