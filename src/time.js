@@ -48,7 +48,7 @@ export class Time {
   format(spec) {
     let seconds = this.total_minutes * 60;
     let date = new Date(seconds * 1000);
-    let format = new Intl.DateTimeFormat('en-US', { timeStyle: 'short' });
+    let format = new Intl.DateTimeFormat('en-US', { timeStyle: 'short', timeZone: "UTC" });
     return format.format(date);
   }
 }

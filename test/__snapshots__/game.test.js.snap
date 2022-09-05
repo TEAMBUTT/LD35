@@ -1663,7 +1663,7 @@ exports[`game can display scene bathroom 1`] = `
             </div>
           </div>
         </div>
-         shows 9:00 AM.
+         shows 5:00 PM.
       
         <br />
         
@@ -1803,7 +1803,7 @@ exports[`game can display scene bathroom 1`] = `
             </div>
           </div>
         </div>
-         shows 9:00 AM.
+         shows 5:00 PM.
       
         <br />
         
@@ -4723,7 +4723,7 @@ exports[`game can display scene counter 1`] = `
             </div>
           </div>
         </div>
-         shows 9:00 AM.
+         shows 5:00 PM.
       
         <br />
         
@@ -4863,7 +4863,7 @@ exports[`game can display scene counter 1`] = `
             </div>
           </div>
         </div>
-         shows 9:00 AM.
+         shows 5:00 PM.
       
         <br />
         
@@ -5247,7 +5247,7 @@ exports[`game can display scene counter 1`] = `
           </div>
         </div>
          on the wall says it is
-      9:00 AM.
+      5:00 PM.
       
         <br />
         
@@ -6958,7 +6958,7 @@ exports[`game can display scene diningArea 1`] = `
             </div>
           </div>
         </div>
-         shows 9:00 AM.
+         shows 5:00 PM.
       
         <br />
         
@@ -14169,7 +14169,7 @@ exports[`game can display scene kitchen 1`] = `
             </div>
           </div>
         </div>
-         shows 9:00 AM.
+         shows 5:00 PM.
       
         <br />
         
@@ -14309,7 +14309,7 @@ exports[`game can display scene kitchen 1`] = `
             </div>
           </div>
         </div>
-         shows 9:00 AM.
+         shows 5:00 PM.
       
         <br />
         
@@ -14693,7 +14693,7 @@ exports[`game can display scene kitchen 1`] = `
           </div>
         </div>
          on the wall says it is
-      9:00 AM.
+      5:00 PM.
       
         <br />
         
@@ -14814,7 +14814,7 @@ exports[`game can display scene kitchen 1`] = `
           </div>
         </div>
          on the wall says it is
-      9:00 AM.
+      5:00 PM.
       
         <br />
         
@@ -14865,7 +14865,7 @@ exports[`game can display scene kitchen 1`] = `
           </div>
         </div>
          on the wall says it is
-        9:00 AM.
+        5:00 PM.
         
         <br />
         
@@ -16645,7 +16645,7 @@ exports[`game can display scene managerLeaving 1`] = `
             </div>
           </div>
         </div>
-         shows 9:00 AM.
+         shows 5:00 PM.
       
         <br />
         
@@ -16785,7 +16785,7 @@ exports[`game can display scene managerLeaving 1`] = `
             </div>
           </div>
         </div>
-         shows 9:00 AM.
+         shows 5:00 PM.
       
         <br />
         
@@ -17169,7 +17169,7 @@ exports[`game can display scene managerLeaving 1`] = `
           </div>
         </div>
          on the wall says it is
-      9:00 AM.
+      5:00 PM.
       
         <br />
         
@@ -17290,7 +17290,7 @@ exports[`game can display scene managerLeaving 1`] = `
           </div>
         </div>
          on the wall says it is
-      9:00 AM.
+      5:00 PM.
       
         <br />
         
@@ -17341,7 +17341,7 @@ exports[`game can display scene managerLeaving 1`] = `
           </div>
         </div>
          on the wall says it is
-        9:00 AM.
+        5:00 PM.
         
         <br />
         
@@ -17470,7 +17470,7 @@ exports[`game can display scene managerLeaving 1`] = `
           </div>
         </div>
          on the wall says it is
-        9:00 AM.
+        5:00 PM.
         
         <br />
         
@@ -19291,7 +19291,7 @@ exports[`game can display scene outBack 1`] = `
             </div>
           </div>
         </div>
-         shows 9:00 AM.
+         shows 5:00 PM.
       
         <br />
         
@@ -19431,7 +19431,7 @@ exports[`game can display scene outBack 1`] = `
             </div>
           </div>
         </div>
-         shows 9:00 AM.
+         shows 5:00 PM.
       
         <br />
         
@@ -19815,7 +19815,7 @@ exports[`game can display scene outBack 1`] = `
           </div>
         </div>
          on the wall says it is
-      9:00 AM.
+      5:00 PM.
       
         <br />
         
@@ -19936,7 +19936,7 @@ exports[`game can display scene outBack 1`] = `
           </div>
         </div>
          on the wall says it is
-      9:00 AM.
+      5:00 PM.
       
         <br />
         
@@ -19987,7 +19987,7 @@ exports[`game can display scene outBack 1`] = `
           </div>
         </div>
          on the wall says it is
-        9:00 AM.
+        5:00 PM.
         
         <br />
         
@@ -20116,7 +20116,7 @@ exports[`game can display scene outBack 1`] = `
           </div>
         </div>
          on the wall says it is
-        9:00 AM.
+        5:00 PM.
         
         <br />
         
@@ -23423,7 +23423,7 @@ exports[`game can display scene van 1`] = `
             </div>
           </div>
         </div>
-         shows 9:00 AM.
+         shows 5:00 PM.
       
         <br />
         
@@ -23563,7 +23563,7 @@ exports[`game can display scene van 1`] = `
             </div>
           </div>
         </div>
-         shows 9:00 AM.
+         shows 5:00 PM.
       
         <br />
         
@@ -23947,7 +23947,7 @@ exports[`game can display scene van 1`] = `
           </div>
         </div>
          on the wall says it is
-      9:00 AM.
+      5:00 PM.
       
         <br />
         
@@ -24068,7 +24068,7 @@ exports[`game can display scene van 1`] = `
           </div>
         </div>
          on the wall says it is
-      9:00 AM.
+      5:00 PM.
       
         <br />
         
@@ -24119,7 +24119,7 @@ exports[`game can display scene van 1`] = `
           </div>
         </div>
          on the wall says it is
-        9:00 AM.
+        5:00 PM.
         
         <br />
         
@@ -24248,7 +24248,7 @@ exports[`game can display scene van 1`] = `
           </div>
         </div>
          on the wall says it is
-        9:00 AM.
+        5:00 PM.
         
         <br />
         
