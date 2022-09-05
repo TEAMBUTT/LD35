@@ -1,7 +1,6 @@
 import $ from 'jquery';
 import { addMessage } from './messageQueue.js';
 
-import extend from 'lodash/extend';
 import each from 'lodash/each';
 import template from 'lodash/template';
 
@@ -19,7 +18,7 @@ export default function formatMessage(message, data) {
     isInInventory: isInInventory
   };
 
-  extend(helpers, data);
+  Object.assign(helpers, data);
 
   message = template(message)(helpers);
   message = $('<div class="message scene-description">').append(message);

@@ -4,7 +4,6 @@ import { addItem, removeItem, isInInventory } from 'inventory.js';
 import capitalize from 'lodash/capitalize';
 import concat from 'lodash/concat';
 import map from 'lodash/map';
-import extend from 'lodash/extend';
 
 let foodItems = [
   'raw patty',
@@ -19,7 +18,7 @@ let foodItems = [
 export class Customer extends Entity {
   constructor(options) {
     super();
-    extend(this, options);
+    Object.assign(this, options);
   }
 
   name() {

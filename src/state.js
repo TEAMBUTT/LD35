@@ -1,4 +1,3 @@
-import extend from 'lodash/extend';
 import {Time} from 'time';
 
 let state = window.state = {
