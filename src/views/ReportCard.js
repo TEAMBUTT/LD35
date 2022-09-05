@@ -9,7 +9,7 @@ let html = template(`
     <section class="results">
       <h1>Employee Performance Review</h1>
       <table class="results-table">
-        <% _.each(results, function(result) { %>
+        <% results.forEach(function(result) { %>
           <tr>
           <td class="results-score"><%= result.score %></td>
           <td class="results-description"><%= result.description %></td>
@@ -19,7 +19,7 @@ let html = template(`
 
       <h3 class="results-total-score">
         Total score:
-        <%= _.sumBy(results, 'score') %>
+        <%= results.reduce((m, r) => m + r.score, 0) %>
       </h3>
 
       <a class="play-again" href="/">Play again</a>

@@ -135,21 +135,27 @@ export default function calculateResults() {
     a(-30, "You handled food without washing your hands.");
   }
 
-  let servedCustomers = state.customers.filter((x) => x.served);
-  let angryCustomers = state.customers.filter((x) => x.angry);
-  let fedCustomers = state.customers.filter((x) => x.fed);
-  let unservedCustomers = state.customers.filter((x) => !x.served);
+  let servedCustomers = 0;
+  let angryCustomers = 0;
+  let fedCustomers = 0;
+  let unservedCustomers = 0;
+  for (const [key, c] of Object.entries(state.customers)) {
+    if (c.served) servedCustomers += 1;
+    if (c.angry) angryCustomers += 1;
+    if (c.fed) fedCustomers += 1;
+    if (!c.served) unservedCustomers += 1;
+  }
 
-  if(fedCustomers.length) {
-    a(fedCustomers.length*10, `You fed ${fedCustomers.length} customers.`);
+  if(fedCustomers) {
+    a(fedCustomers*10, `You fed ${fedCustomers} customers.`);
   }
-  if(angryCustomers.length) {
-    a(-angryCustomers.length*10, `You gave ${angryCustomers.length} customers the wrong item.`);
+  if(angryCustomers) {
+    a(-angryCustomers*10, `You gave ${angryCustomers} customers the wrong item.`);
   }
-  if(!servedCustomers.length) {
-    a(-20 * unservedCustomers.length, `You didn't serve any customers.`);
-  } else if(unservedCustomers.length) {
-    a(-20 * unservedCustomers.length, `You didn't serve ${unservedCustomers.length} customers.`);
+  if(!servedCustomers) {
+    a(-20 * unservedCustomers, `You didn't serve any customers.`);
+  } else if(unservedCustomers) {
+    a(-20 * unservedCustomers, `You didn't serve ${unservedCustomers} customers.`);
   }
 
   if(state.amountStolen > 0.00) {

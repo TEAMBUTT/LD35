@@ -15,7 +15,11 @@ function inPrepInventory(item) {
 }
 
 function hasBurger() {
-  return _.some(['burger', 'bacon burger', 'cheese burger', 'bacon cheese burger'], inPrepInventory);
+  for (item of ['burger', 'bacon burger', 'cheese burger', 'bacon cheese burger']) {
+    if (inPrepInventory(item)) return true;
+  }
+
+  return false;
 }
 
 function hasBurgerOrPatty() {
