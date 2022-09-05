@@ -21,7 +21,7 @@ import van from './scenes/circleBurger/van.js';
 
 import queryString from 'query-string';
 
-const scenes = {
+export const scenes = {
   bedroom,
   car,
   garage,

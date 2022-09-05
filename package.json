@@ -16,6 +16,9 @@
   "license": "UNLICENSED",
   "homepage": "https://github.com/TEAMBUTT/LD35#readme",
   "devDependencies": {
+    "@babel/core": "^7.18.13",
+    "@babel/preset-env": "^7.18.10",
+    "babel-jest": "^29.0.2",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^29.0.2",

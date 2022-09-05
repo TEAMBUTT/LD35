@@ -9,6 +9,7 @@ export default class {
   constructor() {
     this.$frame = $('.main-content');
   }
+
   start() {
     this.messageBox = $('<div class="message-box">');
     this.$frame.append(this.messageBox);
@@ -16,6 +17,7 @@ export default class {
     printMessage("You are late for work!");
     renderCurrentScene();
   }
+
   displayMessage(message) {
     this.messageBox.children('.to-hide').removeClass('to-hide').addClass('disabled');
 
