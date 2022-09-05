@@ -15,7 +15,7 @@ function inPrepInventory(item) {
 }
 
 function hasBurger() {
-  for (item of ['burger', 'bacon burger', 'cheese burger', 'bacon cheese burger']) {
+  for (const item of ['burger', 'bacon burger', 'cheese burger', 'bacon cheese burger']) {
     if (inPrepInventory(item)) return true;
   }
 
