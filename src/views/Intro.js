@@ -1,12 +1,5 @@
 import $ from 'jquery';
-import template from 'lodash/template';
 import Promise from "bluebird";
-
-let html = template(`
-  <div class="intro-screen">
-    <div class="intro-screen-title"><%= text %></div>
-  </div>
-`)
 
 export default class {
   start() {
@@ -25,6 +18,10 @@ export default class {
     });
   }
   html(text) {
-    return html({ text });
+    return `
+      <div class="intro-screen">
+        <div class="intro-screen-title">${ text }</div>
+      </div>
+    `;
   }
 };
