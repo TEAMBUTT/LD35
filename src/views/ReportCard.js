@@ -1,31 +1,33 @@
 import $ from 'jquery';
-import template from 'lodash/template';
 
 import state from "state";
 import calculateResults from "calculateResults";
 
-let html = template(`
+let html = ({results}) => `
   <div class="report-card-screen">
     <section class="results">
       <h1>Employee Performance Review</h1>
       <table class="results-table">
-        <% results.forEach(function(result) { %>
+        ${
+        results.map((result) => `
           <tr>
-          <td class="results-score"><%= result.score %></td>
-          <td class="results-description"><%= result.description %></td>
+          <td class="results-score">${ result.score }</td>
+          <td class="results-description">${ result.description }</td>
           </tr>
-        <% }) %>
+        `).join("\n")
+        }
       </table>
 
       <h3 class="results-total-score">
         Total score:
-        <%= results.reduce((m, r) => m + r.score, 0) %>
+        ${ results.reduce((m, r) => m + r.score, 0) }
       </h3>
 
       <a class="play-again" href="/">Play again</a>
     </section>
   </div>
-`)
+`;
+
 
 export default class {
   start() {
