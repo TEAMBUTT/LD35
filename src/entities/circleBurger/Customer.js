@@ -1,9 +1,9 @@
 import Entity, { printMessage, action, actionWithItem, time, state } from "Entity";
 import { addItem, removeItem, isInInventory } from 'inventory.js';
 
-import capitalize from 'lodash/capitalize';
-import concat from 'lodash/concat';
-import map from 'lodash/map';
+const capitalize = (string) => {
+  return string ? string.charAt(0).toUpperCase() + string.slice(1).toLowerCase() : '';
+};
 
 let foodItems = [
   'raw patty',
@@ -44,12 +44,12 @@ export class Customer extends Entity {
         state.currentTime.add(5, 'minutes');
       })];
     }
-    return concat([
+    return [
       action("Talk.", () => {
         printMessage(this.dialog);
         state.currentTime.add(5, 'minutes');
-      })],
-      map(foodItems, (item) => {
+      })].concat(
+      foodItems.map((item) => {
         return actionWithItem(`Give ${item}.`, item, () => {
           printMessage(`You give ${this.definiteArticle} the ${item}.`);
           if (item == this.desiredItem) {
