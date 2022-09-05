@@ -1,7 +1,6 @@
 import $ from 'jquery';
 import { addMessage } from './messageQueue.js';
 
-import each from 'lodash/each';
 import template from 'lodash/template';
 
 import state from './state.js';
@@ -23,7 +22,7 @@ export default function formatMessage(message, data) {
   message = template(message)(helpers);
   message = $('<div class="message scene-description">').append(message);
 
-  each(entities, (entity) => {
+  entities.forEach((entity) => {
     message
       .find(data[entity].placeholderSelector())
       .each((index, element) => {
